@@ -1,6 +1,6 @@
 /**
  * LOTE 1 — produtos prontos para venda (Empire + Studio).
- * Comissão 50% nos flagships e micros J; valores ilustrativos — resultados variam.
+ * Comissão: flagships 50% · micros J 70% (playbook isca). Cookie de 180 dias. Valores ilustrativos — resultados variam.
  */
 
 export type Lote1Product = {
@@ -8,7 +8,7 @@ export type Lote1Product = {
   name: string;
   price: number;
   commissionPercent: number;
-  /** Página no Studio, se existir */
+  /** Página no Studio, se existir (também usado para resolver /logos/[studioSlug]) */
   studioSlug?: string;
   /** Env var do checkout Hotmart (preencher após criar no painel) */
   checkoutEnvKey?: string;
@@ -16,6 +16,9 @@ export type Lote1Product = {
 };
 
 export const LOTE1_COMMISSION_PERCENT = 50;
+
+/** Duração do cookie de afiliado configurada no painel Hotmart (dias). */
+export const LOTE1_COOKIE_DAYS = 180;
 
 export const LOTE1_FLAGSHIPS: Lote1Product[] = [
   {
@@ -50,6 +53,7 @@ export const LOTE1_FLAGSHIPS: Lote1Product[] = [
     name: "ChatGPT para Empreendedores",
     price: 57,
     commissionPercent: 50,
+    studioSlug: "chatgpt-empreendedores",
     checkoutEnvKey: "NEXT_PUBLIC_HOTMART_CHECKOUT_CHATGPT",
     tier: "flagship",
   },
@@ -58,6 +62,7 @@ export const LOTE1_FLAGSHIPS: Lote1Product[] = [
     name: "Instagram para Negócios Locais com IA",
     price: 77,
     commissionPercent: 50,
+    studioSlug: "instagram-negocios-locais-ia",
     checkoutEnvKey: "NEXT_PUBLIC_HOTMART_CHECKOUT_INSTAGRAM",
     tier: "flagship",
   },
@@ -66,6 +71,7 @@ export const LOTE1_FLAGSHIPS: Lote1Product[] = [
     name: "Google Meu Negócio Masterclass",
     price: 57,
     commissionPercent: 50,
+    studioSlug: "google-meu-negocio-masterclass",
     checkoutEnvKey: "NEXT_PUBLIC_HOTMART_CHECKOUT_GMN",
     tier: "flagship",
   },
@@ -73,16 +79,96 @@ export const LOTE1_FLAGSHIPS: Lote1Product[] = [
 
 /** Micro-produtos J1–J10 (tripwire R$ 7–14) */
 export const LOTE1_MICROS: Lote1Product[] = [
-  { code: "J1", name: "10 Prompts WhatsApp que Vendem", price: 9, commissionPercent: 50, checkoutEnvKey: "NEXT_PUBLIC_HOTMART_CHECKOUT_J1", tier: "micro" },
-  { code: "J2", name: "Checklist IA em 1 Hora", price: 7, commissionPercent: 50, checkoutEnvKey: "NEXT_PUBLIC_HOTMART_CHECKOUT_J2", tier: "micro" },
-  { code: "J3", name: "30 Posts Prontos com IA", price: 12, commissionPercent: 50, checkoutEnvKey: "NEXT_PUBLIC_HOTMART_CHECKOUT_J3", tier: "micro" },
-  { code: "J4", name: "Template Atendimento Automático Ético", price: 14, commissionPercent: 50, checkoutEnvKey: "NEXT_PUBLIC_HOTMART_CHECKOUT_J4", tier: "micro" },
-  { code: "J5", name: "Mini-Guia GMN 30 min", price: 9, commissionPercent: 50, checkoutEnvKey: "NEXT_PUBLIC_HOTMART_CHECKOUT_J5", tier: "micro" },
-  { code: "J6", name: "40 Legendas Instagram por Segmento", price: 7, commissionPercent: 50, checkoutEnvKey: "NEXT_PUBLIC_HOTMART_CHECKOUT_J6", tier: "micro" },
-  { code: "J7", name: "Calculadora de Preço Rápida", price: 9, commissionPercent: 50, checkoutEnvKey: "NEXT_PUBLIC_HOTMART_CHECKOUT_J7", tier: "micro" },
-  { code: "J8", name: "15 Ideias de Reels por Segmento", price: 7, commissionPercent: 50, checkoutEnvKey: "NEXT_PUBLIC_HOTMART_CHECKOUT_J8", tier: "micro" },
-  { code: "J9", name: "Template Bio Instagram Perfeita", price: 7, commissionPercent: 50, checkoutEnvKey: "NEXT_PUBLIC_HOTMART_CHECKOUT_J9", tier: "micro" },
-  { code: "J10", name: "Pack 50 Hashtags por Nicho", price: 7, commissionPercent: 50, checkoutEnvKey: "NEXT_PUBLIC_HOTMART_CHECKOUT_J10", tier: "micro" },
+  {
+    code: "J1",
+    name: "10 Prompts WhatsApp que Vendem",
+    price: 9,
+    commissionPercent: 70,
+    studioSlug: "10-prompts-whatsapp-vendem",
+    checkoutEnvKey: "NEXT_PUBLIC_HOTMART_CHECKOUT_J1",
+    tier: "micro",
+  },
+  {
+    code: "J2",
+    name: "Checklist IA em 1 Hora",
+    price: 7,
+    commissionPercent: 70,
+    studioSlug: "checklist-ia-1-hora",
+    checkoutEnvKey: "NEXT_PUBLIC_HOTMART_CHECKOUT_J2",
+    tier: "micro",
+  },
+  {
+    code: "J3",
+    name: "30 Posts Prontos com IA",
+    price: 12,
+    commissionPercent: 70,
+    studioSlug: "30-posts-prontos-ia",
+    checkoutEnvKey: "NEXT_PUBLIC_HOTMART_CHECKOUT_J3",
+    tier: "micro",
+  },
+  {
+    code: "J4",
+    name: "Template Atendimento Automático Ético",
+    price: 14,
+    commissionPercent: 70,
+    studioSlug: "template-atendimento-automatico",
+    checkoutEnvKey: "NEXT_PUBLIC_HOTMART_CHECKOUT_J4",
+    tier: "micro",
+  },
+  {
+    code: "J5",
+    name: "Mini-Guia GMN 30 min",
+    price: 9,
+    commissionPercent: 70,
+    studioSlug: "mini-guia-gmn-30min",
+    checkoutEnvKey: "NEXT_PUBLIC_HOTMART_CHECKOUT_J5",
+    tier: "micro",
+  },
+  {
+    code: "J6",
+    name: "20 Legendas Instagram por Segmento",
+    price: 7,
+    commissionPercent: 70,
+    studioSlug: "20-legendas-instagram",
+    checkoutEnvKey: "NEXT_PUBLIC_HOTMART_CHECKOUT_J6",
+    tier: "micro",
+  },
+  {
+    code: "J7",
+    name: "Calculadora de Preço Rápida",
+    price: 9,
+    commissionPercent: 70,
+    studioSlug: "calculadora-preco-rapida",
+    checkoutEnvKey: "NEXT_PUBLIC_HOTMART_CHECKOUT_J7",
+    tier: "micro",
+  },
+  {
+    code: "J8",
+    name: "15 Ideias de Reels por Segmento",
+    price: 7,
+    commissionPercent: 70,
+    studioSlug: "15-ideias-reels-segmento",
+    checkoutEnvKey: "NEXT_PUBLIC_HOTMART_CHECKOUT_J8",
+    tier: "micro",
+  },
+  {
+    code: "J9",
+    name: "Template Bio Instagram Perfeita",
+    price: 7,
+    commissionPercent: 70,
+    studioSlug: "template-bio-instagram",
+    checkoutEnvKey: "NEXT_PUBLIC_HOTMART_CHECKOUT_J9",
+    tier: "micro",
+  },
+  {
+    code: "J10",
+    name: "Pack 50 Hashtags por Nicho",
+    price: 7,
+    commissionPercent: 70,
+    studioSlug: "pack-50-hashtags-nicho",
+    checkoutEnvKey: "NEXT_PUBLIC_HOTMART_CHECKOUT_J10",
+    tier: "micro",
+  },
 ];
 
 export const LOTE1_ALL = [...LOTE1_FLAGSHIPS, ...LOTE1_MICROS];

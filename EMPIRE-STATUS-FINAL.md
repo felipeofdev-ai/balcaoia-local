@@ -1,45 +1,58 @@
-# EMPIRE STATUS — BalcãoIA / VOID-9
+# EMPIRE-STATUS-FINAL — VOID-9 SUPREME (28 Jul 2026)
 
-**Atualizado:** 2026-07-28 (execução honesta)
+## Veredito
 
-## Etapa 1 — Estado verificado
+**Infraestrutura de lançamento LOTE 1: pronta no código.**  
+**Publicação Hotmart: ainda manual / RPA parcial** — sem `product_id` nem checkout real capturado.
+
+---
+
+## O que está pronto
 
 | Item | Status |
 |------|--------|
-| Git Studio | `main` limpo / sync |
-| Webhook | ✅ online |
-| OAuth Hotmart | ✅ |
-| APP_SECRET | ✅ Vercel |
-| HOTTOK | ❌ **ausente** (não configurado — valor não fornecido) |
-| Checkout URL | ❌ **ausente** |
-| Logos FOCO 14 | ✅ `/public/logos/foco-14` |
-| Ecossistema | ✅ `/ecossistema` |
+| 16 PDFs + capas LOTE 1 | ✅ ReportLab (`hotmart-factory/logs/pdfs-gerados.md`) |
+| `auth_state.json` Hotmart | ✅ (não versionar) |
+| Manifestos LOTE 1 + bump/upsell | ✅ `hotmart-factory/manifestos/*.json` |
+| RPA wizard (formato→info→preço→PDF) | ✅ melhorado; J1 ainda sem `product_id` |
+| Logos SVG 16 produtos | ✅ `balcaoia-studio/public/logos/` |
+| Mockups social-cover | ✅ espelhados de logos |
+| Páginas `/produtos/[slug]` LOTE 1 | ✅ wired (Void9 + lote1-affiliates) |
+| `/afiliados` elite (70%/180d/16) | ✅ |
+| Kits afiliados Empire | ✅ A1/A2/B1/J1 completos; demais enxutos |
+| Cursos modulares A1–D3 | ✅ pastas `curso/` |
+| Script cupons API | ✅ `scripts/configurar-api-hotmart.py` |
+| SEO + sitemap + webhook | ✅ online |
+| Checkout landing system | ✅ (aguarda hotlink real) |
 
-## Etapa 2 — Vercel env
+## O que NÃO está pronto
 
-**Pausada.** Envie `HOTTOK` e `NEXT_PUBLIC_HOTMART_CHECKOUT_URL` para eu adicionar via CLI.
+| Item | Status |
+|------|--------|
+| 16 produtos publicados Hotmart | ❌ |
+| Links `pay.hotmart.com` reais | ❌ |
+| Order bump / recuperador / funil ativos | ❌ (painel) |
+| Cupons via API | ⏳ precisa `product_id` |
+| Área de membros Hotmart Club com aulas | ❌ upload manual pós-publicação |
+| Env Vercel `NEXT_PUBLIC_HOTMART_CHECKOUT_*` | ❌ vazios de propósito |
 
-## Etapa 3 — FOCO 14 aprofundado
+## RPA — último teste J1
 
-Repo privado `foco-14`:
-- Ebook ~**16k palavras** (~60–80 pág. equivalentes a 200–250 wpp) + 18 módulos + 22 apêndices
-- Sales page longa ~**5,9k palavras**
-- VSL, headlines, 3 bônus, kit afiliados completo, 12 emails, checklist Hotmart
-- *Honestidade:* densidade editorial forte; “90 páginas impressas” depende de formatação tipográfica.
+- Formato Ebook ✅ · Nome/descrição ✅ · Capa ✅  
+- Bug corrigido: PDF não pode sobrescrever capa em Informações  
+- URL final anterior: `…/products/add/4/info` sem `product_id`  
+- **Ação:** conferir rascunhos no painel e completar Precificação → Membros → Publicar
 
-## Etapas 4–6 — Studio
+## Compliance
 
-- Home com faixa Ecossistema → FOCO 14 / afiliados
-- Product + FAQ JSON-LD nas páginas `/produtos/[slug]`
-- 6 artigos longos (~5,2k palavras cada) em `content/blog/`
-- Blog loader lê markdown longos
+- Sem AggregateRating inventado  
+- Sem promessa de renda  
+- Sem hotlink inventado  
+- Kits usam `[LINK_AFILIADO]`
 
-## Hotmart API create
+## Próximo passo crítico
 
-Continua **PANEL_REQUIRED** (0 IDs reais). Cadastre FOCO 14 no painel.
-
-## Próximo passo humano
-
-1. Colar **HOTTOK**  
-2. Criar FOCO 14 no painel → colar checkout  
-3. Redeploy após env  
+1. Publicar J1 no painel (ou re-rodar RPA corrigido)  
+2. Colar checkout real nas envs Vercel  
+3. Ativar afiliados 70% micros / 50% flagships + cookie 180d  
+4. Rodar batch RPA restante só após J1 com `product_id`

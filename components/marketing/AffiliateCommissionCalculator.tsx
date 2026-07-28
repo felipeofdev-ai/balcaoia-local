@@ -48,7 +48,7 @@ export function AffiliateCommissionCalculator() {
                 </option>
               ))}
             </optgroup>
-            <optgroup label="Micros J (50%)">
+            <optgroup label="Micros J (70%)">
               {LOTE1_ALL.filter((p) => p.tier === "micro").map((p) => (
                 <option key={p.code} value={p.code}>
                   {p.code} — {p.name} ({formatBRL(p.price)})

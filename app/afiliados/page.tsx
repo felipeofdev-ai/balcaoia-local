@@ -25,13 +25,13 @@ import {
 } from "@/components/marketing/AffiliateProgramSections";
 
 export const metadata: Metadata = {
-  title: "Programa de Afiliados — 50% LOTE 1",
+  title: "Programa de Afiliados — até 70% LOTE 1",
   description:
-    "Indique produtos BalcãoIA LOTE 1 (A1, A2, B1, C2, D1, D3 + micros J) com comissão de 50%. Materiais, tabela, simulador e regras de compliance — sem promessa de renda.",
+    "Indique os 16 produtos BalcãoIA LOTE 1 (A1, A2, B1, C2, D1, D3 + micros J1–J10) com comissão de 50% a 70% e cookie de 180 dias. Materiais, tabela, simulador e regras de compliance — sem promessa de renda.",
   alternates: { canonical: `${SITE.url}/afiliados` },
   openGraph: {
     title: "Programa de Afiliados BalcãoIA",
-    description: "Comissão 50% no LOTE 1. Materiais prontos e regras Hotmart.",
+    description: "Comissão de até 70% no LOTE 1, cookie de 180 dias. Materiais prontos e regras Hotmart.",
     url: `${SITE.url}/afiliados`,
   },
 };

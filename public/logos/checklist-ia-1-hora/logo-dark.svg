@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="120" viewBox="0 0 400 120" role="img" aria-label="Checklist IA 1h">
+  <rect width="400" height="120" fill="#0B1220"/>
+  <rect x="0" y="0" width="8" height="120" fill="#10B981"/>
+  <g transform="translate(24,20)" color="#10B981"><path d="M30 40 L42 18 L54 40 Z" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="42" cy="48" r="4" fill="currentColor"/></g>
+  <text x="110" y="58" font-family="Geist, Inter, system-ui, sans-serif" font-size="22" font-weight="700" fill="#F8FAFC">Checklist IA 1h</text>
+  <text x="110" y="86" font-family="Geist, Inter, system-ui, sans-serif" font-size="14" fill="#10B981">Organize em 60 min</text>
+</svg>

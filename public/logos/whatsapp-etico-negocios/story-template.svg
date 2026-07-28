@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <defs><linearGradient id="st" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1F2937"/><stop offset="100%" stop-color="#10B981"/></linearGradient></defs>
+  <rect width="1080" height="1920" fill="url(#st)"/>
+  <text x="540" y="720" text-anchor="middle" font-family="Geist, Inter, system-ui, sans-serif" font-size="64" font-weight="800" fill="#fff">WhatsApp Ético</text>
+  <text x="540" y="820" text-anchor="middle" font-family="Geist, Inter, system-ui, sans-serif" font-size="36" fill="#ECFDF5">Venda sem spam</text>
+  <rect x="290" y="980" width="500" height="90" rx="12" fill="#fff"/>
+  <text x="540" y="1038" text-anchor="middle" font-family="Geist, Inter, system-ui, sans-serif" font-size="28" font-weight="700" fill="#1F2937">Ver oferta</text>
+</svg>

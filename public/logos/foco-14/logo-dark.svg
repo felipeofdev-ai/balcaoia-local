@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="400" height="120" viewBox="0 0 400 120">
-  <rect width="400" height="120" rx="12" fill="#0F172A"/>
-  <g transform="translate(56,60)"><circle cx="0" cy="0" r="28" fill="none" stroke="#F8FAFC" stroke-width="4"/><path d="M0-12v14l10 6" fill="none" stroke="#F8FAFC" stroke-width="4" stroke-linecap="round"/><path d="M18-22l8-8M26-22h-8v8" fill="none" stroke="#F8FAFC" stroke-width="3"/></g>
-  <text x="110" y="52" font-family="Georgia,serif" font-size="22" font-weight="700" fill="#F8FAFC">FOCO 14</text>
-  <text x="110" y="78" font-family="system-ui" font-size="12" fill="#94A3B8">14 dias. Foco total.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="120" viewBox="0 0 400 120" role="img" aria-label="FOCO 14">
+  <rect width="400" height="120" fill="#0B1220"/>
+  <rect x="0" y="0" width="8" height="120" fill="#2563EB"/>
+  <g transform="translate(24,20)" color="#2563EB"><rect x="26" y="12" width="32" height="40" rx="4" fill="none" stroke="currentColor" stroke-width="3"/><path d="M34 24h16M34 34h16M34 44h10" stroke="currentColor" stroke-width="3"/></g>
+  <text x="110" y="58" font-family="Geist, Inter, system-ui, sans-serif" font-size="22" font-weight="700" fill="#F8FAFC">FOCO 14</text>
+  <text x="110" y="86" font-family="Geist, Inter, system-ui, sans-serif" font-size="14" fill="#2563EB">Clareza em 14 dias</text>
 </svg>

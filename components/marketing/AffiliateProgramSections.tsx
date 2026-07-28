@@ -18,8 +18,10 @@ import { formatBRL } from "@/lib/config/pricing";
 import { HOTMART } from "@/lib/config/hotmart";
 import { SITE } from "@/lib/config/site";
 import {
+  LOTE1_ALL,
   LOTE1_FLAGSHIPS,
   LOTE1_MICROS,
+  LOTE1_COOKIE_DAYS,
   commissionPerSale,
 } from "@/lib/config/lote1-affiliates";
 
@@ -53,8 +55,7 @@ const STEPS = [
 export const AFFILIATE_PROGRAM_FAQ = [
   {
     question: "Qual a comissão do programa?",
-    answer:
-      "Os produtos LOTE 1 (flagships A1, A2, B1, C2, D1, D3 e micros J1–J10) têm comissão de 50% configurada no painel Hotmart. Produtos de tiers superiores no ecossistema Studio podem ter percentuais diferentes (30–40%).",
+    answer: `Os flagships LOTE 1 (A1, A2, B1, C2, D1, D3) têm comissão de 50% e os micros J1–J10 têm comissão de 70%, ambos configurados no painel Hotmart, com cookie de ${LOTE1_COOKIE_DAYS} dias. Produtos de tiers superiores no ecossistema Studio podem ter percentuais diferentes (30–40%).`,
   },
   {
     question: "Posso prometer que o afiliado vai ganhar R$ X por mês?",
@@ -84,7 +85,7 @@ export const AFFILIATE_PROGRAM_FAQ = [
   {
     question: "Posso divulgar só os micros J de R$ 7?",
     answer:
-      "Sim. Micros são tripwire de volume — comissão de 50% sobre preço baixo, ideal para testar tráfego. Depois você pode indicar flagships como FOCO 14 ou WhatsApp Ético.",
+      "Sim. Micros são tripwire de volume — comissão de 70% sobre preço baixo, ideal para testar tráfego. Depois você pode indicar flagships como FOCO 14 ou WhatsApp Ético.",
   },
   {
     question: "O BalcãoIA é oficial da Meta ou WhatsApp?",
@@ -114,6 +115,7 @@ export const AFFILIATE_PROGRAM_FAQ = [
 export function AffiliateProgramSections() {
   const affiliateUrl =
     process.env.NEXT_PUBLIC_HOTMART_AFFILIATE_URL || HOTMART.affiliateBaseUrl;
+  const maxCommission = Math.max(...LOTE1_ALL.map((p) => p.commissionPercent));
 
   return (
     <>
@@ -128,11 +130,11 @@ export function AffiliateProgramSections() {
             Programa de afiliados · LOTE 1
           </span>
           <h1 className="text-balance max-w-3xl text-3xl font-extrabold leading-tight sm:text-5xl">
-            Indique produtos BalcãoIA e receba até 50% de comissão por venda
+            Indique produtos BalcãoIA e receba até {maxCommission}% de comissão por venda
           </h1>
           <p className="max-w-2xl text-balance text-white/75">
-            Ecossistema educativo para negócios locais — foco, atendimento ético, IA assistida e
-            micro-produtos de entrada.{" "}
+            {LOTE1_ALL.length} produtos no LOTE 1 — foco, atendimento ético, IA assistida e
+            micro-produtos de entrada. Cookie de {LOTE1_COOKIE_DAYS} dias.{" "}
             <strong className="font-semibold text-white">
               Sem promessa de renda: resultados dependem do seu esforço e do seu público.
             </strong>
@@ -158,7 +160,8 @@ export function AffiliateProgramSections() {
             </a>
           </div>
           <p className="text-xs text-white/50">
-            Comissão paga pela Hotmart · Materiais e regras de compliance abaixo
+            Comissão paga pela Hotmart · Cookie de {LOTE1_COOKIE_DAYS} dias · Materiais e regras
+            de compliance abaixo
           </p>
         </div>
       </section>
@@ -192,8 +195,8 @@ export function AffiliateProgramSections() {
         <div className="container-app flex flex-col gap-10">
           <SectionTitle
             eyebrow="LOTE 1"
-            title="Tabela de comissões — 50% sobre o preço de venda"
-            description="Valores ilustrativos por venda confirmada. Order bumps e upsells podem gerar comissões adicionais conforme configuração Hotmart."
+            title="Tabela de comissões — 50% (flagships) a 70% (micros)"
+            description={`Valores ilustrativos por venda confirmada, com cookie de ${LOTE1_COOKIE_DAYS} dias. Order bumps e upsells podem gerar comissões adicionais conforme configuração Hotmart.`}
           />
           <div className="overflow-x-auto rounded-2xl border border-[var(--border)] bg-white shadow-sm">
             <table className="w-full min-w-[640px] text-left text-sm">
@@ -202,7 +205,7 @@ export function AffiliateProgramSections() {
                   <th className="px-4 py-3 font-semibold text-[var(--brand-graphite)]">Código</th>
                   <th className="px-4 py-3 font-semibold text-[var(--brand-graphite)]">Produto</th>
                   <th className="px-4 py-3 font-semibold text-[var(--brand-graphite)]">Preço</th>
-                  <th className="px-4 py-3 font-semibold text-[var(--brand-graphite)]">Comissão 50%</th>
+                  <th className="px-4 py-3 font-semibold text-[var(--brand-graphite)]">Comissão</th>
                   <th className="px-4 py-3 font-semibold text-[var(--brand-graphite)]">Página</th>
                 </tr>
               </thead>
@@ -215,7 +218,8 @@ export function AffiliateProgramSections() {
                     <td className="px-4 py-3 text-[var(--brand-graphite)]">{p.name}</td>
                     <td className="px-4 py-3">{formatBRL(p.price)}</td>
                     <td className="px-4 py-3 font-semibold text-[var(--brand-amber-dark)]">
-                      {formatBRL(commissionPerSale(p.price, p.commissionPercent))}
+                      {formatBRL(commissionPerSale(p.price, p.commissionPercent))} (
+                      {p.commissionPercent}%)
                     </td>
                     <td className="px-4 py-3">
                       {p.studioSlug ? (
@@ -236,7 +240,7 @@ export function AffiliateProgramSections() {
           </div>
           <details className="rounded-2xl border border-[var(--border)] bg-white">
             <summary className="cursor-pointer px-5 py-4 text-sm font-semibold text-[var(--brand-graphite)]">
-              Micro-produtos J1–J10 (tripwire R$ 7–14 · comissão 50%)
+              Micro-produtos J1–J10 (tripwire R$ 7–14 · comissão 70%)
             </summary>
             <div className="overflow-x-auto border-t border-[var(--border)]">
               <table className="w-full min-w-[560px] text-left text-sm">
@@ -267,6 +271,48 @@ export function AffiliateProgramSections() {
       </section>
 
       <section className="bg-white py-16 sm:py-20">
+        <div className="container-app flex flex-col gap-10">
+          <SectionTitle
+            eyebrow="Catálogo"
+            title={`${LOTE1_ALL.length} produtos prontos para divulgar`}
+            description="Cada card leva à página de vendas quando o produto já está publicado no Studio."
+          />
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+            {LOTE1_ALL.map((p) => {
+              const card = (
+                <div className="flex h-full flex-col items-center gap-3 rounded-2xl border border-[var(--border)] bg-[var(--muted)]/30 p-5 text-center transition-colors hover:border-[var(--brand-petrol)]">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`/logos/${p.studioSlug}/logo-square.svg`}
+                    alt={p.name}
+                    width={64}
+                    height={64}
+                    className="h-16 w-16 rounded-lg object-contain"
+                  />
+                  <p className="text-xs font-bold uppercase tracking-wide text-[var(--brand-petrol)]">
+                    {p.code}
+                  </p>
+                  <p className="text-sm font-semibold leading-snug text-[var(--brand-graphite)]">
+                    {p.name}
+                  </p>
+                  <p className="text-xs text-[var(--muted-foreground)]">
+                    {formatBRL(p.price)} · comissão {p.commissionPercent}%
+                  </p>
+                </div>
+              );
+              return p.studioSlug ? (
+                <Link key={p.code} href={`/produtos/${p.studioSlug}`}>
+                  {card}
+                </Link>
+              ) : (
+                <div key={p.code}>{card}</div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[var(--muted)]/60 py-16 sm:py-20">
         <div className="container-app flex flex-col gap-8">
           <SectionTitle
             eyebrow="Simulador"
@@ -284,7 +330,7 @@ export function AffiliateProgramSections() {
         </div>
       </section>
 
-      <section className="bg-[var(--muted)]/60 py-16 sm:py-20">
+      <section className="bg-white py-16 sm:py-20">
         <div className="container-app flex flex-col gap-10">
           <SectionTitle eyebrow="FAQ" title="Perguntas frequentes do programa" />
           <FAQAccordion items={AFFILIATE_PROGRAM_FAQ} />

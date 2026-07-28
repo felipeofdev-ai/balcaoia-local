@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <rect width="1080" height="1080" fill="#FDF2F8"/>
+  <rect y="0" width="1080" height="24" fill="#EC4899"/>
+  <g transform="translate(430,220) scale(2.8)" color="#EC4899"><rect x="24" y="16" width="36" height="36" rx="8" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="42" cy="34" r="8" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="54" cy="24" r="3" fill="currentColor"/></g>
+  <text x="540" y="620" text-anchor="middle" font-family="Geist, Inter, system-ui, sans-serif" font-size="56" font-weight="800" fill="#7C3AED">Google Meu Negócio</text>
+  <text x="540" y="700" text-anchor="middle" font-family="Geist, Inter, system-ui, sans-serif" font-size="32" fill="#EC4899">Apareça no Maps</text>
+</svg>

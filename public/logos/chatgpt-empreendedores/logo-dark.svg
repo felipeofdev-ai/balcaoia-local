@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="120" viewBox="0 0 400 120" role="img" aria-label="ChatGPT Empreendedores">
+  <rect width="400" height="120" fill="#0B1220"/>
+  <rect x="0" y="0" width="8" height="120" fill="#7C3AED"/>
+  <g transform="translate(24,20)" color="#7C3AED"><circle cx="42" cy="32" r="18" fill="none" stroke="currentColor" stroke-width="3"/><path d="M32 32h20M42 22v20" stroke="currentColor" stroke-width="3"/></g>
+  <text x="110" y="58" font-family="Geist, Inter, system-ui, sans-serif" font-size="22" font-weight="700" fill="#F8FAFC">ChatGPT Empreendedores</text>
+  <text x="110" y="86" font-family="Geist, Inter, system-ui, sans-serif" font-size="14" fill="#7C3AED">Prompts que executam</text>
+</svg>
