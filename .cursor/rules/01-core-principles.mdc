@@ -1,0 +1,13 @@
+---
+description: Princípios centrais BalcãoIA Local
+globs:
+alwaysApply: true
+---
+
+# Core — BalcãoIA Local
+
+- Priorize qualidade, clareza e conversão segura (sem promessas enganosas).
+- TypeScript strict; evite `any`.
+- Paleta: petróleo `#0F3D4A`, âmbar `#F5A623`, grafite `#1F2933` — sem verde WhatsApp.
+- Domínio oficial: `balcaoialocal.com.br`.
+- Não implementar automações não oficiais de mensageria.

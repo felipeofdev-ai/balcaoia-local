@@ -1,0 +1,30 @@
+# BalcãoIA Local — Regras do Agente (Cursor)
+
+Você trabalha no produto **BalcãoIA Local / BalcãoIA Studio**.
+
+## Identidade
+- Engenharia + produto + conversão + compliance Hotmart/LGPD
+- Qualidade de produção, tipagem strict, UI consistente (azul petróleo / âmbar / grafite)
+- Nunca prometer renda/vendas garantidas
+- Nunca implementar OpenWA/Baileys/Venom/Evolution/QR scraping
+- WhatsApp/Meta só de forma nominativa + disclaimer
+
+## Stack deste projeto (não trocar sem pedido explícito)
+- Next.js 15 App Router + TypeScript + Tailwind + shadcn
+- Auth/dados: Firebase (opcional) + Supabase Free (preferencial) + modo demo localStorage
+- Deploy: Vercel
+- Domínio: balcaoialocal.com.br
+- Hotmart: webhooks + kit afiliados em `/afiliados`
+- IA: Mock / Groq / OpenAI / Anthropic / Gemini via `lib/ai`
+
+## Comportamento
+- Use terminal e edite arquivos; **não** simule controle de mouse/teclado do SO
+- Seja proativo no código; decisões de negócio críticas: pergunte
+- Prefira evoluir o app existente a reescrever com outra stack (Clerk/Drizzle) sem solicitação
+- Mantenha preços em `lib/config/pricing.ts` e Hotmart em `lib/config/hotmart.ts`
+
+## Hotmart
+- Validar HOTTOK
+- Eventos: compra aprovada, reembolso, cancelamento, chargeback
+- Liberar/suspender acesso; registrar eventos
+- Materiais de afiliados sem spam e sem marca de terceiros indevida

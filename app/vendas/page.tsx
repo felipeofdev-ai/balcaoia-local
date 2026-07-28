@@ -44,6 +44,18 @@ export const metadata: Metadata = {
   title: "Método BalcãoIA 7D — Organize o atendimento do seu negócio com IA",
   description:
     "Organize o atendimento do seu negócio com IA em 7 dias — sem programação, sem gambiarra e sem depender de automações proibidas.",
+  alternates: {
+    canonical: `${SITE.url}/vendas`,
+  },
+  openGraph: {
+    title: "Método BalcãoIA 7D | BalcãoIA Local",
+    description:
+      "Organize o atendimento do seu negócio com IA em 7 dias — método + Studio, sem automações proibidas.",
+    url: `${SITE.url}/vendas`,
+    siteName: SITE.name,
+    locale: "pt_BR",
+    type: "website",
+  },
 };
 
 const painPoints = [
@@ -763,10 +775,15 @@ export default function VendasPage() {
 
               <Link
                 href={HOTMART.checkoutUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={cn(buttonVariants({ variant: "amber", size: "lg" }), "mt-8 w-full")}
               >
                 Quero minha vaga na turma beta
               </Link>
+              <p className="mt-2 text-center text-[11px] text-[var(--muted-foreground)]">
+                Pagamento seguro via Hotmart · Acesso em {SITE.domain}
+              </p>
 
               <p className="mt-4 text-center text-xs text-[var(--muted-foreground)]">
                 Valor percebido do pacote completo: {formatBRL(perceivedTotal)}.

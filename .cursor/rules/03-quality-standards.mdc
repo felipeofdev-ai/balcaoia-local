@@ -1,0 +1,14 @@
+---
+description: Padrões de qualidade UI/UX
+globs: app/**/*,components/**/*
+alwaysApply: false
+---
+
+# Qualidade
+
+- Loading / empty / error states
+- Mobile-first
+- Acessibilidade básica
+- Toasts para ações importantes
+- Copy comercial sem promessa de renda
+- Página de vendas usa `HOTMART` + `SITE` + `PRICING` centralizados

@@ -1,0 +1,13 @@
+---
+description: Integração Hotmart BalcãoIA
+globs: lib/hotmart/**/*,app/api/webhooks/**/*,docs/HOTMART*
+alwaysApply: false
+---
+
+# Hotmart
+
+- Webhook em `/api/webhooks/hotmart` com HOTTOK.
+- Eventos: PURCHASE_APPROVED, REFUNDED, CANCELLED, chargeback, subscription.
+- Liberar/suspender workspace; registrar `hotmart_events` / audit.
+- Kit afiliados em `/afiliados` + `docs/HOTMART_PRODUTO_COMPLETO.md`.
+- Nunca sugerir spam, renda garantida ou afiliação falsa com Meta/Hotmart.
