@@ -31,10 +31,10 @@ function LoginPageContent() {
 
   const [magicEmail, setMagicEmail] = React.useState("");
   const [magicSent, setMagicSent] = React.useState(false);
-  const [pwEmail, setPwEmail] = React.useState(DEMO_ACCOUNT.email);
+  const [pwEmail, setPwEmail] = React.useState<string>(DEMO_ACCOUNT.email);
   const [pwPassword, setPwPassword] = React.useState("");
-  const [demoName, setDemoName] = React.useState(DEMO_ACCOUNT.name);
-  const [demoEmail, setDemoEmail] = React.useState(DEMO_ACCOUNT.email);
+  const [demoName, setDemoName] = React.useState<string>(DEMO_ACCOUNT.name);
+  const [demoEmail, setDemoEmail] = React.useState<string>(DEMO_ACCOUNT.email);
   const [loading, setLoading] = React.useState<string | null>(null);
   const [error, setError] = React.useState<string | null>(null);
 
