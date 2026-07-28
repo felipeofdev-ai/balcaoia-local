@@ -1,45 +1,32 @@
 # EMPIRE STATUS — BalcãoIA / VOID-9
 
-**Atualizado:** 2026-07-28 (execução honesta)
+**Atualizado:** 2026-07-28
 
-## Etapa 1 — Estado verificado
+## Infraestrutura
 
 | Item | Status |
 |------|--------|
-| Git Studio | `main` limpo / sync |
-| Webhook | ✅ online |
-| OAuth Hotmart | ✅ |
-| APP_SECRET | ✅ Vercel |
-| HOTTOK | ❌ **ausente** (não configurado — valor não fornecido) |
-| Checkout URL | ❌ **ausente** |
-| Logos FOCO 14 | ✅ `/public/logos/foco-14` |
-| Ecossistema | ✅ `/ecossistema` |
+| Webhook | ✅ online (`/api/webhook`) |
+| HOTTOK | ✅ `hottok_configured: true` (domínio + Vercel) |
+| APP_SECRET | ✅ |
+| OAuth Hotmart | ✅ `access_token` HTTP 200 |
+| Criar produto via API | ❌ **painel obrigatório** |
+| Checkout URL | ❌ aguardando links do painel |
 
-## Etapa 2 — Vercel env
+## Etapas desta operação
 
-**Pausada.** Envie `HOTTOK` e `NEXT_PUBLIC_HOTMART_CHECKOUT_URL` para eu adicionar via CLI.
-
-## Etapa 3 — FOCO 14 aprofundado
-
-Repo privado `foco-14`:
-- Ebook ~**16k palavras** (~60–80 pág. equivalentes a 200–250 wpp) + 18 módulos + 22 apêndices
-- Sales page longa ~**5,9k palavras**
-- VSL, headlines, 3 bônus, kit afiliados completo, 12 emails, checklist Hotmart
-- *Honestidade:* densidade editorial forte; “90 páginas impressas” depende de formatação tipográfica.
-
-## Etapas 4–6 — Studio
-
-- Home com faixa Ecossistema → FOCO 14 / afiliados
-- Product + FAQ JSON-LD nas páginas `/produtos/[slug]`
-- 6 artigos longos (~5,2k palavras cada) em `content/blog/`
-- Blog loader lê markdown longos
-
-## Hotmart API create
-
-Continua **PANEL_REQUIRED** (0 IDs reais). Cadastre FOCO 14 no painel.
+| Etapa | Status |
+|-------|--------|
+| 1 HOTTOK + deploy | ✅ |
+| 2 Teste OAuth | ✅ access_token OK |
+| 3 Guia 15 produtos | ✅ `docs/guia-criar-produtos-hotmart.md` |
+| 4 Links reais nas páginas | ⏳ bloqueado até criar no painel |
+| 5 FOCO 14 aprofundado | ✅ ~15.1k palavras + bônus + ads |
+| 6 Commit/push/deploy | em andamento |
 
 ## Próximo passo humano
 
-1. Colar **HOTTOK**  
-2. Criar FOCO 14 no painel → colar checkout  
-3. Redeploy após env  
+1. Abrir https://app.hotmart.com/products/add
+2. Criar **FOCO 14** copiando de `docs/guia-criar-produtos-hotmart.md`
+3. Colar o link de checkout no chat
+4. Eu configuro `NEXT_PUBLIC_HOTMART_CHECKOUT_FOCO14` + redeploy

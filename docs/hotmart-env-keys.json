@@ -1,0 +1,122 @@
+[
+  {
+    "n": 1,
+    "slug": "foco-14",
+    "env": "NEXT_PUBLIC_HOTMART_CHECKOUT_FOCO14",
+    "name": "FOCO 14 — Método de Foco Profissional",
+    "price": "47,00",
+    "commission": 50
+  },
+  {
+    "n": 2,
+    "slug": "rotina-clareza-freelancer",
+    "env": "NEXT_PUBLIC_HOTMART_CHECKOUT_CLAREZA",
+    "name": "Clareza Semanal — Planejamento de Alta Performance",
+    "price": "37,00",
+    "commission": 50
+  },
+  {
+    "n": 3,
+    "slug": "checklist-atendimento-local",
+    "env": "NEXT_PUBLIC_HOTMART_CHECKOUT_BALCAOIA_PRO",
+    "name": "BalcãoIA Pro — Atendimento Inteligente com IA",
+    "price": "97,00",
+    "commission": 50
+  },
+  {
+    "n": 4,
+    "slug": "whatsapp-etico-negocios",
+    "env": "NEXT_PUBLIC_HOTMART_CHECKOUT_WHATSAPP_ETICO",
+    "name": "WhatsApp Ético — Como Vender Mais Sem Spam",
+    "price": "67,00",
+    "commission": 50
+  },
+  {
+    "n": 5,
+    "slug": "desafio-7d-atendimento",
+    "env": "NEXT_PUBLIC_HOTMART_CHECKOUT_PRODUTIVIDADE",
+    "name": "Produtividade Local — Gestão Inteligente para Empreendedores",
+    "price": "87,00",
+    "commission": 50
+  },
+  {
+    "n": 6,
+    "slug": "curso-organizacao-atendimento",
+    "env": "NEXT_PUBLIC_HOTMART_CHECKOUT_SISTEMA",
+    "name": "Sistema BalcãoIA — Curso Completo de IA para Negócios Locais",
+    "price": "197,00",
+    "commission": 40
+  },
+  {
+    "n": 7,
+    "slug": "programa-8-semanas-balcao",
+    "env": "NEXT_PUBLIC_HOTMART_CHECKOUT_TRANSFORMACAO",
+    "name": "Transformação Digital Local — Programa de 8 Semanas",
+    "price": "297,00",
+    "commission": 40
+  },
+  {
+    "n": 8,
+    "slug": "sistema-balcao-proprietario",
+    "env": "NEXT_PUBLIC_HOTMART_CHECKOUT_METODO",
+    "name": "Método BalcãoIA — O Sistema Proprietário Completo",
+    "price": "247,00",
+    "commission": 40
+  },
+  {
+    "n": 9,
+    "slug": "workshop-ia-atendimento",
+    "env": "NEXT_PUBLIC_HOTMART_CHECKOUT_WORKSHOP",
+    "name": "Workshop IA para Negócios Locais — Implementação Prática",
+    "price": "197,00",
+    "commission": 40
+  },
+  {
+    "n": 10,
+    "slug": "bundle-entrada-local",
+    "env": "NEXT_PUBLIC_HOTMART_CHECKOUT_BUNDLE",
+    "name": "Bundle Master BalcãoIA — Pacote Completo de Entrada",
+    "price": "197,00",
+    "commission": 40
+  },
+  {
+    "n": 11,
+    "slug": "mentoria-grupo-gravada",
+    "env": "NEXT_PUBLIC_HOTMART_CHECKOUT_MENTORIA",
+    "name": "Mentoria BalcãoIA em Grupo — Implementação Guiada",
+    "price": "997,00",
+    "commission": 30
+  },
+  {
+    "n": 12,
+    "slug": "curso-avancado-comunidade",
+    "env": "NEXT_PUBLIC_HOTMART_CHECKOUT_AVANCADO",
+    "name": "Curso Avançado BalcãoIA + Comunidade de Alto Nível",
+    "price": "1.497,00",
+    "commission": 30
+  },
+  {
+    "n": 13,
+    "slug": "certificado-conclusao-7d",
+    "env": "NEXT_PUBLIC_HOTMART_CHECKOUT_CERTIFICACAO",
+    "name": "Certificação BalcãoIA — Especialista em IA para Negócios Locais",
+    "price": "1.997,00",
+    "commission": 30
+  },
+  {
+    "n": 14,
+    "slug": "mastermind-gravado-operadores",
+    "env": "NEXT_PUBLIC_HOTMART_CHECKOUT_MASTERMIND",
+    "name": "Mastermind BalcãoIA — Grupo Seleto de Alto Nível",
+    "price": "2.497,00",
+    "commission": 30
+  },
+  {
+    "n": 15,
+    "slug": "suite-completa-balcaoia",
+    "env": "NEXT_PUBLIC_HOTMART_CHECKOUT_SUITE",
+    "name": "Suite Completa BalcãoIA — Acesso Total e Vitalício",
+    "price": "2.997,00",
+    "commission": 30
+  }
+]

@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { formatBRL } from "@/lib/config/pricing";
 import { HOTMART, HOTMART_COMPLIANCE_RULES } from "@/lib/config/hotmart";
 import { getEbookBySlug, getAllEbookIdeas } from "@/lib/market-research/trends";
+import { getVoid9BySlug } from "@/lib/market-research/void9-portfolio";
 import { SITE } from "@/lib/config/site";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -31,6 +32,11 @@ export default async function AfiliadosProdutoPage({ params }: Props) {
   const { slug } = await params;
   const idea = getEbookBySlug(slug);
   if (!idea) notFound();
+  const void9 = getVoid9BySlug(slug);
+  const logoSlug = void9?.logoSlug || slug;
+  const commission = void9?.suggestedAffiliate ?? idea.suggestedAffiliate;
+  const affiliateUrl =
+    process.env.NEXT_PUBLIC_HOTMART_AFFILIATE_URL || HOTMART.affiliateBaseUrl;
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -38,7 +44,7 @@ export default async function AfiliadosProdutoPage({ params }: Props) {
       <main className="container-app flex-1 py-16">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={`/logos/${slug}/logo-horizontal.svg`}
+          src={`/logos/${logoSlug}/logo-horizontal.svg`}
           alt={idea.title}
           className="mb-6 h-14 w-auto"
         />
@@ -46,12 +52,13 @@ export default async function AfiliadosProdutoPage({ params }: Props) {
           Afilie-se a {idea.title}
         </h1>
         <p className="mt-3 max-w-2xl text-[var(--muted-foreground)]">
-          Comissão sugerida: <strong>{idea.suggestedAffiliate}%</strong> sobre {formatBRL(idea.price)}.
-          Ativação real no painel Hotmart após o produto existir.
+          Comissão configurada no lançamento: <strong>{commission}%</strong> sobre{" "}
+          {formatBRL(idea.price)}. Ative no painel Hotmart após o produto existir e use o
+          link oficial de afiliação.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <a
-            href={HOTMART.affiliateBaseUrl}
+            href={affiliateUrl}
             target="_blank"
             rel="noopener noreferrer"
             className={cn(buttonVariants({ variant: "default", size: "lg" }))}
