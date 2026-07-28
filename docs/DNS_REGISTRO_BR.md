@@ -1,69 +1,34 @@
-# DNS Registro.br → Vercel — balcaoialocal.com.br
+# DNS — Modo avançado já ativo (Registro.br)
 
-**Status Vercel (agora):** Invalid Configuration  
-**Causa:** nameservers ainda são `a.auto.dns.br` / `b.auto.dns.br` e **não há nenhum registro A** na zona.
+Você já ativou o **Modo avançado**. Falta só criar **3 entradas** e clicar **Salvar alterações**.
 
-Site já funciona em: https://balcaoia-studio.vercel.app  
-
----
-
-## Método recomendado (manter DNS do Registro.br)
-
-### 1. Abrir a zona
-1. https://registro.br → login  
-2. Clique em **balcaoialocal.com.br**  
-3. Seção **DNS** → **Configurar endereçamento**  
-4. Se pedir: ative **Modo avançado** → Confirmar (pode levar alguns minutos na 1ª vez)  
-5. Depois: **Configurar zona DNS**
-
-### 2. Apagar conflitos
-Remova qualquer entrada **A**, **AAAA** ou **CNAME** da raiz (`@` / em branco) e de `www` que não sejam as abaixo.
-
-### 3. Criar exatamente isto
-
-#### Raiz `balcaoialocal.com.br` — dois registros **A**
-| Tipo | Nome | Dados |
-|------|------|--------|
-| **A** | *(vazio)* ou `@` | `216.198.79.1` |
-| **A** | *(vazio)* ou `@` | `64.29.17.1` |
-
-#### `www` — um **CNAME**
-| Tipo | Nome | Dados |
-|------|------|--------|
-| **CNAME** | `www` | `0aa115eeb83a6cac.vercel-dns-017.com.` |
-
-> Se o painel reclamar do ponto final, use sem o ponto: `0aa115eeb83a6cac.vercel-dns-017.com`
-
-### 4. Salvar alterações
-Clique em **Salvar alterações** (obrigatório).
-
-### 5. Me avise
-Assim que salvar, diga **“DNS salvo”** — eu rodo `vercel domains verify` e confirmo quando ficar **Valid**.
-
-Propagação típica: 5–60 minutos (às vezes até 2h).
+Eu **não consigo** clicar no seu painel. A Vercel ainda vê `aValues: []` (zona vazia).
 
 ---
 
-## Alternativa (delegar DNS à Vercel)
+## Agora no Registro.br (2 minutos)
 
-Só use se preferir gerenciar DNS na Vercel:
+1. Abra **balcaoialocal.com.br**
+2. **DNS** → **Configurar zona DNS** (não só “modo avançado”)
+3. Clique **Nova entrada** três vezes:
 
-No Registro.br → DNS → **alterar servidores DNS** para:
-- `ns1.vercel-dns.com`
-- `ns2.vercel-dns.com`
+| # | Tipo | Nome | Dados |
+|---|------|------|--------|
+| 1 | **A** | *(deixe em branco)* | `216.198.79.1` |
+| 2 | **A** | *(deixe em branco)* | `64.29.17.1` |
+| 3 | **CNAME** | `www` | `0aa115eeb83a6cac.vercel-dns-017.com.` |
 
-A zona já existe na conta Vercel com ALIAS. Propagação de NS costuma ser mais lenta (até 24–48h).
+4. Clique **Salvar alterações** (sem isso nada publica)
+5. Responda aqui: **DNS salvo**
 
-**Preferência:** método dos registros A + CNAME acima (mais rápido e simples no .br).
+Eu valido na Vercel e atualizo as URLs oficiais automaticamente.
 
 ---
 
-## Depois que a Vercel mostrar Valid
+## Enquanto o domínio não aponta
 
-URLs oficiais:
-- https://balcaoialocal.com.br  
-- https://balcaoialocal.com.br/vendas  
-- https://www.balcaoialocal.com.br  
-
-Na Hotmart, use a página de vendas: `https://balcaoialocal.com.br/vendas`  
-Webhook: `https://balcaoialocal.com.br/api/webhooks/hotmart`
+Use o sistema já pronto:
+- Site: https://balcaoia-studio.vercel.app  
+- Vendas: https://balcaoia-studio.vercel.app/vendas  
+- Login: https://balcaoia-studio.vercel.app/app/login  
+  - `demo@balcaoialocal.com.br` / `BalcaoIA7D!`
