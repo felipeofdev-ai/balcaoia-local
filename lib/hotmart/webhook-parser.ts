@@ -1,3 +1,4 @@
+import { timingSafeEqual } from "node:crypto";
 import type {
   HotmartEventLogEntry,
   HotmartEventType,
@@ -35,15 +36,24 @@ export const HOTMART_PLAN_EVENTS: HotmartEventType[] = ["SWITCH_PLAN"];
 
 /**
  * Valida o hottok recebido contra o configurado em HOTMART_HOTTOK.
- * Sem HOTTOK configurado (ambiente local/demo), o webhook aceita qualquer
- * chamada para permitir testes — em produção, configure sempre HOTMART_HOTTOK.
+ * Comparação timing-safe. Sem HOTTOK (local/demo), aceita qualquer chamada;
+ * em produção configure sempre HOTMART_HOTTOK (ou alias HOTTOK).
  */
 export function validateHottok(
   received: string | null | undefined,
   expected: string | null | undefined
 ): boolean {
-  if (!expected || !expected.trim()) return true;
-  return Boolean(received) && received === expected;
+  const exp = (expected || process.env.HOTTOK || "").trim();
+  if (!exp) return true;
+  if (!received) return false;
+  try {
+    const a = Buffer.from(String(received));
+    const b = Buffer.from(exp);
+    if (a.length !== b.length) return false;
+    return timingSafeEqual(a, b);
+  } catch {
+    return received === exp;
+  }
 }
 
 function toStringOrNull(value: unknown): string | null {

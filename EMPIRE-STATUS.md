@@ -1,22 +1,29 @@
-# EMPIRE STATUS — BalcãoIA Local
+# VOID-9 SUPREME — Status
 
-**Última atualização:** 2026-07-28  
-**Status:** ✅ Studio em produção + kit VOID-9 **FOCO 14** pronto · DNS domínio ainda pendente
+**Atualizado:** 2026-07-28
 
-## VOID-9
-Pasta `void-9/`: research → oferta → produto → copy → landing → emails → API Hotmart → checklist.
+## Integração Hotmart (código)
 
-| Item | Valor |
-|------|--------|
-| Produto | FOCO 14 |
-| Ticket | R$ 67 (+ bump R$ 27) |
-| Upsell | Método BalcãoIA 7D |
-| Nicho | Produtividade/foco (empreende sozinho) |
+- Webhook prod: `/api/webhooks/hotmart` + alias `/api/webhook`
+- Admin API: `/api/hotmart/{product,checkout,affiliate,reports}` (header `x-void9-secret`)
+- Lib: `lib/hotmart/client.ts` (OAuth + sales) · `void-9/` managers
+- HOTTOK timing-safe · docs em `void-9/README.md`
 
-## Você (manual)
-1. DNS Registro.br  
-2. Criar produto na Hotmart (`void-9/checklists/07-lancamento-hotmart.md`)  
-3. Colar checkout em `void-9/landing/index.html` + HOTTOK na Vercel  
+**Ainda manual:** criar produto no painel, colar checkout URL, gerar HOTTOK, `APP_SECRET` na Vercel.
 
-## Demo
-`/app/login` · `demo@balcaoialocal.com.br` / `BalcaoIA7D!`
+## Portfólio (15 produtos · repos privados)
+
+| # | Repo | Tier |
+|---|------|------|
+| 1 | [foco-14](https://github.com/felipeofdev-ai/foco-14) | Entrada |
+| 2 | [rotina-clareza-freelancer](https://github.com/felipeofdev-ai/rotina-clareza-freelancer) | Entrada |
+| 3–15 | checklist, desafio, whatsapp, guia, cursos, bundle, mentoria, cert, mastermind… | ver GitHub |
+
+Meta: [void9-balcaoia-portfolio](https://github.com/felipeofdev-ai/void9-balcaoia-portfolio)
+
+## Próximos passos
+
+1. DNS `balcaoialocal.com.br` → Valid
+2. Painel Hotmart → produto + webhook HOTTOK
+3. Rotacionar Client Secret (exposto em chat)
+4. Aprofundar conteúdo SKU a SKU

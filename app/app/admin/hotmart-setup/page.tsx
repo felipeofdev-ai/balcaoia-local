@@ -33,7 +33,9 @@ const STEPS = [
     title: "Webhook",
     items: [
       `URL: ${SITE.url}/api/webhooks/hotmart`,
-      "Copiar HOTTOK → variável HOTMART_HOTTOK na Vercel",
+      `Alias: ${SITE.url}/api/webhook`,
+      "Copiar HOTTOK → variável HOTMART_HOTTOK (ou HOTTOK) na Vercel",
+      "APP_SECRET na Vercel para proteger /api/hotmart/*",
       "Ativar eventos de compra/reembolso/assinatura",
     ],
     href: "https://app-vlc.hotmart.com/tools/webhook",

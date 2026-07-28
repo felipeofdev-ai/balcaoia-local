@@ -16,6 +16,7 @@ export const HOTMART = {
     "https://hotmart.com/pt-br/marketplace/produtos/balcaoia-local",
   /** Webhook no Studio (produção Vercel / domínio) */
   webhookPath: "/api/webhooks/hotmart",
+  webhookAliasPath: "/api/webhook",
   webhookUrl:
     process.env.NEXT_PUBLIC_HOTMART_WEBHOOK_URL ||
     "https://balcaoia-studio.vercel.app/api/webhooks/hotmart",
