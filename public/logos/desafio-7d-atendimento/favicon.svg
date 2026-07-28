@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="6" fill="#2563EB"/>
+  <g transform="translate(16,16) scale(0.35)" stroke="#fff" fill="none"><path d="M-30 8h20l8-16h20" fill="none" stroke="#fff" stroke-width="4"/><circle cx="22" cy="8" r="10" fill="none" stroke="#fff" stroke-width="3"/><text x="22" y="12" text-anchor="middle" font-size="10" fill="#fff" font-family="system-ui">7</text></g>
+</svg>

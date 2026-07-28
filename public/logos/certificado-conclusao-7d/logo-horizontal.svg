@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="120" viewBox="0 0 400 120" role="img" aria-label="Certificação 7D">
+  <rect width="400" height="120" rx="12" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="8" height="120" fill="#0F0F0F"/>
+  <g transform="translate(56,60)"><rect x="-28" y="-20" width="56" height="40" rx="4" fill="none" stroke="#0F0F0F" stroke-width="3"/><path d="M-16-4h32M-16 8h20" stroke="#0F0F0F" stroke-width="2"/><circle cx="14" cy="10" r="8" fill="none" stroke="#FFD700" stroke-width="2"/></g>
+  <text x="110" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="700" fill="#0F172A">CERT</text>
+  <text x="110" y="78" font-family="system-ui,Segoe UI,sans-serif" font-size="12" fill="#64748B">Prova por evidência</text>
+  <text x="380" y="108" text-anchor="end" font-family="system-ui" font-size="9" fill="#94A3B8">BalcãoIA</text>
+</svg>

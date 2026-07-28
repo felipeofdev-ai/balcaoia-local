@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="120" viewBox="0 0 400 120" role="img" aria-label="Desafio 7D">
+  <rect width="400" height="120" rx="12" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="8" height="120" fill="#2563EB"/>
+  <g transform="translate(56,60)"><path d="M-30 8h20l8-16h20" fill="none" stroke="#2563EB" stroke-width="4"/><circle cx="22" cy="8" r="10" fill="none" stroke="#F8FAFC" stroke-width="3"/><text x="22" y="12" text-anchor="middle" font-size="10" fill="#F8FAFC" font-family="system-ui">7</text></g>
+  <text x="110" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="700" fill="#0F172A">7 DIAS</text>
+  <text x="110" y="78" font-family="system-ui,Segoe UI,sans-serif" font-size="12" fill="#64748B">Atendimento organizado</text>
+  <text x="380" y="108" text-anchor="end" font-family="system-ui" font-size="9" fill="#94A3B8">BalcãoIA</text>
+</svg>

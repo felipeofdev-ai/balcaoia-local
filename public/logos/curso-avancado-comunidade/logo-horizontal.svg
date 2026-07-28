@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="120" viewBox="0 0 400 120" role="img" aria-label="Curso Avançado">
+  <rect width="400" height="120" rx="12" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="8" height="120" fill="#111827"/>
+  <g transform="translate(56,60)"><circle cx="0" cy="0" r="8" fill="#F59E0B"/><circle cx="-22" cy="-16" r="6" fill="none" stroke="#111827" stroke-width="2"/><circle cx="22" cy="-16" r="6" fill="none" stroke="#111827" stroke-width="2"/><circle cx="-22" cy="18" r="6" fill="none" stroke="#111827" stroke-width="2"/><circle cx="22" cy="18" r="6" fill="none" stroke="#111827" stroke-width="2"/><path d="M-16-12L-6-4M16-12L6-4M-16 14L-6 4M16 14L6 4" stroke="#111827" stroke-width="2"/></g>
+  <text x="110" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="700" fill="#0F172A">AVANÇADO</text>
+  <text x="110" y="78" font-family="system-ui,Segoe UI,sans-serif" font-size="12" fill="#64748B">Avançado. Conectado.</text>
+  <text x="380" y="108" text-anchor="end" font-family="system-ui" font-size="9" fill="#94A3B8">BalcãoIA</text>
+</svg>

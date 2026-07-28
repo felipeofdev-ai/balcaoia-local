@@ -1,0 +1,182 @@
+[
+  {
+    "slug": "foco-14",
+    "name": "FOCO 14",
+    "tier": 1,
+    "color": "#2563EB",
+    "paths": {
+      "horizontal": "/logos/foco-14/logo-horizontal.svg",
+      "square": "/logos/foco-14/logo-square.svg",
+      "favicon": "/logos/foco-14/favicon.svg",
+      "dark": "/logos/foco-14/logo-dark.svg"
+    }
+  },
+  {
+    "slug": "rotina-clareza-freelancer",
+    "name": "Clareza Semanal",
+    "tier": 1,
+    "color": "#0EA5E9",
+    "paths": {
+      "horizontal": "/logos/rotina-clareza-freelancer/logo-horizontal.svg",
+      "square": "/logos/rotina-clareza-freelancer/logo-square.svg",
+      "favicon": "/logos/rotina-clareza-freelancer/favicon.svg",
+      "dark": "/logos/rotina-clareza-freelancer/logo-dark.svg"
+    }
+  },
+  {
+    "slug": "checklist-atendimento-local",
+    "name": "Checklist Atendimento",
+    "tier": 1,
+    "color": "#0284C7",
+    "paths": {
+      "horizontal": "/logos/checklist-atendimento-local/logo-horizontal.svg",
+      "square": "/logos/checklist-atendimento-local/logo-square.svg",
+      "favicon": "/logos/checklist-atendimento-local/favicon.svg",
+      "dark": "/logos/checklist-atendimento-local/logo-dark.svg"
+    }
+  },
+  {
+    "slug": "desafio-7d-atendimento",
+    "name": "Desafio 7D",
+    "tier": 1,
+    "color": "#2563EB",
+    "paths": {
+      "horizontal": "/logos/desafio-7d-atendimento/logo-horizontal.svg",
+      "square": "/logos/desafio-7d-atendimento/logo-square.svg",
+      "favicon": "/logos/desafio-7d-atendimento/favicon.svg",
+      "dark": "/logos/desafio-7d-atendimento/logo-dark.svg"
+    }
+  },
+  {
+    "slug": "whatsapp-etico-negocios",
+    "name": "WhatsApp Ético",
+    "tier": 1,
+    "color": "#10B981",
+    "paths": {
+      "horizontal": "/logos/whatsapp-etico-negocios/logo-horizontal.svg",
+      "square": "/logos/whatsapp-etico-negocios/logo-square.svg",
+      "favicon": "/logos/whatsapp-etico-negocios/favicon.svg",
+      "dark": "/logos/whatsapp-etico-negocios/logo-dark.svg"
+    }
+  },
+  {
+    "slug": "guia-catalogo-precos",
+    "name": "Catálogo & Preços",
+    "tier": 1,
+    "color": "#0EA5E9",
+    "paths": {
+      "horizontal": "/logos/guia-catalogo-precos/logo-horizontal.svg",
+      "square": "/logos/guia-catalogo-precos/logo-square.svg",
+      "favicon": "/logos/guia-catalogo-precos/favicon.svg",
+      "dark": "/logos/guia-catalogo-precos/logo-dark.svg"
+    }
+  },
+  {
+    "slug": "curso-organizacao-atendimento",
+    "name": "Curso Organização",
+    "tier": 2,
+    "color": "#0F766E",
+    "paths": {
+      "horizontal": "/logos/curso-organizacao-atendimento/logo-horizontal.svg",
+      "square": "/logos/curso-organizacao-atendimento/logo-square.svg",
+      "favicon": "/logos/curso-organizacao-atendimento/favicon.svg",
+      "dark": "/logos/curso-organizacao-atendimento/logo-dark.svg"
+    }
+  },
+  {
+    "slug": "programa-8-semanas-balcao",
+    "name": "Programa 8 Semanas",
+    "tier": 2,
+    "color": "#0F766E",
+    "paths": {
+      "horizontal": "/logos/programa-8-semanas-balcao/logo-horizontal.svg",
+      "square": "/logos/programa-8-semanas-balcao/logo-square.svg",
+      "favicon": "/logos/programa-8-semanas-balcao/favicon.svg",
+      "dark": "/logos/programa-8-semanas-balcao/logo-dark.svg"
+    }
+  },
+  {
+    "slug": "sistema-balcao-proprietario",
+    "name": "Sistema Balcão",
+    "tier": 2,
+    "color": "#115E59",
+    "paths": {
+      "horizontal": "/logos/sistema-balcao-proprietario/logo-horizontal.svg",
+      "square": "/logos/sistema-balcao-proprietario/logo-square.svg",
+      "favicon": "/logos/sistema-balcao-proprietario/favicon.svg",
+      "dark": "/logos/sistema-balcao-proprietario/logo-dark.svg"
+    }
+  },
+  {
+    "slug": "workshop-ia-atendimento",
+    "name": "Workshop IA",
+    "tier": 2,
+    "color": "#0F766E",
+    "paths": {
+      "horizontal": "/logos/workshop-ia-atendimento/logo-horizontal.svg",
+      "square": "/logos/workshop-ia-atendimento/logo-square.svg",
+      "favicon": "/logos/workshop-ia-atendimento/favicon.svg",
+      "dark": "/logos/workshop-ia-atendimento/logo-dark.svg"
+    }
+  },
+  {
+    "slug": "bundle-entrada-local",
+    "name": "Bundle Entrada",
+    "tier": 2,
+    "color": "#134E4A",
+    "paths": {
+      "horizontal": "/logos/bundle-entrada-local/logo-horizontal.svg",
+      "square": "/logos/bundle-entrada-local/logo-square.svg",
+      "favicon": "/logos/bundle-entrada-local/favicon.svg",
+      "dark": "/logos/bundle-entrada-local/logo-dark.svg"
+    }
+  },
+  {
+    "slug": "mentoria-grupo-gravada",
+    "name": "Mentoria Grupo",
+    "tier": 3,
+    "color": "#0F0F0F",
+    "paths": {
+      "horizontal": "/logos/mentoria-grupo-gravada/logo-horizontal.svg",
+      "square": "/logos/mentoria-grupo-gravada/logo-square.svg",
+      "favicon": "/logos/mentoria-grupo-gravada/favicon.svg",
+      "dark": "/logos/mentoria-grupo-gravada/logo-dark.svg"
+    }
+  },
+  {
+    "slug": "curso-avancado-comunidade",
+    "name": "Curso Avançado",
+    "tier": 3,
+    "color": "#111827",
+    "paths": {
+      "horizontal": "/logos/curso-avancado-comunidade/logo-horizontal.svg",
+      "square": "/logos/curso-avancado-comunidade/logo-square.svg",
+      "favicon": "/logos/curso-avancado-comunidade/favicon.svg",
+      "dark": "/logos/curso-avancado-comunidade/logo-dark.svg"
+    }
+  },
+  {
+    "slug": "certificado-conclusao-7d",
+    "name": "Certificação 7D",
+    "tier": 3,
+    "color": "#0F0F0F",
+    "paths": {
+      "horizontal": "/logos/certificado-conclusao-7d/logo-horizontal.svg",
+      "square": "/logos/certificado-conclusao-7d/logo-square.svg",
+      "favicon": "/logos/certificado-conclusao-7d/favicon.svg",
+      "dark": "/logos/certificado-conclusao-7d/logo-dark.svg"
+    }
+  },
+  {
+    "slug": "mastermind-gravado-operadores",
+    "name": "Mastermind",
+    "tier": 3,
+    "color": "#000000",
+    "paths": {
+      "horizontal": "/logos/mastermind-gravado-operadores/logo-horizontal.svg",
+      "square": "/logos/mastermind-gravado-operadores/logo-square.svg",
+      "favicon": "/logos/mastermind-gravado-operadores/favicon.svg",
+      "dark": "/logos/mastermind-gravado-operadores/logo-dark.svg"
+    }
+  }
+]

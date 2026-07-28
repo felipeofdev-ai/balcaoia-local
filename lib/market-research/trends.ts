@@ -291,10 +291,15 @@ export const TOP_NICHES_2026: MarketNiche[] = [
   },
 ];
 
+import { getVoid9AsEbookIdeas } from "./void9-portfolio";
+
 export function getAllEbookIdeas(): Array<EbookIdea & { nicheName: string; nicheId: string }> {
-  return TOP_NICHES_2026.flatMap((n) =>
+  const fromNiches = TOP_NICHES_2026.flatMap((n) =>
     n.ebookIdeas.map((e) => ({ ...e, nicheName: n.name, nicheId: n.id }))
   );
+  const void9 = getVoid9AsEbookIdeas();
+  const seen = new Set(fromNiches.map((e) => e.slug));
+  return [...fromNiches, ...void9.filter((e) => !seen.has(e.slug))];
 }
 
 export function getEbookBySlug(slug: string) {

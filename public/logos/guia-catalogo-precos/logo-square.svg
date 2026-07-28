@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" role="img" aria-label="Catálogo & Preços">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" rx="32" fill="url(#bg)"/>
+  <g transform="translate(200,150) scale(2.2)" stroke="#FFFFFF"><path d="M-8-24h20l16 28-28 16-16-28z" fill="none" stroke="#FFFFFF" stroke-width="3"/><circle cx="4" cy="-8" r="4" fill="#0EA5E9"/></g>
+  <text x="200" y="300" text-anchor="middle" font-family="Georgia,serif" font-size="28" font-weight="700" fill="#FFFFFF">CATÁLOGO</text>
+  <text x="200" y="334" text-anchor="middle" font-family="system-ui" font-size="14" fill="#E2E8F0">Preço claro em 30s</text>
+</svg>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" role="img" aria-label="Desafio 7D">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" rx="32" fill="url(#bg)"/>
+  <g transform="translate(200,150) scale(2.2)" stroke="#FFFFFF"><path d="M-30 8h20l8-16h20" fill="none" stroke="#FFFFFF" stroke-width="4"/><circle cx="22" cy="8" r="10" fill="none" stroke="#2563EB" stroke-width="3"/><text x="22" y="12" text-anchor="middle" font-size="10" fill="#2563EB" font-family="system-ui">7</text></g>
+  <text x="200" y="300" text-anchor="middle" font-family="Georgia,serif" font-size="28" font-weight="700" fill="#FFFFFF">7 DIAS</text>
+  <text x="200" y="334" text-anchor="middle" font-family="system-ui" font-size="14" fill="#E2E8F0">Atendimento organizado</text>
+</svg>

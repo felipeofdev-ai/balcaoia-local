@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="120" viewBox="0 0 400 120" role="img" aria-label="FOCO 14">
+  <rect width="400" height="120" rx="12" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="8" height="120" fill="#2563EB"/>
+  <g transform="translate(56,60)"><circle cx="0" cy="0" r="28" fill="none" stroke="#2563EB" stroke-width="4"/><path d="M0-12v14l10 6" fill="none" stroke="#F8FAFC" stroke-width="4" stroke-linecap="round"/><path d="M18-22l8-8M26-22h-8v8" fill="none" stroke="#F8FAFC" stroke-width="3"/></g>
+  <text x="110" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="700" fill="#0F172A">FOCO 14</text>
+  <text x="110" y="78" font-family="system-ui,Segoe UI,sans-serif" font-size="12" fill="#64748B">14 dias. Foco total.</text>
+  <text x="380" y="108" text-anchor="end" font-family="system-ui" font-size="9" fill="#94A3B8">BalcãoIA</text>
+</svg>

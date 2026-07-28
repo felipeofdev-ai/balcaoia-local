@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Check, ShieldCheck, ArrowRight } from "lucide-react";
+import { Check, ShieldCheck, ArrowRight, X } from "lucide-react";
 import { MarketingHeader } from "@/components/marketing/MarketingHeader";
 import { MarketingFooter } from "@/components/marketing/MarketingFooter";
 import { FAQAccordion } from "@/components/marketing/FAQAccordion";
@@ -9,6 +10,7 @@ import { cn } from "@/lib/utils";
 import { formatBRL } from "@/lib/config/pricing";
 import { HOTMART } from "@/lib/config/hotmart";
 import type { EbookIdea } from "@/lib/market-research/trends";
+import { getVoid9BySlug } from "@/lib/market-research/void9-portfolio";
 
 type Props = {
   idea: EbookIdea & { nicheName: string };
@@ -24,7 +26,11 @@ function resolveCheckout(idea: EbookIdea) {
 
 export function ProductSalesPage({ idea, complianceNote }: Props) {
   const checkout = resolveCheckout(idea);
+  const void9 = getVoid9BySlug(idea.slug);
   const table = Math.round(idea.price * 1.8);
+  const bumpValue = Math.round(idea.price * 0.4);
+  const logoSrc = `/logos/${void9?.logoSlug || idea.slug}/logo-horizontal.svg`;
+  const coverSrc = `/mockups/${void9?.logoSlug || idea.slug}/social-cover.svg`;
 
   const faq = [
     {
@@ -39,14 +45,59 @@ export function ProductSalesPage({ idea, complianceNote }: Props) {
     },
     {
       question: "Tem garantia?",
-      answer: `Sim. Garantia de ${HOTMART.guaranteeDays} dias conforme política Hotmart e do produto.`,
+      answer: `Sim. Garantia de ${void9?.guaranteeDays ?? HOTMART.guaranteeDays} dias conforme política Hotmart e do produto.`,
+    },
+    {
+      question: "Serve para quem atende sozinho?",
+      answer: "Sim. O ecossistema BalcãoIA foi pensado para operação solo e equipes pequenas.",
+    },
+    {
+      question: "Usa automação não oficial de WhatsApp?",
+      answer: "Não. Trabalhamos só com práticas éticas e, quando houver IA, com revisão humana.",
+    },
+    {
+      question: "É oficial da Meta, WhatsApp ou Hotmart?",
+      answer: "Não. BalcãoIA é independente. Usamos nomes de marcas apenas de forma nominativa.",
+    },
+    {
+      question: "Quanto tempo por dia preciso?",
+      answer: "Blocos curtos (25–90 min) já bastam se forem protegidos e fechados com evidência.",
+    },
+    {
+      question: "Posso parcelar?",
+      answer: "Parcelamento depende das opções liberadas no checkout Hotmart no momento da compra.",
+    },
+    {
+      question: "Tem order bump ou upsell?",
+      answer: void9
+        ? `Sim, na trilha: bump sugerido ${void9.bump}; próximo passo ${void9.upsell}.`
+        : "Pode haver ofertas complementares no checkout, sempre opcionais.",
+    },
+    {
+      question: "Como vira afiliado?",
+      answer: `Veja /produtos/${idea.slug}/afiliados e a página geral /afiliados.`,
     },
     {
       question: "Qual a relação com o BalcãoIA Studio?",
-      answer:
-        idea.alignedWithBalcaoia
-          ? "Este material é alinhado ao Método BalcãoIA 7D e pode ser o próximo passo natural para o Studio completo."
-          : "É um produto do catálogo complementar. O produto principal continua sendo o Método BalcãoIA 7D + Studio.",
+      answer: idea.alignedWithBalcaoia
+        ? "Alinhado ao Método BalcãoIA 7D — pode ser ponte para o Studio completo."
+        : "Produto complementar do catálogo BalcãoIA.",
+    },
+    {
+      question: "Funciona no celular?",
+      answer: "Sim. O conteúdo é digital e a leitura/prática funciona no mobile.",
+    },
+    {
+      question: "E se eu não gostar?",
+      answer: "Use a garantia no prazo informado e solicite reembolso pela Hotmart.",
+    },
+    {
+      question: "Preciso de equipe?",
+      answer: "Não. Começa solo; se tiver equipe, os checklists ajudam a padronizar.",
+    },
+    {
+      question: "Tem suporte?",
+      answer: "Suporte via contato@balcaoialocal.com.br para dúvidas de acesso e material.",
     },
   ];
 
@@ -56,6 +107,10 @@ export function ProductSalesPage({ idea, complianceNote }: Props) {
       <main className="flex-1">
         <section className="gradient-petrol text-white">
           <div className="container-app flex flex-col items-center gap-6 py-16 text-center sm:py-24">
+            <div className="rounded-xl bg-white/95 px-4 py-2 shadow-sm">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={logoSrc} alt={idea.title} width={280} height={84} className="h-14 w-auto" />
+            </div>
             <Badge className="bg-white/10 text-[var(--brand-amber)]">{idea.nicheName}</Badge>
             <h1 className="max-w-3xl text-balance text-4xl font-extrabold tracking-tight sm:text-5xl">
               {idea.title}
@@ -73,19 +128,31 @@ export function ProductSalesPage({ idea, complianceNote }: Props) {
                 <ArrowRight className="h-4 w-4" />
               </a>
               <Link
-                href="/vendas"
+                href={`/produtos/${idea.slug}/afiliados`}
                 className={cn(
                   buttonVariants({ variant: "outline", size: "lg" }),
                   "border-white/30 text-white hover:bg-white hover:text-[var(--brand-petrol)]"
                 )}
               >
-                Ver Método 7D completo
+                Quero afiliar
               </Link>
             </div>
             <p className="flex items-center gap-2 text-xs text-white/60">
               <ShieldCheck className="h-4 w-4 text-[var(--brand-amber)]" />
-              Garantia de {HOTMART.guaranteeDays} dias · Sem promessa de renda
+              Garantia de {void9?.guaranteeDays ?? HOTMART.guaranteeDays} dias · Sem promessa de renda
             </p>
+          </div>
+        </section>
+
+        <section className="border-b border-[var(--border)] bg-white py-6">
+          <div className="container-app flex flex-wrap items-center justify-center gap-6 text-center text-sm text-[var(--muted-foreground)]">
+            <span>Conteúdo digital completo</span>
+            <span>·</span>
+            <span>Trilha BalcãoIA</span>
+            <span>·</span>
+            <span>Compliance ético</span>
+            <span>·</span>
+            <span>Checkout Hotmart</span>
           </div>
         </section>
 
@@ -104,17 +171,34 @@ export function ProductSalesPage({ idea, complianceNote }: Props) {
         </section>
 
         <section className="bg-[var(--muted)] py-14">
-          <div className="container-app">
-            <h2 className="text-2xl font-bold text-[var(--brand-graphite)]">A big idea</h2>
-            <p className="mt-3 max-w-3xl text-lg text-[var(--muted-foreground)]">{idea.bigIdea}</p>
-            <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-              {idea.benefits.map((b) => (
-                <li key={b} className="flex items-start gap-2 text-sm">
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-[var(--brand-petrol)]" />
-                  {b}
-                </li>
-              ))}
-            </ul>
+          <div className="container-app grid gap-8 lg:grid-cols-2 lg:items-center">
+            <div>
+              <h2 className="text-2xl font-bold text-[var(--brand-graphite)]">A solução</h2>
+              <p className="mt-3 text-lg text-[var(--muted-foreground)]">{idea.bigIdea}</p>
+              {void9 && (
+                <p className="mt-2 text-sm font-medium text-[var(--brand-petrol)]">
+                  Mecanismo: {void9.mechanism}
+                </p>
+              )}
+              <ul className="mt-8 grid gap-3">
+                {idea.benefits.map((b) => (
+                  <li key={b} className="flex items-start gap-2 text-sm">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-[var(--brand-petrol)]" />
+                    {b}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="overflow-hidden rounded-2xl border border-[var(--border)] bg-white shadow-sm">
+              <Image
+                src={coverSrc}
+                alt={`Capa ${idea.title}`}
+                width={1200}
+                height={630}
+                className="h-auto w-full"
+                unoptimized
+              />
+            </div>
           </div>
         </section>
 
@@ -135,6 +219,85 @@ export function ProductSalesPage({ idea, complianceNote }: Props) {
           </ol>
         </section>
 
+        {void9 && (
+          <section className="bg-[var(--muted)] py-14">
+            <div className="container-app">
+              <h2 className="text-2xl font-bold text-[var(--brand-graphite)]">Bônus da trilha</h2>
+              <ul className="mt-6 grid gap-4 sm:grid-cols-3">
+                {[void9.bump, "Templates de execução", "Checklist de implantação"].map((b) => (
+                  <li key={b} className="rounded-xl border border-[var(--border)] bg-white p-4 text-sm">
+                    <p className="font-semibold text-[var(--brand-graphite)]">{b}</p>
+                    <p className="mt-1 text-[var(--muted-foreground)]">
+                      Valor de referência educativa ~ {formatBRL(bumpValue)}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )}
+
+        <section className="container-app py-14">
+          <h2 className="text-2xl font-bold text-[var(--brand-graphite)]">Stack de valor</h2>
+          <div className="mt-6 overflow-hidden rounded-xl border border-[var(--border)]">
+            <table className="w-full text-left text-sm">
+              <tbody>
+                <tr className="border-b border-[var(--border)] bg-white">
+                  <td className="px-4 py-3">Produto principal</td>
+                  <td className="px-4 py-3 text-right">{formatBRL(table)}</td>
+                </tr>
+                <tr className="border-b border-[var(--border)] bg-white">
+                  <td className="px-4 py-3">Bônus / templates</td>
+                  <td className="px-4 py-3 text-right">{formatBRL(bumpValue * 2)}</td>
+                </tr>
+                <tr className="bg-[var(--brand-petrol)] text-white">
+                  <td className="px-4 py-3 font-semibold">Você investe hoje</td>
+                  <td className="px-4 py-3 text-right text-lg font-bold">{formatBRL(idea.price)}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-3 text-xs text-[var(--muted-foreground)]">
+            Valores de referência educativa — não são “preço de mercado comprovado”. Sem promessa financeira.
+          </p>
+        </section>
+
+        <section className="bg-[var(--muted)] py-14">
+          <div className="container-app grid gap-8 sm:grid-cols-2">
+            <div>
+              <h2 className="flex items-center gap-2 text-xl font-bold text-[var(--brand-graphite)]">
+                <Check className="h-5 w-5 text-emerald-600" /> Para quem é
+              </h2>
+              <ul className="mt-4 space-y-2 text-sm">
+                <li>Donos de negócio local e prestadores solo</li>
+                <li>Quem quer organização sem milagre</li>
+                <li>Quem aceita praticar em blocos curtos</li>
+              </ul>
+            </div>
+            <div>
+              <h2 className="flex items-center gap-2 text-xl font-bold text-[var(--brand-graphite)]">
+                <X className="h-5 w-5 text-red-600" /> Para quem não é
+              </h2>
+              <ul className="mt-4 space-y-2 text-sm">
+                <li>Quem busca renda garantida</li>
+                <li>Quem quer robô / gambiarra de WhatsApp</li>
+                <li>Quem não vai executar nenhum exercício</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section className="container-app py-14 text-center">
+          <ShieldCheck className="mx-auto h-12 w-12 text-[var(--brand-petrol)]" />
+          <h2 className="mt-4 text-2xl font-bold text-[var(--brand-graphite)]">
+            Garantia de {void9?.guaranteeDays ?? HOTMART.guaranteeDays} dias
+          </h2>
+          <p className="mx-auto mt-3 max-w-xl text-sm text-[var(--muted-foreground)]">
+            Avalie o material com uso real. Se não fizer sentido para o seu contexto, solicite reembolso pela Hotmart
+            no prazo da garantia.
+          </p>
+        </section>
+
         <section id="oferta" className="bg-[var(--brand-petrol)] py-14 text-white">
           <div className="container-app max-w-xl text-center">
             <p className="text-sm text-white/60 line-through">De {formatBRL(table)}</p>
@@ -151,6 +314,9 @@ export function ProductSalesPage({ idea, complianceNote }: Props) {
               Garantir meu acesso
             </a>
             <p className="mt-4 text-xs text-white/50">{complianceNote}</p>
+            {void9 && (
+              <p className="mt-2 text-xs text-white/60">Próximo passo natural: {void9.upsell}</p>
+            )}
           </div>
         </section>
 

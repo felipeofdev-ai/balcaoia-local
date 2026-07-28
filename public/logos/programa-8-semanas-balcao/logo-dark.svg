@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="120" viewBox="0 0 400 120">
+  <rect width="400" height="120" rx="12" fill="#0F172A"/>
+  <g transform="translate(56,60)"><path d="M-24 16L0-20L24 16" fill="none" stroke="#F59E0B" stroke-width="4"/><path d="M-8 4h16" stroke="#F59E0B" stroke-width="4"/></g>
+  <text x="110" y="52" font-family="Georgia,serif" font-size="22" font-weight="700" fill="#F8FAFC">8 SEMANAS</text>
+  <text x="110" y="78" font-family="system-ui" font-size="12" fill="#94A3B8">Trilha de implantação</text>
+</svg>

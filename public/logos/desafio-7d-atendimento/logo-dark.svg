@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="120" viewBox="0 0 400 120">
+  <rect width="400" height="120" rx="12" fill="#0F172A"/>
+  <g transform="translate(56,60)"><path d="M-30 8h20l8-16h20" fill="none" stroke="#F8FAFC" stroke-width="4"/><circle cx="22" cy="8" r="10" fill="none" stroke="#F8FAFC" stroke-width="3"/><text x="22" y="12" text-anchor="middle" font-size="10" fill="#F8FAFC" font-family="system-ui">7</text></g>
+  <text x="110" y="52" font-family="Georgia,serif" font-size="22" font-weight="700" fill="#F8FAFC">7 DIAS</text>
+  <text x="110" y="78" font-family="system-ui" font-size="12" fill="#94A3B8">Atendimento organizado</text>
+</svg>

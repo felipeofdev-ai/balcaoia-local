@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="120" viewBox="0 0 400 120" role="img" aria-label="Programa 8 Semanas">
+  <rect width="400" height="120" rx="12" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="8" height="120" fill="#0F766E"/>
+  <g transform="translate(56,60)"><path d="M-24 16L0-20L24 16" fill="none" stroke="#0F766E" stroke-width="4"/><path d="M-8 4h16" stroke="#F59E0B" stroke-width="4"/></g>
+  <text x="110" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="700" fill="#0F172A">8 SEMANAS</text>
+  <text x="110" y="78" font-family="system-ui,Segoe UI,sans-serif" font-size="12" fill="#64748B">Trilha de implantação</text>
+  <text x="380" y="108" text-anchor="end" font-family="system-ui" font-size="9" fill="#94A3B8">BalcãoIA</text>
+</svg>

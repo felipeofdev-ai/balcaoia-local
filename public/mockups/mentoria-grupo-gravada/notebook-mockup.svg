@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520">
+  <rect x="80" y="40" width="640" height="400" rx="16" fill="#1E293B"/>
+  <rect x="100" y="60" width="600" height="340" fill="#0F0F0F"/>
+  <text x="400" y="240" text-anchor="middle" font-family="Georgia,serif" font-size="32" fill="#fff">MENTORIA</text>
+  <rect x="200" y="450" width="400" height="24" rx="4" fill="#334155"/>
+</svg>

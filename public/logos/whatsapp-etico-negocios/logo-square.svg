@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" role="img" aria-label="WhatsApp Ético">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" rx="32" fill="url(#bg)"/>
+  <g transform="translate(200,150) scale(2.2)" stroke="#FFFFFF"><path d="M-28-18h48a8 8 0 018 8v20a8 8 0 01-8 8h-28l-12 12v-12h-8a8 8 0 01-8-8v-20a8 8 0 018-8z" fill="none" stroke="#FFFFFF" stroke-width="3"/><circle cx="-8" cy="0" r="4" fill="#10B981"/><circle cx="4" cy="0" r="4" fill="#10B981"/><circle cx="16" cy="0" r="4" fill="#10B981"/></g>
+  <text x="200" y="300" text-anchor="middle" font-family="Georgia,serif" font-size="28" font-weight="700" fill="#FFFFFF">ÉTICO</text>
+  <text x="200" y="334" text-anchor="middle" font-family="system-ui" font-size="14" fill="#E2E8F0">Venda sem spam</text>
+</svg>

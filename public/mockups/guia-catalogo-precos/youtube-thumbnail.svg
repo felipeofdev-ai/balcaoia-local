@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#0F172A"/>
+  <rect x="0" y="0" width="18" height="720" fill="#0EA5E9"/>
+  <text x="80" y="340" font-family="Georgia,serif" font-size="56" fill="#fff">Catálogo &amp; Preços</text>
+  <text x="80" y="420" font-family="system-ui" font-size="28" fill="#94A3B8">Preço claro em 30s</text>
+</svg>

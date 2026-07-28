@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="120" viewBox="0 0 400 120">
+  <rect width="400" height="120" rx="12" fill="#0F172A"/>
+  <g transform="translate(56,60)"><path d="M-28-18h48a8 8 0 018 8v20a8 8 0 01-8 8h-28l-12 12v-12h-8a8 8 0 01-8-8v-20a8 8 0 018-8z" fill="none" stroke="#F8FAFC" stroke-width="3"/><circle cx="-8" cy="0" r="4" fill="#F8FAFC"/><circle cx="4" cy="0" r="4" fill="#F8FAFC"/><circle cx="16" cy="0" r="4" fill="#F8FAFC"/></g>
+  <text x="110" y="52" font-family="Georgia,serif" font-size="22" font-weight="700" fill="#F8FAFC">ÉTICO</text>
+  <text x="110" y="78" font-family="system-ui" font-size="12" fill="#94A3B8">Venda sem spam</text>
+</svg>
