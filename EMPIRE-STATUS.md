@@ -1,40 +1,45 @@
 # EMPIRE STATUS — BalcãoIA / VOID-9
 
-**Atualizado:** 2026-07-28
+**Atualizado:** 2026-07-28 (execução honesta)
 
-## Infraestrutura
+## Etapa 1 — Estado verificado
 
 | Item | Status |
 |------|--------|
-| Webhook | ✅ `/api/webhook` |
+| Git Studio | `main` limpo / sync |
+| Webhook | ✅ online |
 | OAuth Hotmart | ✅ |
-| APP_SECRET | ✅ |
-| HOTTOK | ❌ pendente |
-| Checkout real | ❌ pendente |
-| GitHub CLI | ✅ autenticado (sem alterar git config global) |
-| Deploy | ✅ produção |
+| APP_SECRET | ✅ Vercel |
+| HOTTOK | ❌ **ausente** (não configurado — valor não fornecido) |
+| Checkout URL | ❌ **ausente** |
+| Logos FOCO 14 | ✅ `/public/logos/foco-14` |
+| Ecossistema | ✅ `/ecossistema` |
 
-## Hotmart — criação via API
+## Etapa 2 — Vercel env
 
-Tentativa real documentada em `docs/hotmart-produtos-criados.json`.  
-Se `status: PANEL_REQUIRED`, **cadastre no painel** (a API deste app não devolve ID de produto).
+**Pausada.** Envie `HOTTOK` e `NEXT_PUBLIC_HOTMART_CHECKOUT_URL` para eu adicionar via CLI.
 
-## Site / SEO
+## Etapa 3 — FOCO 14 aprofundado
 
-- Hub: `/ecossistema`
-- Produtos: `/produtos/[slug]`
-- Blog ampliado (artigos educativos, sem promessa de renda)
-- `sitemap.xml` + `robots.ts` + Organization JSON-LD
+Repo privado `foco-14`:
+- Ebook ~**16k palavras** (~60–80 pág. equivalentes a 200–250 wpp) + 18 módulos + 22 apêndices
+- Sales page longa ~**5,9k palavras**
+- VSL, headlines, 3 bônus, kit afiliados completo, 12 emails, checklist Hotmart
+- *Honestidade:* densidade editorial forte; “90 páginas impressas” depende de formatação tipográfica.
 
-## Bloqueios honestos (não feitos de propósito)
+## Etapas 4–6 — Studio
 
-- Não alteramos `git config --global` (política de segurança)
-- Não instalamos stack redundante (framer/zustand/next-seo)
-- Não afirmamos “15 produtos criados na Hotmart” sem ID real
-- Não há loop infinito de novos SKUs
+- Home com faixa Ecossistema → FOCO 14 / afiliados
+- Product + FAQ JSON-LD nas páginas `/produtos/[slug]`
+- 6 artigos longos (~5,2k palavras cada) em `content/blog/`
+- Blog loader lê markdown longos
+
+## Hotmart API create
+
+Continua **PANEL_REQUIRED** (0 IDs reais). Cadastre FOCO 14 no painel.
 
 ## Próximo passo humano
 
-1. HOTTOK na Vercel + Redeploy  
-2. Criar FOCO 14 no painel Hotmart  
-3. `NEXT_PUBLIC_HOTMART_CHECKOUT_URL`  
+1. Colar **HOTTOK**  
+2. Criar FOCO 14 no painel → colar checkout  
+3. Redeploy após env  
