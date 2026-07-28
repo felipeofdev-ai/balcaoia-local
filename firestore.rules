@@ -1,0 +1,42 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return signedIn() && request.auth.uid == userId;
+    }
+
+    function isAdmin() {
+      return signedIn() &&
+        request.auth.token.email in [
+          // Admins: atualize com os e-mails do ADMIN_EMAILS
+        ];
+    }
+
+    match /users/{userId} {
+      allow read, write: if isOwner(userId);
+
+      match /businesses/{businessId} {
+        allow read, write: if isOwner(userId);
+      }
+    }
+
+    match /leads/{leadId} {
+      allow create: if true;
+      allow read, update, delete: if signedIn();
+    }
+
+    match /workspaces/{workspaceId} {
+      allow read: if signedIn() &&
+        resource.data.buyerEmail == request.auth.token.email;
+      allow write: if false; // apenas Admin SDK / API server
+    }
+
+    match /hotmart_events/{eventId} {
+      allow read, write: if false;
+    }
+  }
+}
