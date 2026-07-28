@@ -7,9 +7,12 @@ import {
   BookOpenCheck,
   LayoutDashboard,
   LayoutTemplate,
+  ListChecks,
   LogOut,
   Settings,
   ShieldCheck,
+  Sparkles,
+  TrendingUp,
   Users2,
   Webhook,
   X,
@@ -32,6 +35,9 @@ const MAIN_NAV: NavItem[] = [
 ];
 
 const ADMIN_NAV: NavItem[] = [
+  { label: "Mercado", href: "/app/admin/mercado", icon: TrendingUp },
+  { label: "Studio criação", href: "/app/admin/studio", icon: Sparkles },
+  { label: "Setup Hotmart", href: "/app/admin/hotmart-setup", icon: ListChecks },
   { label: "Templates de nicho", href: "/app/admin/templates", icon: ShieldCheck },
   { label: "Leads", href: "/app/admin/leads", icon: Users2 },
   { label: "Eventos Hotmart", href: "/app/admin/hotmart-events", icon: Webhook },
