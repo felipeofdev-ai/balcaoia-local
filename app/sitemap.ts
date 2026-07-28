@@ -3,7 +3,7 @@ import { getAllEbookIdeas } from "@/lib/market-research/trends";
 import { BLOG_POSTS } from "@/lib/content/blog";
 
 const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL || "https://balcaoia-studio.vercel.app"
+  process.env.NEXT_PUBLIC_SITE_URL || "https://balcaoialocal.com.br"
 ).replace(/\/$/, "");
 
 const STATIC_ROUTES: Array<{
@@ -14,8 +14,8 @@ const STATIC_ROUTES: Array<{
   { path: "", changeFrequency: "weekly", priority: 1 },
   { path: "/ecossistema", changeFrequency: "weekly", priority: 0.9 },
   { path: "/vendas", changeFrequency: "weekly", priority: 0.95 },
-  { path: "/afiliados", changeFrequency: "weekly", priority: 0.85 },
-  { path: "/blog", changeFrequency: "weekly", priority: 0.8 },
+  { path: "/afiliados", changeFrequency: "weekly", priority: 0.88 },
+  { path: "/blog", changeFrequency: "weekly", priority: 0.82 },
   { path: "/diagnostico", changeFrequency: "monthly", priority: 0.75 },
   { path: "/checklist", changeFrequency: "monthly", priority: 0.6 },
   { path: "/aula-gratis", changeFrequency: "monthly", priority: 0.6 },
@@ -41,7 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${SITE_URL}/produtos/${e.slug}`,
     lastModified,
     changeFrequency: "weekly" as const,
-    priority: 0.8,
+    priority: 0.85,
   }));
 
   const posts = BLOG_POSTS.map((p) => ({

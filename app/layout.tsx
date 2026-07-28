@@ -14,44 +14,59 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const SEO_BASE = "https://balcaoialocal.com.br";
+
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE.url),
+  metadataBase: new URL(SEO_BASE),
   title: {
-    default: "BalcãoIA Local — Organize o atendimento do seu negócio",
-    template: "%s | BalcãoIA Local",
+    default: "BalcãoIA — IA assistida e ética para negócios locais",
+    template: "%s | BalcãoIA",
   },
   description:
-    "Organize atendimento, catálogo e foco no negócio local com IA assistida e ética. Diagnóstico gratuito. Sem promessa de renda.",
+    "Organize atendimento, catálogo, foco e operação do seu negócio local com o ecossistema BalcãoIA: diagnóstico gratuito, Método 7D, FOCO 14, WhatsApp ético e trilha de produtos digitais. Conteúdo educativo — sem promessa de renda.",
   keywords: [
-    "atendimento negócio local",
-    "IA para pequenas empresas",
-    "WhatsApp atendimento ético",
-    "organizar atendimento",
+    "IA negócio local Brasil",
+    "atendimento WhatsApp ético",
+    "organizar atendimento pequena empresa",
     "produtividade empreendedor solo",
+    "transformação digital comércio local",
+    "ChatGPT para empreendedores",
+    "Google Meu Negócio negócio local",
+    "Instagram negócios locais",
     "método balcãoia",
     "foco 14",
+    "programa afiliados Hotmart",
+    "automação ética WhatsApp",
   ],
   authors: [{ name: "BalcãoIA" }],
   creator: "BalcãoIA",
   publisher: "BalcãoIA",
   alternates: {
-    canonical: SITE.url,
+    canonical: SEO_BASE,
   },
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: SITE.url,
-    siteName: "BalcãoIA Local",
-    title: "BalcãoIA Local — Organize o atendimento do seu negócio",
+    url: SEO_BASE,
+    siteName: "BalcãoIA",
+    title: "BalcãoIA — IA assistida e ética para negócios locais",
     description:
-      "Diagnóstico, trilha de produtos e Studio para organizar o balcão com IA assistida — sem gambiarra.",
-    images: [{ url: "/logo.png", width: 512, height: 512, alt: "BalcãoIA" }],
+      "Diagnóstico gratuito, ecossistema de produtos e Studio para organizar atendimento, foco e operação no balcão — com revisão humana e sem automação arriscada.",
+    images: [
+      {
+        url: `${SEO_BASE}/logo.png`,
+        width: 512,
+        height: 512,
+        alt: "BalcãoIA — negócios locais com IA ética",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "BalcãoIA Local",
-    description: "Organize o atendimento do seu negócio local com clareza e ética.",
-    images: ["/logo.png"],
+    title: "BalcãoIA",
+    description:
+      "Organize atendimento e operação do negócio local com IA assistida, ética e trilha educativa completa.",
+    images: [`${SEO_BASE}/logo.png`],
   },
   robots: {
     index: true,

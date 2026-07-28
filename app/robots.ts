@@ -1,14 +1,15 @@
 import type { MetadataRoute } from "next";
-import { SITE } from "@/lib/config/site";
 
 export default function robots(): MetadataRoute.Robots {
-  const base = SITE.url;
+  const base = (
+    process.env.NEXT_PUBLIC_SITE_URL || "https://balcaoialocal.com.br"
+  ).replace(/\/$/, "");
   return {
     rules: [
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/app/", "/api/", "/admin"],
+        disallow: ["/admin", "/api"],
       },
     ],
     sitemap: `${base}/sitemap.xml`,

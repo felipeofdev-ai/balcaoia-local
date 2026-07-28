@@ -43,6 +43,7 @@ export default async function ProdutoPage({ params }: Props) {
     "@type": "Product",
     name: idea.title,
     description: idea.promise,
+    image: `${SITE.url}/mockups/${slug}/social-cover.svg`,
     brand: { "@type": "Brand", name: "BalcãoIA" },
     offers: {
       "@type": "Offer",
@@ -50,6 +51,7 @@ export default async function ProdutoPage({ params }: Props) {
       price: String(idea.price),
       availability: "https://schema.org/InStock",
       url: `${SITE.url}/produtos/${slug}`,
+      seller: { "@type": "Organization", name: "BalcãoIA" },
     },
   };
 

@@ -4,7 +4,6 @@ import {
   Ban,
   Mail,
   MessageCircle,
-  Megaphone,
   ShieldAlert,
   UserX,
   Video,
@@ -14,18 +13,27 @@ import { MarketingFooter } from "@/components/marketing/MarketingFooter";
 import { SectionTitle } from "@/components/marketing/SectionTitle";
 import { FAQAccordion } from "@/components/marketing/FAQAccordion";
 import { DisclaimerBrands } from "@/components/marketing/DisclaimerBrands";
-import { BrandLogo } from "@/components/shared/BrandLogo";
 import { CopyButton } from "@/components/shared/CopyButton";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { HOTMART, HOTMART_COMPLIANCE_RULES } from "@/lib/config/hotmart";
 import { PRICING, formatBRL } from "@/lib/config/pricing";
 import { SITE } from "@/lib/config/site";
+import {
+  AffiliateProgramSections,
+  AFFILIATE_PROGRAM_FAQ,
+} from "@/components/marketing/AffiliateProgramSections";
 
 export const metadata: Metadata = {
-  title: "Materiais para Afiliados — BalcãoIA",
+  title: "Programa de Afiliados — 50% LOTE 1",
   description:
-    "Copys, roteiros de Reels, e-mails e mensagens prontas para divulgar o BalcãoIA com responsabilidade, sem promessa de renda e sem uso indevido de marcas.",
+    "Indique produtos BalcãoIA LOTE 1 (A1, A2, B1, C2, D1, D3 + micros J) com comissão de 50%. Materiais, tabela, simulador e regras de compliance — sem promessa de renda.",
+  alternates: { canonical: `${SITE.url}/afiliados` },
+  openGraph: {
+    title: "Programa de Afiliados BalcãoIA",
+    description: "Comissão 50% no LOTE 1. Materiais prontos e regras Hotmart.",
+    url: `${SITE.url}/afiliados`,
+  },
 };
 
 const shortCopy = `Ajudo negócios locais a organizar o atendimento com IA — sem programação, sem gambiarra e sem depender de automações proibidas.
@@ -185,46 +193,35 @@ const disclosureRules = [
 ];
 
 export default function AfiliadosPage() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: AFFILIATE_PROGRAM_FAQ.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  };
+
   return (
     <div className="flex min-h-screen flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <MarketingHeader />
       <main className="flex-1">
-        <section className="relative overflow-hidden gradient-petrol text-white">
-          <div className="bg-grid-petrol absolute inset-0 opacity-40" aria-hidden="true" />
-          <div className="container-app relative flex flex-col items-center gap-6 py-16 text-center sm:py-20">
-            <div className="inline-flex items-center rounded-2xl bg-white px-5 py-3.5 shadow-lg shadow-black/25">
-              <BrandLogo size="xl" variant="light" priority />
-            </div>
-            <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-[var(--brand-amber)]">
-              <Megaphone className="h-3.5 w-3.5" />
-              Central do afiliado
-            </span>
-            <h1 className="text-balance max-w-2xl text-3xl font-extrabold leading-tight sm:text-4xl">
-              Materiais prontos para divulgar o BalcãoIA com responsabilidade
-            </h1>
-            <p className="max-w-xl text-balance text-white/75">
-              Copys, roteiros e mensagens prontas — comissão sugerida de{" "}
-              {HOTMART.affiliateCommissionPercent}% · produto a partir de{" "}
-              {formatBRL(PRICING.launch)}. Sempre siga as regras Hotmart e do BalcãoIA.
-            </p>
-            <a
-              href={HOTMART.affiliateBaseUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center rounded-full bg-[var(--brand-amber)] px-5 py-2.5 text-sm font-semibold text-[var(--brand-graphite)]"
-            >
-              Candidatar-se / abrir marketplace Hotmart
-            </a>
-          </div>
-        </section>
+        <AffiliateProgramSections />
 
-        <section className="bg-white py-10">
+        <section id="materiais" className="scroll-mt-20 bg-white py-10">
           <div className="container-app">
-            <div className="mx-auto max-w-3xl rounded-2xl border border-[var(--border)] bg-[var(--muted)]/40 p-6">
-              <h2 className="text-lg font-bold text-[var(--brand-graphite)]">
-                Kit oficial do afiliado — o que você vende
-              </h2>
-              <ul className="mt-3 space-y-2 text-sm text-[var(--muted-foreground)]">
+            <SectionTitle
+              align="left"
+              eyebrow="Materiais"
+              title="Kit oficial do afiliado — copys e roteiros"
+            />
+            <div className="mx-auto mt-6 max-w-3xl rounded-2xl border border-[var(--border)] bg-[var(--muted)]/40 p-6">
+              <ul className="space-y-2 text-sm text-[var(--muted-foreground)]">
                 <li>
                   <strong className="text-[var(--brand-graphite)]">Produto:</strong>{" "}
                   {HOTMART.productName}

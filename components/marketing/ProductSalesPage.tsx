@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { formatBRL } from "@/lib/config/pricing";
 import { HOTMART } from "@/lib/config/hotmart";
+import { SITE } from "@/lib/config/site";
 import type { EbookIdea } from "@/lib/market-research/trends";
 import { getVoid9BySlug } from "@/lib/market-research/void9-portfolio";
 
@@ -17,11 +18,15 @@ type Props = {
   complianceNote: string;
 };
 
-function resolveCheckout(idea: EbookIdea) {
+function resolveCheckout(idea: EbookIdea): string | null {
   if (idea.checkoutEnvKey && process.env[idea.checkoutEnvKey]) {
     return process.env[idea.checkoutEnvKey] as string;
   }
-  return HOTMART.checkoutUrl;
+  const fallback = HOTMART.checkoutUrl;
+  if (fallback && !fallback.includes("SEU_CHECKOUT")) {
+    return fallback;
+  }
+  return null;
 }
 
 export function ProductSalesPage({ idea, complianceNote }: Props) {
@@ -118,15 +123,25 @@ export function ProductSalesPage({ idea, complianceNote }: Props) {
             <p className="max-w-2xl text-lg text-white/80">{idea.subtitle}</p>
             <p className="max-w-2xl text-sm text-white/70">{idea.promise}</p>
             <div className="flex flex-col gap-3 sm:flex-row">
-              <a
-                href={checkout}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={cn(buttonVariants({ variant: "amber", size: "lg" }))}
-              >
-                Quero acessar agora
-                <ArrowRight className="h-4 w-4" />
-              </a>
+              {checkout ? (
+                <a
+                  href={checkout}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cn(buttonVariants({ variant: "amber", size: "lg" }))}
+                >
+                  Quero acessar agora
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              ) : (
+                <a
+                  href={`mailto:${SITE.supportEmail}?subject=${encodeURIComponent(`Checkout ${idea.title}`)}`}
+                  className={cn(buttonVariants({ variant: "amber", size: "lg" }))}
+                >
+                  Solicitar link de checkout
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              )}
               <Link
                 href={`/produtos/${idea.slug}/afiliados`}
                 className={cn(
@@ -305,14 +320,28 @@ export function ProductSalesPage({ idea, complianceNote }: Props) {
             <p className="mt-2 text-sm text-white/70">
               Comissão afiliado sugerida: {idea.suggestedAffiliate}%
             </p>
-            <a
-              href={checkout}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(buttonVariants({ variant: "amber", size: "lg" }), "mt-8 inline-flex")}
-            >
-              Garantir meu acesso
-            </a>
+            {checkout ? (
+              <a
+                href={checkout}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(buttonVariants({ variant: "amber", size: "lg" }), "mt-8 inline-flex")}
+              >
+                Garantir meu acesso
+              </a>
+            ) : (
+              <a
+                href={`mailto:${SITE.supportEmail}?subject=${encodeURIComponent(`Checkout ${idea.title}`)}`}
+                className={cn(buttonVariants({ variant: "amber", size: "lg" }), "mt-8 inline-flex")}
+              >
+                Solicitar link de checkout
+              </a>
+            )}
+            {!checkout && (
+              <p className="mt-3 text-xs text-white/60">
+                Checkout Hotmart em configuração — envie e-mail para receber o link quando estiver ativo.
+              </p>
+            )}
             <p className="mt-4 text-xs text-white/50">{complianceNote}</p>
             {void9 && (
               <p className="mt-2 text-xs text-white/60">Próximo passo natural: {void9.upsell}</p>

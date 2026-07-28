@@ -10,47 +10,8 @@ export interface BlogPost {
   content: string;
 }
 
-/** Posts curtos legados + artigos longos em content/blog/*.md */
-export const BLOG_POSTS_SHORT: BlogPost[] = [
-  {
-    slug: "ia-para-negocios-locais-2026",
-    title: "IA para negócios locais em 2026: por onde começar sem gambiarra",
-    description:
-      "Guia prático para donos de salões, clínicas e lojas usarem IA com organização e revisão humana.",
-    date: "2026-07-01",
-    relatedProductSlug: "negocio-local-ia",
-    content: `## O problema não é a ferramenta
-
-Muitos negócios locais testam ChatGPT e desistem porque a resposta inventa preço ou tom. O problema raramente é o modelo — é a **falta de base organizada**.
-
-## Três fundamentos
-
-1. Catálogo e políticas por escrito
-2. Roteiros de primeira resposta
-3. Revisão humana antes de ir ao ar
-
-## O que evitar
-
-Automações não oficiais de WhatsApp, disparo em massa e promessas de renda.
-
-## Próximo passo
-
-Faça o [diagnóstico gratuito](/diagnostico) e conheça o [Método BalcãoIA 7D](/vendas).`,
-  },
-  {
-    slug: "afiliados-hotmart-compliance",
-    title: "Hotmart para afiliados: compliance que protege sua conta",
-    description: "Regras práticas para divulgar sem prometer renda.",
-    date: "2026-07-10",
-    content: `## Não prometa renda
-
-Promessa de faturamento é risco.
-
-## Use o kit
-
-Materiais em [/afiliados](/afiliados).`,
-  },
-];
+/** Posts curtos legados — substituídos por content/blog/*.md quando existirem */
+export const BLOG_POSTS_SHORT: BlogPost[] = [];
 
 function loadLongPosts(): BlogPost[] {
   const dir = path.join(process.cwd(), "content", "blog");
@@ -67,7 +28,9 @@ function loadLongPosts(): BlogPost[] {
       const contentStart = raw.indexOf("\n## ");
       const content = contentStart >= 0 ? raw.slice(contentStart).trim() : raw;
       const related =
-        slug.includes("whatsapp") || slug.includes("automacao")
+        slug.includes("afiliados") || slug.includes("hotmart")
+          ? "whatsapp-etico-negocios"
+          : slug.includes("whatsapp") || slug.includes("automacao")
           ? "whatsapp-etico-negocios"
           : slug.includes("produtividade") || slug.includes("foco")
             ? "foco-14"
@@ -77,7 +40,9 @@ function loadLongPosts(): BlogPost[] {
                 ? "sistema-balcao-proprietario"
                 : slug.includes("atendimento")
                   ? "workshop-ia-atendimento"
-                  : "foco-14";
+                  : slug.includes("negocios-locais-2026")
+                    ? "checklist-atendimento-local"
+                    : "foco-14";
       return {
         slug,
         title: titleMatch?.[1] || slug,
