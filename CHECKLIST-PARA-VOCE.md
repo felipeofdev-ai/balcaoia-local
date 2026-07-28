@@ -5,9 +5,12 @@ Atualizado: 28 Jul 2026 · BalcãoIA Local
 ## HOTMART (painel web)
 
 - [ ] Abrir Produtos e localizar rascunhos de “10 Prompts WhatsApp que Vendem”
+- [ ] Em **Informações**: selecionar categoria **Negócios e Carreira** (campo obrigatório — era o que travava o RPA)
 - [ ] Finalizar J1: Precificação R$ 9 · garantia 7 dias · PDF · **Publicar**
 - [ ] Copiar hotlink `pay.hotmart.com/XXXX` e colar abaixo
-- [ ] Repetir J2→J10 com RPA:  
+- [ ] Re-testar RPA (já com categoria no script):  
+  `.\venv\Scripts\python.exe src\criar_produto_rpa.py manifestos\10-prompts-whatsapp-vendem.json --sem-revisao`
+- [ ] Só depois: batch J2→J10  
   `.\venv\Scripts\python.exe scripts\batch_lote1_rpa.py --from-slug checklist-ia-1-hora`
 - [ ] Publicar A1, A2, B1, C2, D1, D3 (cursos: upload módulos da pasta `curso/`)
 - [ ] Order Bump (produto complementar já cadastrado)

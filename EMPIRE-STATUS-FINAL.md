@@ -39,9 +39,10 @@
 ## RPA — último teste J1
 
 - Formato Ebook ✅ · Nome/descrição ✅ · Capa ✅  
-- Bug corrigido: PDF não pode sobrescrever capa em Informações  
-- URL final anterior: `…/products/add/4/info` sem `product_id`  
-- **Ação:** conferir rascunhos no painel e completar Precificação → Membros → Publicar
+- Bug corrigido: PDF não sobrescreve capa; detecção de passo ignora stepper lateral  
+- Continuar via JS no rodapé (tentativa atual)  
+- **Bloqueio residual:** wizard às vezes permanece em Informações após Continuar — completar Precificação→PDF→Publicar no painel se o RPA não capturar `product_id`  
+- **Batch 16:** só após 1 produto com `product_id` confirmado
 
 ## Compliance
 
