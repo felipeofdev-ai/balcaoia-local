@@ -1,0 +1,257 @@
+[
+  {
+    "slug": "foco-14",
+    "name": "FOCO 14 — Rotina de Alta Clareza",
+    "price": 67,
+    "tier": 1,
+    "status": "PANEL_REQUIRED",
+    "note": "API de criação não retornou ID válido. Cadastre no painel Hotmart.",
+    "template": {
+      "name": "FOCO 14 — Rotina de Alta Clareza",
+      "description": "Em 14 dias, proteja 2 janelas de foco e feche cada dia com evidência do que avançou — sem virar monge.",
+      "priceBRL": 67,
+      "guaranteeDays": 7,
+      "webhook": "https://balcaoia-studio.vercel.app/api/webhook",
+      "panelUrl": "https://app-vlc.hotmart.com/products",
+      "affiliateCommissionPercent": 50
+    }
+  },
+  {
+    "slug": "rotina-clareza-freelancer",
+    "name": "Clareza Semanal — Ritual do Freelancer",
+    "price": 47,
+    "tier": 1,
+    "status": "PANEL_REQUIRED",
+    "note": "API de criação não retornou ID válido. Cadastre no painel Hotmart.",
+    "template": {
+      "name": "Clareza Semanal — Ritual do Freelancer",
+      "description": "Uma hora por semana para priorizar 3 frentes e bloquear a semana — sem improviso eterno.",
+      "priceBRL": 47,
+      "guaranteeDays": 7,
+      "webhook": "https://balcaoia-studio.vercel.app/api/webhook",
+      "panelUrl": "https://app-vlc.hotmart.com/products",
+      "affiliateCommissionPercent": 50
+    }
+  },
+  {
+    "slug": "checklist-atendimento-local",
+    "name": "Checklist Master Atendimento Local",
+    "price": 37,
+    "tier": 1,
+    "status": "PANEL_REQUIRED",
+    "note": "API de criação não retornou ID válido. Cadastre no painel Hotmart.",
+    "template": {
+      "name": "Checklist Master Atendimento Local",
+      "description": "Checklists operacionais para não esquecer o óbvio no atendimento do dia a dia.",
+      "priceBRL": 37,
+      "guaranteeDays": 7,
+      "webhook": "https://balcaoia-studio.vercel.app/api/webhook",
+      "panelUrl": "https://app-vlc.hotmart.com/products",
+      "affiliateCommissionPercent": 50
+    }
+  },
+  {
+    "slug": "desafio-7d-atendimento",
+    "name": "Desafio 7 Dias — Atendimento Organizado",
+    "price": 57,
+    "tier": 1,
+    "status": "PANEL_REQUIRED",
+    "note": "API de criação não retornou ID válido. Cadastre no painel Hotmart.",
+    "template": {
+      "name": "Desafio 7 Dias — Atendimento Organizado",
+      "description": "Em 7 dias, estrutura mínima de atendimento: horários, scripts e registro.",
+      "priceBRL": 57,
+      "guaranteeDays": 7,
+      "webhook": "https://balcaoia-studio.vercel.app/api/webhook",
+      "panelUrl": "https://app-vlc.hotmart.com/products",
+      "affiliateCommissionPercent": 50
+    }
+  },
+  {
+    "slug": "whatsapp-etico-negocios",
+    "name": "WhatsApp Ético para Negócios Locais",
+    "price": 77,
+    "tier": 1,
+    "status": "PANEL_REQUIRED",
+    "note": "API de criação não retornou ID válido. Cadastre no painel Hotmart.",
+    "template": {
+      "name": "WhatsApp Ético para Negócios Locais",
+      "description": "Vender e atender no WhatsApp sem spam, sem lista comprada e sem gambiarra.",
+      "priceBRL": 77,
+      "guaranteeDays": 7,
+      "webhook": "https://balcaoia-studio.vercel.app/api/webhook",
+      "panelUrl": "https://app-vlc.hotmart.com/products",
+      "affiliateCommissionPercent": 50
+    }
+  },
+  {
+    "slug": "guia-catalogo-precos",
+    "name": "Guia Catálogo & Preços Claros",
+    "price": 47,
+    "tier": 1,
+    "status": "PANEL_REQUIRED",
+    "note": "API de criação não retornou ID válido. Cadastre no painel Hotmart.",
+    "template": {
+      "name": "Guia Catálogo & Preços Claros",
+      "description": "Organize oferta e preços para o cliente entender em 30 segundos.",
+      "priceBRL": 47,
+      "guaranteeDays": 7,
+      "webhook": "https://balcaoia-studio.vercel.app/api/webhook",
+      "panelUrl": "https://app-vlc.hotmart.com/products",
+      "affiliateCommissionPercent": 50
+    }
+  },
+  {
+    "slug": "curso-organizacao-atendimento",
+    "name": "Curso Completo — Organização de Atendimento",
+    "price": 197,
+    "tier": 2,
+    "status": "PANEL_REQUIRED",
+    "note": "API de criação não retornou ID válido. Cadastre no painel Hotmart.",
+    "template": {
+      "name": "Curso Completo — Organização de Atendimento",
+      "description": "De atendimento reativo a operação previsível em módulos práticos.",
+      "priceBRL": 197,
+      "guaranteeDays": 7,
+      "webhook": "https://balcaoia-studio.vercel.app/api/webhook",
+      "panelUrl": "https://app-vlc.hotmart.com/products",
+      "affiliateCommissionPercent": 40
+    }
+  },
+  {
+    "slug": "programa-8-semanas-balcao",
+    "name": "Programa 8 Semanas — Transformação do Balcão",
+    "price": 397,
+    "tier": 2,
+    "status": "PANEL_REQUIRED",
+    "note": "API de criação não retornou ID válido. Cadastre no painel Hotmart.",
+    "template": {
+      "name": "Programa 8 Semanas — Transformação do Balcão",
+      "description": "8 semanas de implantação com rituais, métricas e revisão.",
+      "priceBRL": 397,
+      "guaranteeDays": 7,
+      "webhook": "https://balcaoia-studio.vercel.app/api/webhook",
+      "panelUrl": "https://app-vlc.hotmart.com/products",
+      "affiliateCommissionPercent": 40
+    }
+  },
+  {
+    "slug": "sistema-balcao-proprietario",
+    "name": "Sistema Balcão Proprietário",
+    "price": 297,
+    "tier": 2,
+    "status": "PANEL_REQUIRED",
+    "note": "API de criação não retornou ID válido. Cadastre no painel Hotmart.",
+    "template": {
+      "name": "Sistema Balcão Proprietário",
+      "description": "Método proprietário passo a passo para operar o balcão digital com clareza.",
+      "priceBRL": 297,
+      "guaranteeDays": 7,
+      "webhook": "https://balcaoia-studio.vercel.app/api/webhook",
+      "panelUrl": "https://app-vlc.hotmart.com/products",
+      "affiliateCommissionPercent": 40
+    }
+  },
+  {
+    "slug": "workshop-ia-atendimento",
+    "name": "Workshop Gravado — IA no Atendimento",
+    "price": 197,
+    "tier": 2,
+    "status": "PANEL_REQUIRED",
+    "note": "API de criação não retornou ID válido. Cadastre no painel Hotmart.",
+    "template": {
+      "name": "Workshop Gravado — IA no Atendimento",
+      "description": "Use IA para rascunhar respostas e organizar informação — com humano no comando.",
+      "priceBRL": 197,
+      "guaranteeDays": 7,
+      "webhook": "https://balcaoia-studio.vercel.app/api/webhook",
+      "panelUrl": "https://app-vlc.hotmart.com/products",
+      "affiliateCommissionPercent": 40
+    }
+  },
+  {
+    "slug": "bundle-entrada-local",
+    "name": "Bundle Master Entrada Local",
+    "price": 147,
+    "tier": 2,
+    "status": "PANEL_REQUIRED",
+    "note": "API de criação não retornou ID válido. Cadastre no painel Hotmart.",
+    "template": {
+      "name": "Bundle Master Entrada Local",
+      "description": "Pacote de entrada: FOCO 14 + Clareza + Checklist + bônus.",
+      "priceBRL": 147,
+      "guaranteeDays": 7,
+      "webhook": "https://balcaoia-studio.vercel.app/api/webhook",
+      "panelUrl": "https://app-vlc.hotmart.com/products",
+      "affiliateCommissionPercent": 40
+    }
+  },
+  {
+    "slug": "mentoria-grupo-gravada",
+    "name": "Mentoria em Grupo Gravada",
+    "price": 997,
+    "tier": 3,
+    "status": "PANEL_REQUIRED",
+    "note": "API de criação não retornou ID válido. Cadastre no painel Hotmart.",
+    "template": {
+      "name": "Mentoria em Grupo Gravada",
+      "description": "Sessões gravadas de mentoria com playbooks de implantação.",
+      "priceBRL": 997,
+      "guaranteeDays": 7,
+      "webhook": "https://balcaoia-studio.vercel.app/api/webhook",
+      "panelUrl": "https://app-vlc.hotmart.com/products",
+      "affiliateCommissionPercent": 30
+    }
+  },
+  {
+    "slug": "curso-avancado-comunidade",
+    "name": "Curso Avançado + Comunidade",
+    "price": 1497,
+    "tier": 3,
+    "status": "PANEL_REQUIRED",
+    "note": "API de criação não retornou ID válido. Cadastre no painel Hotmart.",
+    "template": {
+      "name": "Curso Avançado + Comunidade",
+      "description": "Nível avançado de operação + comunidade de operadores locais.",
+      "priceBRL": 1497,
+      "guaranteeDays": 7,
+      "webhook": "https://balcaoia-studio.vercel.app/api/webhook",
+      "panelUrl": "https://app-vlc.hotmart.com/products",
+      "affiliateCommissionPercent": 30
+    }
+  },
+  {
+    "slug": "certificado-conclusao-7d",
+    "name": "Programa de Certificação BalcãoIA 7D",
+    "price": 1997,
+    "tier": 3,
+    "status": "PANEL_REQUIRED",
+    "note": "API de criação não retornou ID válido. Cadastre no painel Hotmart.",
+    "template": {
+      "name": "Programa de Certificação BalcãoIA 7D",
+      "description": "Certificação por evidência de implantação (não por diploma vazio).",
+      "priceBRL": 1997,
+      "guaranteeDays": 7,
+      "webhook": "https://balcaoia-studio.vercel.app/api/webhook",
+      "panelUrl": "https://app-vlc.hotmart.com/products",
+      "affiliateCommissionPercent": 30
+    }
+  },
+  {
+    "slug": "mastermind-gravado-operadores",
+    "name": "Mastermind Gravado — Operadores",
+    "price": 2497,
+    "tier": 3,
+    "status": "PANEL_REQUIRED",
+    "note": "API de criação não retornou ID válido. Cadastre no painel Hotmart.",
+    "template": {
+      "name": "Mastermind Gravado — Operadores",
+      "description": "Mastermind gravado para operadores que já têm base e querem escala ética.",
+      "priceBRL": 2497,
+      "guaranteeDays": 7,
+      "webhook": "https://balcaoia-studio.vercel.app/api/webhook",
+      "panelUrl": "https://app-vlc.hotmart.com/products",
+      "affiliateCommissionPercent": 30
+    }
+  }
+]

@@ -1,0 +1,197 @@
+[
+  {
+    "slug": "foco-14",
+    "name": "FOCO 14 — Rotina de Alta Clareza",
+    "price": 67,
+    "tier": 1,
+    "hotmartId": null,
+    "status": "PANEL_REQUIRED",
+    "affiliate": {
+      "commissionPercent": 50,
+      "autoApprove": true,
+      "note": "Configure no painel Hotmart → Afiliados do produto"
+    }
+  },
+  {
+    "slug": "rotina-clareza-freelancer",
+    "name": "Clareza Semanal — Ritual do Freelancer",
+    "price": 47,
+    "tier": 1,
+    "hotmartId": null,
+    "status": "PANEL_REQUIRED",
+    "affiliate": {
+      "commissionPercent": 50,
+      "autoApprove": true,
+      "note": "Configure no painel Hotmart → Afiliados do produto"
+    }
+  },
+  {
+    "slug": "checklist-atendimento-local",
+    "name": "Checklist Master Atendimento Local",
+    "price": 37,
+    "tier": 1,
+    "hotmartId": null,
+    "status": "PANEL_REQUIRED",
+    "affiliate": {
+      "commissionPercent": 50,
+      "autoApprove": true,
+      "note": "Configure no painel Hotmart → Afiliados do produto"
+    }
+  },
+  {
+    "slug": "desafio-7d-atendimento",
+    "name": "Desafio 7 Dias — Atendimento Organizado",
+    "price": 57,
+    "tier": 1,
+    "hotmartId": null,
+    "status": "PANEL_REQUIRED",
+    "affiliate": {
+      "commissionPercent": 50,
+      "autoApprove": true,
+      "note": "Configure no painel Hotmart → Afiliados do produto"
+    }
+  },
+  {
+    "slug": "whatsapp-etico-negocios",
+    "name": "WhatsApp Ético para Negócios Locais",
+    "price": 77,
+    "tier": 1,
+    "hotmartId": null,
+    "status": "PANEL_REQUIRED",
+    "affiliate": {
+      "commissionPercent": 50,
+      "autoApprove": true,
+      "note": "Configure no painel Hotmart → Afiliados do produto"
+    }
+  },
+  {
+    "slug": "guia-catalogo-precos",
+    "name": "Guia Catálogo & Preços Claros",
+    "price": 47,
+    "tier": 1,
+    "hotmartId": null,
+    "status": "PANEL_REQUIRED",
+    "affiliate": {
+      "commissionPercent": 50,
+      "autoApprove": true,
+      "note": "Configure no painel Hotmart → Afiliados do produto"
+    }
+  },
+  {
+    "slug": "curso-organizacao-atendimento",
+    "name": "Curso Completo — Organização de Atendimento",
+    "price": 197,
+    "tier": 2,
+    "hotmartId": null,
+    "status": "PANEL_REQUIRED",
+    "affiliate": {
+      "commissionPercent": 40,
+      "autoApprove": true,
+      "note": "Configure no painel Hotmart → Afiliados do produto"
+    }
+  },
+  {
+    "slug": "programa-8-semanas-balcao",
+    "name": "Programa 8 Semanas — Transformação do Balcão",
+    "price": 397,
+    "tier": 2,
+    "hotmartId": null,
+    "status": "PANEL_REQUIRED",
+    "affiliate": {
+      "commissionPercent": 40,
+      "autoApprove": true,
+      "note": "Configure no painel Hotmart → Afiliados do produto"
+    }
+  },
+  {
+    "slug": "sistema-balcao-proprietario",
+    "name": "Sistema Balcão Proprietário",
+    "price": 297,
+    "tier": 2,
+    "hotmartId": null,
+    "status": "PANEL_REQUIRED",
+    "affiliate": {
+      "commissionPercent": 40,
+      "autoApprove": true,
+      "note": "Configure no painel Hotmart → Afiliados do produto"
+    }
+  },
+  {
+    "slug": "workshop-ia-atendimento",
+    "name": "Workshop Gravado — IA no Atendimento",
+    "price": 197,
+    "tier": 2,
+    "hotmartId": null,
+    "status": "PANEL_REQUIRED",
+    "affiliate": {
+      "commissionPercent": 40,
+      "autoApprove": true,
+      "note": "Configure no painel Hotmart → Afiliados do produto"
+    }
+  },
+  {
+    "slug": "bundle-entrada-local",
+    "name": "Bundle Master Entrada Local",
+    "price": 147,
+    "tier": 2,
+    "hotmartId": null,
+    "status": "PANEL_REQUIRED",
+    "affiliate": {
+      "commissionPercent": 40,
+      "autoApprove": true,
+      "note": "Configure no painel Hotmart → Afiliados do produto"
+    }
+  },
+  {
+    "slug": "mentoria-grupo-gravada",
+    "name": "Mentoria em Grupo Gravada",
+    "price": 997,
+    "tier": 3,
+    "hotmartId": null,
+    "status": "PANEL_REQUIRED",
+    "affiliate": {
+      "commissionPercent": 30,
+      "autoApprove": true,
+      "note": "Configure no painel Hotmart → Afiliados do produto"
+    }
+  },
+  {
+    "slug": "curso-avancado-comunidade",
+    "name": "Curso Avançado + Comunidade",
+    "price": 1497,
+    "tier": 3,
+    "hotmartId": null,
+    "status": "PANEL_REQUIRED",
+    "affiliate": {
+      "commissionPercent": 30,
+      "autoApprove": true,
+      "note": "Configure no painel Hotmart → Afiliados do produto"
+    }
+  },
+  {
+    "slug": "certificado-conclusao-7d",
+    "name": "Programa de Certificação BalcãoIA 7D",
+    "price": 1997,
+    "tier": 3,
+    "hotmartId": null,
+    "status": "PANEL_REQUIRED",
+    "affiliate": {
+      "commissionPercent": 30,
+      "autoApprove": true,
+      "note": "Configure no painel Hotmart → Afiliados do produto"
+    }
+  },
+  {
+    "slug": "mastermind-gravado-operadores",
+    "name": "Mastermind Gravado — Operadores",
+    "price": 2497,
+    "tier": 3,
+    "hotmartId": null,
+    "status": "PANEL_REQUIRED",
+    "affiliate": {
+      "commissionPercent": 30,
+      "autoApprove": true,
+      "note": "Configure no painel Hotmart → Afiliados do produto"
+    }
+  }
+]

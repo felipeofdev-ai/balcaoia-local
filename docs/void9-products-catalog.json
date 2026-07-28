@@ -1,0 +1,107 @@
+[
+  {
+    "slug": "foco-14",
+    "name": "FOCO 14 — Rotina de Alta Clareza",
+    "price": 67,
+    "tier": 1,
+    "promise": "Em 14 dias, proteja 2 janelas de foco e feche cada dia com evidência do que avançou — sem virar monge."
+  },
+  {
+    "slug": "rotina-clareza-freelancer",
+    "name": "Clareza Semanal — Ritual do Freelancer",
+    "price": 47,
+    "tier": 1,
+    "promise": "Uma hora por semana para priorizar 3 frentes e bloquear a semana — sem improviso eterno."
+  },
+  {
+    "slug": "checklist-atendimento-local",
+    "name": "Checklist Master Atendimento Local",
+    "price": 37,
+    "tier": 1,
+    "promise": "Checklists operacionais para não esquecer o óbvio no atendimento do dia a dia."
+  },
+  {
+    "slug": "desafio-7d-atendimento",
+    "name": "Desafio 7 Dias — Atendimento Organizado",
+    "price": 57,
+    "tier": 1,
+    "promise": "Em 7 dias, estrutura mínima de atendimento: horários, scripts e registro."
+  },
+  {
+    "slug": "whatsapp-etico-negocios",
+    "name": "WhatsApp Ético para Negócios Locais",
+    "price": 77,
+    "tier": 1,
+    "promise": "Vender e atender no WhatsApp sem spam, sem lista comprada e sem gambiarra."
+  },
+  {
+    "slug": "guia-catalogo-precos",
+    "name": "Guia Catálogo & Preços Claros",
+    "price": 47,
+    "tier": 1,
+    "promise": "Organize oferta e preços para o cliente entender em 30 segundos."
+  },
+  {
+    "slug": "curso-organizacao-atendimento",
+    "name": "Curso Completo — Organização de Atendimento",
+    "price": 197,
+    "tier": 2,
+    "promise": "De atendimento reativo a operação previsível em módulos práticos."
+  },
+  {
+    "slug": "programa-8-semanas-balcao",
+    "name": "Programa 8 Semanas — Transformação do Balcão",
+    "price": 397,
+    "tier": 2,
+    "promise": "8 semanas de implantação com rituais, métricas e revisão."
+  },
+  {
+    "slug": "sistema-balcao-proprietario",
+    "name": "Sistema Balcão Proprietário",
+    "price": 297,
+    "tier": 2,
+    "promise": "Método proprietário passo a passo para operar o balcão digital com clareza."
+  },
+  {
+    "slug": "workshop-ia-atendimento",
+    "name": "Workshop Gravado — IA no Atendimento",
+    "price": 197,
+    "tier": 2,
+    "promise": "Use IA para rascunhar respostas e organizar informação — com humano no comando."
+  },
+  {
+    "slug": "bundle-entrada-local",
+    "name": "Bundle Master Entrada Local",
+    "price": 147,
+    "tier": 2,
+    "promise": "Pacote de entrada: FOCO 14 + Clareza + Checklist + bônus."
+  },
+  {
+    "slug": "mentoria-grupo-gravada",
+    "name": "Mentoria em Grupo Gravada",
+    "price": 997,
+    "tier": 3,
+    "promise": "Sessões gravadas de mentoria com playbooks de implantação."
+  },
+  {
+    "slug": "curso-avancado-comunidade",
+    "name": "Curso Avançado + Comunidade",
+    "price": 1497,
+    "tier": 3,
+    "promise": "Nível avançado de operação + comunidade de operadores locais."
+  },
+  {
+    "slug": "certificado-conclusao-7d",
+    "name": "Programa de Certificação BalcãoIA 7D",
+    "price": 1997,
+    "tier": 3,
+    "promise": "Certificação por evidência de implantação (não por diploma vazio)."
+  },
+  {
+    "slug": "mastermind-gravado-operadores",
+    "name": "Mastermind Gravado — Operadores",
+    "price": 2497,
+    "tier": 3,
+    "promise": "Mastermind gravado para operadores que já têm base e querem escala ética."
+  }
+]
