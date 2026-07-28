@@ -105,8 +105,24 @@ describe("handleHotmartEvent", () => {
     expect(cancelled.action).toBe("suspend");
   });
 
-  it("takes no workspace action for unrelated events", async () => {
-    const parsed = parseHotmartPayload({ event: "PURCHASE_BILLET_PRINTED", data: {} });
+  it("marks pending on PURCHASE_DELAYED / PURCHASE_BILLET_PRINTED", async () => {
+    const delayed = await handleHotmartEvent(parseHotmartPayload({ event: "PURCHASE_DELAYED", data: {} }));
+    const billet = await handleHotmartEvent(parseHotmartPayload({ event: "PURCHASE_BILLET_PRINTED", data: {} }));
+    expect(delayed.action).toBe("pending");
+    expect(billet.action).toBe("pending");
+  });
+
+  it("suspends on SUBSCRIPTION_CANCELLATION and updates plan on SWITCH_PLAN", async () => {
+    const cancelSub = await handleHotmartEvent(
+      parseHotmartPayload({ event: "SUBSCRIPTION_CANCELLATION", data: {} })
+    );
+    const switchPlan = await handleHotmartEvent(parseHotmartPayload({ event: "SWITCH_PLAN", data: {} }));
+    expect(cancelSub.action).toBe("suspend");
+    expect(switchPlan.action).toBe("update_plan");
+  });
+
+  it("takes no workspace action for cart abandonment", async () => {
+    const parsed = parseHotmartPayload({ event: "PURCHASE_OUT_OF_SHOPPING_CART", data: {} });
     const result = await handleHotmartEvent(parsed);
     expect(result.action).toBe("none");
     expect(result.ok).toBe(true);

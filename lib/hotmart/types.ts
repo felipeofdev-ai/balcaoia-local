@@ -73,7 +73,7 @@ export interface ParsedHotmartEvent {
   raw: unknown;
 }
 
-export type WorkspaceAction = "activate" | "suspend" | "none";
+export type WorkspaceAction = "activate" | "suspend" | "pending" | "update_plan" | "none";
 
 export interface HotmartHandleResult {
   ok: boolean;

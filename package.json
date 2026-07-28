@@ -9,6 +9,7 @@
     "lint": "eslint",
     "test": "vitest run",
     "test:watch": "vitest",
+    "validate": "node scripts/validate-system.mjs",
     "deploy:firebase": "firebase deploy --only hosting,firestore",
     "deploy:firebase:hosting": "firebase deploy --only hosting",
     "deploy:firebase:rules": "firebase deploy --only firestore:rules,firestore:indexes"

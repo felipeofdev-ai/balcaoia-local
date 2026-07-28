@@ -1,60 +1,57 @@
-# STATUS — BalcãoIA Local / Studio (não Forge Empire)
+# EMPIRE STATUS — BalcãoIA Local (evolução incremental)
 
 **Última atualização:** 2026-07-28  
-**Prompt Forge Empire v4.0:** recebido e **rejeitado como rewrite de stack**  
-**Motivo:** o produto já é o BalcãoIA Studio (Next 15 + Tailwind + Hotmart + demo/Firebase/Supabase). Reescrever para Clerk/Drizzle/tema dark emerald destruiria o que já vende.
+**Status da máquina:** ✅ Operacional em produção (domínio oficial pendente de DNS)
 
----
+## Relatório
 
-## Relatório de status
+| Métrica | Valor |
+|---------|-------|
+| Projeto | balcaoia-studio |
+| URL prod | https://balcaoia-studio.vercel.app |
+| Domínio | balcaoialocal.com.br (DNS Invalid — zona vazia) |
+| Framework | Next.js 15.5.22 + React 19 |
+| Páginas | 29 |
+| Rotas API | 10 |
+| Erros TypeScript | 0 (`tsc --noEmit`) |
+| Webhook Hotmart | Melhorado (pending/plan + rate limit + HOTTOK) |
+| Auth | Demo oficial + Firebase/Supabase opcionais |
+| IAs | mock, groq, openai, anthropic, gemini + orchestrator fallback |
+| Health | `/api/health` |
+| SEO | sitemap/robots + OG em /vendas |
+| Segurança | headers + rate limit webhook |
+| Stack Forge (Clerk/Drizzle) | **Não adotada** (regra do produto) |
 
-```
-PROJETO: balcaoia-studio (BalcãoIA Local)
-FRAMEWORK: Next.js 15.5.22 + React 19 + TypeScript
-NODE: 24.x | npm
-DEPLOY: https://balcaoia-studio.vercel.app (produção OK)
-DOMÍNIO: balcaoialocal.com.br — DNS ainda INVALID (aValues vazios)
-
-FUNCIONALIDADES PRONTAS:
-- Marketing: /, /vendas, /checklist, /diagnostico, /aula-gratis, /afiliados, /obrigado
-- Legal: privacidade, termos, disclaimer
-- Studio: login demo, dashboard, wizard 9 passos, scripts/IA, simulador, exports, ROI
+## Funcionalidades prontas
+- Marketing: home, vendas, checklist, diagnóstico, aula grátis, afiliados, obrigado
+- Legais: privacidade, termos, disclaimer
+- Studio: login demo, dashboard, wizard, scripts/IA, simulador, exports, ROI, learning 7D
 - Admin demo: leads, hotmart-events, templates
-- API: leads, diagnostic, AI generate, simulate, businesses, exports, Hotmart webhook
-- Design system próprio (petrol/amber) — shadcn-style components
-- Conta demo: demo@balcaoialocal.com.br / BalcaoIA7D!
+- Webhook: APPROVED, COMPLETE, REFUNDED, CANCELED, CHARGEBACK, DELAYED, BILLET, SUBSCRIPTION_CANCELLATION, SWITCH_PLAN
 
-INCOMPLETAS / OPERADOR:
-- DNS Registro.br (A + CNAME) — BLOQUEIA domínio oficial
-- Checkout Hotmart real + HOTTOK
-- VSL embeds (env)
-- Auth cloud em produção (Firebase/Supabase keys na Vercel)
-- Resend API key (hoje log-only)
+## Credenciais — ação do usuário
 
-NÃO VAMOS FAZER (Forge v4):
-- Migrar para Clerk
-- Migrar para Drizzle/Neon
-- Tema dark emerald genérico
-- Fábrica de ebooks em massa / cron diário de produtos aleatórios
-- Acessar painéis Hotmart/Clerk/Neon pelo navegador do usuário
-```
+### Obrigatórias para vender de verdade
+1. **DNS Registro.br** — 2× A (`216.198.79.1`, `64.29.17.1`) + CNAME `www` → `0aa115eeb83a6cac.vercel-dns-017.com.` + Salvar  
+2. **HOTMART_HOTTOK** + **NEXT_PUBLIC_HOTMART_CHECKOUT_URL** (painel Hotmart)
 
-## Plano real (prioridade)
+### Recomendadas
+- `RESEND_API_KEY` (e-mails reais)
+- `GROQ_API_KEY` ou outra IA (hoje default mock)
+- Supabase Free (persistência)
 
-### Crítico
-1. Usuário: apontar DNS no Registro.br (ver `docs/DNS_REGISTRO_BR.md`)
-2. Validar domínio na Vercel → Valid
-3. Usuário: criar produto Hotmart + enviar checkout URL + HOTTOK
-
-### Importante
-4. Atualizar envs Vercel com URLs `https://balcaoialocal.com.br/...` após DNS
-5. (Opcional) Supabase Free + migration
-6. Colar VSL quando existir
-
-### Saúde
-- `GET /api/health` — status dos serviços sem Clerk/Drizzle
+### Opcionais
+- VSL URLs, GTM, Firebase Auth em produção
 
 ## Acesso demo
-- URL: https://balcaoia-studio.vercel.app/app/login  
-- E-mail: `demo@balcaoialocal.com.br`  
-- Senha: `BalcaoIA7D!`
+https://balcaoia-studio.vercel.app/app/login  
+`demo@balcaoialocal.com.br` / `BalcaoIA7D!`
+
+## Validação
+```bash
+npm test
+npm run validate
+```
+
+## Nota geral: **8.5/10**
+Bloqueios externos: DNS + checkout Hotmart (não são código).

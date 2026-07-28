@@ -6,6 +6,7 @@ import {
   parseHotmartPayload,
   validateHottok,
 } from "@/lib/hotmart/webhook-parser";
+import { checkRateLimit } from "@/lib/security/rate-limit";
 
 export const runtime = "nodejs";
 
@@ -22,6 +23,24 @@ function randomId(): string {
  * defina HOTMART_HOTTOK com o token exibido lá para validar a origem.
  */
 export async function POST(request: Request) {
+  const ip =
+    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+    request.headers.get("x-real-ip") ||
+    "anonymous";
+  const limit = checkRateLimit(`hotmart:${ip}`, 120, 60_000);
+  if (!limit.ok) {
+    return NextResponse.json(
+      { ok: false, error: "Rate limit excedido" },
+      {
+        status: 429,
+        headers: {
+          "X-RateLimit-Remaining": "0",
+          "X-RateLimit-Reset": String(limit.resetAt),
+        },
+      }
+    );
+  }
+
   let body: unknown;
   try {
     body = await request.json();
@@ -29,7 +48,8 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, error: "JSON inválido" }, { status: 400 });
   }
 
-  const bodyRecord = typeof body === "object" && body !== null ? (body as Record<string, unknown>) : {};
+  const bodyRecord =
+    typeof body === "object" && body !== null ? (body as Record<string, unknown>) : {};
   const receivedHottok =
     request.headers.get("x-hotmart-hottok") ??
     request.headers.get("X-Hotmart-Hottok") ??
@@ -58,14 +78,21 @@ export async function POST(request: Request) {
   try {
     const supabase = createServiceClient();
     const result = await handleHotmartEvent(parsed, { supabase: supabase ?? undefined });
+    console.info("[hotmart]", result.action, parsed.eventType, parsed.buyerEmail);
     return NextResponse.json(
       {
         ok: true,
         action: result.action,
         message: result.message,
         persisted: result.persisted,
+        eventType: parsed.eventType,
       },
-      { status: 200 }
+      {
+        status: 200,
+        headers: {
+          "X-RateLimit-Remaining": String(limit.remaining),
+        },
+      }
     );
   } catch (error) {
     console.error("[/api/webhooks/hotmart]", error);

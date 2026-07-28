@@ -21,7 +21,17 @@ export const HOTMART_SUSPEND_EVENTS: HotmartEventType[] = [
   "PURCHASE_CHARGEBACK",
   "PURCHASE_EXPIRED",
   "PURCHASE_PROTEST",
+  "SUBSCRIPTION_CANCELLATION",
 ];
+
+/** Pagamento ainda não confirmado (boleto / atraso). */
+export const HOTMART_PENDING_EVENTS: HotmartEventType[] = [
+  "PURCHASE_DELAYED",
+  "PURCHASE_BILLET_PRINTED",
+];
+
+/** Mudança de plano de assinatura. */
+export const HOTMART_PLAN_EVENTS: HotmartEventType[] = ["SWITCH_PLAN"];
 
 /**
  * Valida o hottok recebido contra o configurado em HOTMART_HOTTOK.
@@ -104,6 +114,8 @@ export interface HandleHotmartEventOptions {
 function resolveAction(eventType: HotmartEventType): WorkspaceAction {
   if (HOTMART_ACTIVATE_EVENTS.includes(eventType)) return "activate";
   if (HOTMART_SUSPEND_EVENTS.includes(eventType)) return "suspend";
+  if (HOTMART_PENDING_EVENTS.includes(eventType)) return "pending";
+  if (HOTMART_PLAN_EVENTS.includes(eventType)) return "update_plan";
   return "none";
 }
 
@@ -128,6 +140,10 @@ export async function handleHotmartEvent(
     message = `Workspace ativado para ${who} (compra ${purchase}).`;
   } else if (action === "suspend") {
     message = `Workspace suspenso para ${who} (compra ${purchase}).`;
+  } else if (action === "pending") {
+    message = `Pagamento pendente para ${who} (compra ${purchase}) — acesso aguardando confirmação.`;
+  } else if (action === "update_plan") {
+    message = `Plano atualizado para ${who} (compra ${purchase}).`;
   }
 
   let persisted: "supabase" | "memory" = "memory";
@@ -158,6 +174,20 @@ export async function handleHotmartEvent(
         await supabase
           .from("workspaces")
           .update({ status: "suspended" })
+          .eq("hotmart_buyer_email", parsed.buyerEmail);
+      } else if (action === "pending" && parsed.buyerEmail) {
+        await supabase
+          .from("workspaces")
+          .update({ status: "pending" })
+          .eq("hotmart_buyer_email", parsed.buyerEmail);
+      } else if (action === "update_plan" && parsed.buyerEmail) {
+        await supabase
+          .from("workspaces")
+          .update({
+            status: "active",
+            hotmart_purchase_id: parsed.purchaseId,
+            plan_updated_at: new Date().toISOString(),
+          })
           .eq("hotmart_buyer_email", parsed.buyerEmail);
       }
 

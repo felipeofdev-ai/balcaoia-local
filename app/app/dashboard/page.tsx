@@ -75,7 +75,9 @@ export default function DashboardPage() {
             {firstName ? `Olá, ${firstName}!` : "Olá!"}
           </h1>
           <p className="mt-1 text-sm text-[var(--muted-foreground)]">
-            Aqui está um resumo dos seus negócios no BalcãoIA Studio.
+            {firstName
+              ? `Bem-vindo de volta. Continue o Método 7D e organize o atendimento do seu negócio.`
+              : "Aqui está um resumo dos seus negócios no BalcãoIA Studio."}
           </p>
         </div>
         <Link href="/app/businesses/new">
@@ -84,6 +86,46 @@ export default function DashboardPage() {
             Criar negócio
           </Button>
         </Link>
+      </div>
+
+      <div className="grid gap-4 sm:grid-cols-3">
+        <Card>
+          <CardContent className="pt-6">
+            <p className="text-xs font-medium uppercase tracking-wide text-[var(--muted-foreground)]">
+              Acesso
+            </p>
+            <p className="mt-1 text-lg font-semibold text-[var(--brand-petrol)]">Studio ativo</p>
+            <p className="mt-1 text-xs text-[var(--muted-foreground)]">
+              Modo demo ou compra Hotmart liberam o workspace.
+            </p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="pt-6">
+            <p className="text-xs font-medium uppercase tracking-wide text-[var(--muted-foreground)]">
+              Negócios
+            </p>
+            <p className="mt-1 text-lg font-semibold text-[var(--brand-graphite)]">
+              {loaded ? businesses.length : "—"}
+            </p>
+            <p className="mt-1 text-xs text-[var(--muted-foreground)]">Cadastrados neste navegador</p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="pt-6">
+            <p className="text-xs font-medium uppercase tracking-wide text-[var(--muted-foreground)]">
+              Próximo passo
+            </p>
+            <p className="mt-1 text-lg font-semibold text-[var(--brand-graphite)]">
+              {primaryBusiness?.wizard_completed
+                ? "Gerar scripts"
+                : primaryBusiness
+                  ? `Wizard etapa ${primaryBusiness.wizard_step || 1}`
+                  : "Criar negócio"}
+            </p>
+            <p className="mt-1 text-xs text-[var(--muted-foreground)]">Método BalcãoIA 7D</p>
+          </CardContent>
+        </Card>
       </div>
 
       <Card className="border-[var(--brand-petrol)]/20 bg-[var(--brand-petrol)]/5">
