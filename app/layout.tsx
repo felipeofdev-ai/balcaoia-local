@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Toaster } from "sonner";
+import { SITE } from "@/lib/config/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,34 +15,64 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
-  ),
+  metadataBase: new URL(SITE.url),
   title: {
     default: "BalcãoIA Local — Organize o atendimento do seu negócio",
     template: "%s | BalcãoIA Local",
   },
   description:
-    "Descubra em minutos onde seu atendimento perde vendas e receba roteiros prontos para organizar seu negócio local. Diagnóstico gratuito.",
+    "Organize atendimento, catálogo e foco no negócio local com IA assistida e ética. Diagnóstico gratuito. Sem promessa de renda.",
   keywords: [
-    "atendimento ao cliente",
-    "negócio local",
-    "roteiro de vendas",
-    "atendimento WhatsApp",
-    "diagnóstico de atendimento",
+    "atendimento negócio local",
+    "IA para pequenas empresas",
+    "WhatsApp atendimento ético",
+    "organizar atendimento",
+    "produtividade empreendedor solo",
+    "método balcãoia",
+    "foco 14",
   ],
   authors: [{ name: "BalcãoIA" }],
+  creator: "BalcãoIA",
+  publisher: "BalcãoIA",
+  alternates: {
+    canonical: SITE.url,
+  },
   openGraph: {
     type: "website",
     locale: "pt_BR",
+    url: SITE.url,
     siteName: "BalcãoIA Local",
     title: "BalcãoIA Local — Organize o atendimento do seu negócio",
     description:
-      "Descubra em minutos onde seu atendimento perde vendas e receba roteiros prontos para organizar seu negócio local.",
+      "Diagnóstico, trilha de produtos e Studio para organizar o balcão com IA assistida — sem gambiarra.",
+    images: [{ url: "/logo.png", width: 512, height: 512, alt: "BalcãoIA" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "BalcãoIA Local",
+    description: "Organize o atendimento do seu negócio local com clareza e ética.",
     images: ["/logo.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
   icons: {
     icon: "/favicon.ico",
+  },
+};
+
+const orgJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "BalcãoIA Local",
+  url: SITE.url,
+  logo: `${SITE.url}/logo.png`,
+  description: "Organização de atendimento e IA assistida para negócios locais.",
+  email: SITE.supportEmail,
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "BR",
   },
 };
 
@@ -53,6 +84,10 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body className="antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
         {children}
         <Toaster
           position="top-center"

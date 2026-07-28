@@ -6,29 +6,35 @@
 
 | Item | Status |
 |------|--------|
-| Webhook | ✅ `/api/webhook` online |
-| OAuth Hotmart | ✅ CLIENT_ID/SECRET |
-| APP_SECRET | ✅ Vercel |
+| Webhook | ✅ `/api/webhook` |
+| OAuth Hotmart | ✅ |
+| APP_SECRET | ✅ |
 | HOTTOK | ❌ pendente |
 | Checkout real | ❌ pendente |
-| Deploy | ✅ balcaoia-studio.vercel.app · alias balcaoialocal.com.br |
+| GitHub CLI | ✅ autenticado (sem alterar git config global) |
+| Deploy | ✅ produção |
 
-## Portfólio
+## Hotmart — criação via API
 
-- **15 produtos** com kit GitHub v2 + **logos SVG** + **mockups** + páginas `/produtos/[slug]`
+Tentativa real documentada em `docs/hotmart-produtos-criados.json`.  
+Se `status: PANEL_REQUIRED`, **cadastre no painel** (a API deste app não devolve ID de produto).
+
+## Site / SEO
+
 - Hub: `/ecossistema`
-- Afiliados por SKU: `/produtos/[slug]/afiliados`
-- Obrigado: `/produtos/[slug]/obrigado`
+- Produtos: `/produtos/[slug]`
+- Blog ampliado (artigos educativos, sem promessa de renda)
+- `sitemap.xml` + `robots.ts` + Organization JSON-LD
 
-## Honestidade
+## Bloqueios honestos (não feitos de propósito)
 
-- Sem loop infinito de novos repos
-- Sem métricas fake de alunos/faturamento
-- Criação Hotmart via API = **painel** (templates em `docs/hotmart-product-ids.json`)
-- Fila de 5 ideias em `docs/novos-produtos-pesquisa-2026.md` (tendência Business AI 2026)
+- Não alteramos `git config --global` (política de segurança)
+- Não instalamos stack redundante (framer/zustand/next-seo)
+- Não afirmamos “15 produtos criados na Hotmart” sem ID real
+- Não há loop infinito de novos SKUs
 
 ## Próximo passo humano
 
-1. HOTTOK na Vercel  
+1. HOTTOK na Vercel + Redeploy  
 2. Criar FOCO 14 no painel Hotmart  
-3. Colar checkout URL  
+3. `NEXT_PUBLIC_HOTMART_CHECKOUT_URL`  
