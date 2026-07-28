@@ -1,79 +1,60 @@
-# ✅ CHECKLIST — AÇÕES MANUAIS NECESSÁRIAS
+# 🎯 O QUE FAZER AGORA — PASSO A PASSO
 
-Atualizado: 28 Jul 2026 · BalcãoIA Local
+Atualizado: 28 Jul 2026 · Operação Publicação Final
 
-## HOTMART (painel web)
-
-- [ ] Abrir Produtos e localizar rascunhos de “10 Prompts WhatsApp que Vendem”
-- [ ] Em **Informações**: selecionar categoria **Negócios e Carreira** (campo obrigatório — era o que travava o RPA)
-- [ ] Finalizar J1: Precificação R$ 9 · garantia 7 dias · PDF · **Publicar**
-- [ ] Copiar hotlink `pay.hotmart.com/XXXX` e colar abaixo
-- [ ] Re-testar RPA (já com categoria no script):  
-  `.\venv\Scripts\python.exe src\criar_produto_rpa.py manifestos\10-prompts-whatsapp-vendem.json --sem-revisao`
-- [ ] Só depois: batch J2→J10  
-  `.\venv\Scripts\python.exe scripts\batch_lote1_rpa.py --from-slug checklist-ia-1-hora`
-- [ ] Publicar A1, A2, B1, C2, D1, D3 (cursos: upload módulos da pasta `curso/`)
-- [ ] Order Bump (produto complementar já cadastrado)
-- [ ] Funil upsell/downsell
-- [ ] Recuperador Automático + Fast Buy
-- [ ] Checkout personalizado (logo + cor Doce Lucro / BalcãoIA)
-- [ ] Afiliados: micros **70%** · flagships **50%** · cookie **180** · marketplace
-- [ ] Hotmart Recomenda
-
-## CHECKOUTS (cole os links reais)
-
-| SKU | Checkout |
-|-----|----------|
-| J1 | _______________ |
-| J2 | _______________ |
-| J3 | _______________ |
-| J4 | _______________ |
-| J5 | _______________ |
-| J6 | _______________ |
-| J7 | _______________ |
-| J8 | _______________ |
-| J9 | _______________ |
-| J10 | _______________ |
-| A1 | _______________ |
-| A2 | _______________ |
-| B1 | _______________ |
-| C2 | _______________ |
-| D1 | _______________ |
-| D3 | _______________ |
-
-Depois: Vercel → Environment Variables → `NEXT_PUBLIC_HOTMART_CHECKOUT_J1` etc. → Redeploy.
-
-## API (após ter product_id)
-
+## ETAPA 1 — CALIBRAR O RPA
 ```powershell
-cd hotmart-factory
-.\venv\Scripts\python.exe scripts\configurar-api-hotmart.py
+cd "c:\Users\Usuário\Desktop\BalcãoIA Local\hotmart-factory"
+.\venv\Scripts\python.exe scripts\calibrar-hotmart.py
+```
+→ Gera `logs/calibracao-*.png/json` e `calibracao-categorias.txt`  
+→ Confirme pills de categoria (não é `<select>`)
+
+## ETAPA 2 — PUBLICAR J1 (modo revisão)
+```powershell
+.\venv\Scripts\python.exe src\criar_produto_rpa.py manifestos\10-prompts-whatsapp-vendem.json
+```
+> Slug real: `10-prompts-whatsapp-vendem` (não `j1-prompts-whatsapp`)
+
+Na pausa de revisão: confira categoria **Negócios e Carreira**, preço R$9, PDF.  
+Grave `ok` em `rpa_continuar.txt` para publicar.  
+Copie o hotlink `pay.hotmart.com/XXXX`.
+
+## ETAPA 3 — BATCH RESTANTE
+Só após J1 ter `product_id` em `logs/produtos-criados.json`:
+```powershell
+.\venv\Scripts\python.exe scripts\batch-criar-produtos.py --sem-revisao --from-slug checklist-ia-1-hora
 ```
 
-## SEO
+## ETAPA 4 — PÓS-PUBLICAÇÃO
+```powershell
+.\venv\Scripts\python.exe scripts\pos-publicacao-rpa.py
+```
+Revise screenshots em `logs/screenshots/pos-*`.
 
-- [ ] Google Search Console — propriedade `balcaoialocal.com.br`
-- [ ] Verificar domínio / colar meta se pedido
-- [ ] Submeter `https://balcaoialocal.com.br/sitemap.xml`
-- [ ] Google Analytics / Meta Pixel (IDs reais)
+## ETAPA 5 — ENVS DE CHECKOUT
+```powershell
+.\venv\Scripts\python.exe scripts\atualizar-env-checkouts.py
+```
+Rode o `.ps1` gerado **só se** houver URLs reais (nunca PAY123AB).
 
-## AFILIADOS (semana 1)
+## ETAPA 6 — PAINEL (manual)
+- [ ] Order Bump / Funil / Fast Buy / Recuperador
+- [ ] Checkout personalizado (logo + cor)
+- [ ] Afiliados 70% micros / 50% flagships · cookie 180d
+- [ ] Marketplace + Hotmart Recomenda
 
-- [ ] 50 perfis do nicho (lista)
-- [ ] DM com kit (`affiliate-kit/00-guia-do-afiliado.md`)
-- [ ] Grupo afiliados WhatsApp/Telegram
-- [ ] Bio Instagram → `/afiliados`
-- [ ] 1 post/dia do programa (sem claim de renda)
+## ETAPA 7 — AFILIADOS
+- [ ] Bio → https://balcaoialocal.com.br/afiliados
+- [ ] Kits em `balcaoia-empire/**/affiliate-kit/` (`[LINK_AFILIADO]`)
+- [ ] 10 DMs/dia sem claim de renda
 
-## SEGURANÇA
+## LINKS
+- Site: https://balcaoialocal.com.br
+- Afiliados: https://balcaoialocal.com.br/afiliados
+- Painel: https://app.hotmart.com/products
+- Webhook: https://balcaoialocal.com.br/api/webhook
 
-- [ ] Se senha Hotmart apareceu em histórico de terminal/comando, **troque a senha**
-- [ ] Nunca commitar `auth_state.json`, `.env`, `login_2fa_code.txt`
-
-## Site já no ar (validar)
-
-- https://balcaoialocal.com.br
-- https://balcaoialocal.com.br/afiliados
-- https://balcaoialocal.com.br/produtos/10-prompts-whatsapp-vendem
-- https://balcaoialocal.com.br/produtos/whatsapp-etico-negocios
-- https://balcaoialocal.com.br/sitemap.xml
+## BLOQUEIO CONHECIDO
+Sem **categoria** (= pill “Negócios e Carreira”) o Continuar não avança.  
+O RPA agora usa `selecionar_categoria()` com scroll + pill + JS + pausa manual.
