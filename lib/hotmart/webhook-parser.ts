@@ -12,6 +12,8 @@ import type {
 export const HOTMART_ACTIVATE_EVENTS: HotmartEventType[] = [
   "PURCHASE_APPROVED",
   "PURCHASE_COMPLETE",
+  "SUBSCRIPTION_RENEWAL",
+  "SUBSCRIPTION_REACTIVATED",
 ];
 
 /** Eventos que suspendem o acesso ao workspace do comprador. */
