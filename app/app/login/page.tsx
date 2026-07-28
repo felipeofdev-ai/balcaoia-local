@@ -18,7 +18,8 @@ import {
   isFirebaseConfigured,
 } from "@/lib/firebase/auth";
 import { saveUserProfile } from "@/lib/firebase/firestore";
-import { setLocalUser } from "@/lib/local-store";
+import { setAdminDemo, setLocalUser } from "@/lib/local-store";
+import { DEMO_ACCOUNT, isDemoAccount } from "@/lib/config/demo-account";
 
 function LoginPageContent() {
   const router = useRouter();
@@ -30,12 +31,18 @@ function LoginPageContent() {
 
   const [magicEmail, setMagicEmail] = React.useState("");
   const [magicSent, setMagicSent] = React.useState(false);
-  const [pwEmail, setPwEmail] = React.useState("");
+  const [pwEmail, setPwEmail] = React.useState(DEMO_ACCOUNT.email);
   const [pwPassword, setPwPassword] = React.useState("");
-  const [demoName, setDemoName] = React.useState("");
-  const [demoEmail, setDemoEmail] = React.useState("");
+  const [demoName, setDemoName] = React.useState(DEMO_ACCOUNT.name);
+  const [demoEmail, setDemoEmail] = React.useState(DEMO_ACCOUNT.email);
   const [loading, setLoading] = React.useState<string | null>(null);
   const [error, setError] = React.useState<string | null>(null);
+
+  function enterDemoSession(name: string, email: string, asAdmin = true) {
+    setLocalUser({ name, email });
+    setAdminDemo(asAdmin);
+    router.push(redirectTo);
+  }
 
   React.useEffect(() => {
     if (!firebaseConfigured || searchParams.get("emailLink") !== "1") return;
@@ -82,10 +89,18 @@ function LoginPageContent() {
 
   async function handlePasswordLogin(e: React.FormEvent) {
     e.preventDefault();
-    if (!authReady) return;
     setLoading("password");
     setError(null);
     try {
+      // Conta demo oficial — funciona mesmo sem Firebase/Supabase
+      if (isDemoAccount(pwEmail, pwPassword)) {
+        enterDemoSession(DEMO_ACCOUNT.name, DEMO_ACCOUNT.email, true);
+        return;
+      }
+      if (!authReady) {
+        setError("Use a conta demo abaixo ou configure Firebase/Supabase.");
+        return;
+      }
       if (firebaseConfigured) {
         let cred;
         try {
@@ -117,10 +132,9 @@ function LoginPageContent() {
     e.preventDefault();
     setLoading("demo");
     setError(null);
-    const name = demoName.trim() || "Usuário demo";
-    const email = demoEmail.trim() || "demo@balcaoia.local";
-    setLocalUser({ name, email });
-    router.push(redirectTo);
+    const name = demoName.trim() || DEMO_ACCOUNT.name;
+    const email = demoEmail.trim() || DEMO_ACCOUNT.email;
+    enterDemoSession(name, email, true);
   }
 
   return (
@@ -146,59 +160,20 @@ function LoginPageContent() {
           </div>
         ) : !supabaseConfigured ? (
           <div className="rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-xs text-amber-800">
-            Firebase ainda não configurado. Use o <strong>modo demonstração</strong> abaixo
-            ou preencha as variáveis <code>NEXT_PUBLIC_FIREBASE_*</code> no{" "}
-            <code>.env.local</code>.
+            Auth cloud ainda não está no ar. Use a <strong>conta demo</strong> abaixo para
+            testar o Studio completo neste navegador.
           </div>
         ) : null}
 
-        <Card className={!authReady ? "opacity-60" : undefined}>
+        <Card className="border-[var(--brand-petrol)]/30">
           <CardHeader>
-            <CardTitle className="text-base">Link mágico por e-mail</CardTitle>
-            <CardDescription>Enviamos um link de acesso sem precisar de senha.</CardDescription>
+            <CardTitle className="text-base">Entrar com e-mail e senha</CardTitle>
+            <CardDescription>
+              Conta demo oficial: <code className="text-xs">{DEMO_ACCOUNT.email}</code> /{" "}
+              <code className="text-xs">{DEMO_ACCOUNT.password}</code>
+            </CardDescription>
           </CardHeader>
           <CardContent>
-            {magicSent ? (
-              <p className="rounded-lg bg-[var(--brand-petrol)]/10 px-3 py-2.5 text-sm text-[var(--brand-petrol)]">
-                Link enviado! Verifique sua caixa de entrada.
-              </p>
-            ) : (
-              <form onSubmit={handleMagicLink} className="space-y-3">
-                <div>
-                  <Label htmlFor="magic-email">E-mail</Label>
-                  <div className="relative mt-1.5">
-                    <Mail className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-[var(--muted-foreground)]" />
-                    <Input
-                      id="magic-email"
-                      type="email"
-                      required
-                      disabled={!authReady}
-                      value={magicEmail}
-                      onChange={(e) => setMagicEmail(e.target.value)}
-                      placeholder="voce@email.com"
-                      className="pl-10"
-                    />
-                  </div>
-                </div>
-                <Button
-                  type="submit"
-                  variant="outline"
-                  className="w-full"
-                  disabled={!authReady}
-                  loading={loading === "magic"}
-                >
-                  <KeyRound className="h-4 w-4" />
-                  Enviar link mágico
-                </Button>
-              </form>
-            )}
-
-            <div className="my-4 flex items-center gap-3 text-xs text-[var(--muted-foreground)]">
-              <div className="h-px flex-1 bg-[var(--border)]" />
-              ou entre com senha
-              <div className="h-px flex-1 bg-[var(--border)]" />
-            </div>
-
             <form onSubmit={handlePasswordLogin} className="space-y-3">
               <div>
                 <Label htmlFor="pw-email">E-mail</Label>
@@ -206,10 +181,9 @@ function LoginPageContent() {
                   id="pw-email"
                   type="email"
                   className="mt-1.5"
-                  disabled={!authReady}
                   value={pwEmail}
                   onChange={(e) => setPwEmail(e.target.value)}
-                  placeholder="voce@email.com"
+                  placeholder={DEMO_ACCOUNT.email}
                 />
               </div>
               <div>
@@ -219,27 +193,67 @@ function LoginPageContent() {
                   <Input
                     id="pw-password"
                     type="password"
-                    disabled={!authReady}
                     value={pwPassword}
                     onChange={(e) => setPwPassword(e.target.value)}
-                    placeholder="••••••••"
+                    placeholder="Digite a senha demo"
                     className="pl-10"
                   />
                 </div>
               </div>
               <Button
                 type="submit"
-                variant="ghost"
+                variant="amber"
                 className="w-full"
-                disabled={!authReady}
                 loading={loading === "password"}
               >
                 <LogIn className="h-4 w-4" />
-                Entrar com e-mail e senha
+                Entrar no Studio
               </Button>
             </form>
 
             {error && <p className="mt-3 text-xs text-red-600">{error}</p>}
+
+            {authReady && (
+              <>
+                <div className="my-4 flex items-center gap-3 text-xs text-[var(--muted-foreground)]">
+                  <div className="h-px flex-1 bg-[var(--border)]" />
+                  ou link mágico
+                  <div className="h-px flex-1 bg-[var(--border)]" />
+                </div>
+                {magicSent ? (
+                  <p className="rounded-lg bg-[var(--brand-petrol)]/10 px-3 py-2.5 text-sm text-[var(--brand-petrol)]">
+                    Link enviado! Verifique sua caixa de entrada.
+                  </p>
+                ) : (
+                  <form onSubmit={handleMagicLink} className="space-y-3">
+                    <div>
+                      <Label htmlFor="magic-email">E-mail</Label>
+                      <div className="relative mt-1.5">
+                        <Mail className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-[var(--muted-foreground)]" />
+                        <Input
+                          id="magic-email"
+                          type="email"
+                          required
+                          value={magicEmail}
+                          onChange={(e) => setMagicEmail(e.target.value)}
+                          placeholder="voce@email.com"
+                          className="pl-10"
+                        />
+                      </div>
+                    </div>
+                    <Button
+                      type="submit"
+                      variant="outline"
+                      className="w-full"
+                      loading={loading === "magic"}
+                    >
+                      <KeyRound className="h-4 w-4" />
+                      Enviar link mágico
+                    </Button>
+                  </form>
+                )}
+              </>
+            )}
           </CardContent>
         </Card>
 
