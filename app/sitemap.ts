@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllEbookIdeas } from "@/lib/market-research/trends";
 import { BLOG_POSTS } from "@/lib/content/blog";
+import { getAllTierZeroSlugs, getAllCaptureSlugs } from "@/lib/sales/tier-zero-catalog";
 
 const SITE_URL = (
   process.env.NEXT_PUBLIC_SITE_URL || "https://balcaoialocal.com.br"
@@ -37,19 +38,33 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority,
   }));
 
-  const products = getAllEbookIdeas().map((e) => ({
-    url: `${SITE_URL}/produtos/${e.slug}`,
+  const ideaSlugs = new Set(getAllEbookIdeas().map((e) => e.slug));
+  const tierSlugs = getAllTierZeroSlugs();
+  const productSlugSet = new Set([...ideaSlugs, ...tierSlugs]);
+
+  const products = [...productSlugSet].map((slug) => ({
+    url: `${SITE_URL}/produtos/${slug}`,
     lastModified,
     changeFrequency: "weekly" as const,
-    priority: 0.85,
+    priority: 0.9,
   }));
+
+  const captures = getAllCaptureSlugs()
+    .filter((s) => s.length > 2) // skip short codes j1 etc in sitemap noise
+    .filter((s) => !/^(j\d+|a\d+|b\d+|c\d+|d\d+)$/i.test(s))
+    .map((slug) => ({
+      url: `${SITE_URL}/captura/${slug}`,
+      lastModified,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    }));
 
   const posts = BLOG_POSTS.map((p) => ({
     url: `${SITE_URL}/blog/${p.slug}`,
     lastModified: new Date(p.date),
     changeFrequency: "monthly" as const,
-    priority: 0.6,
+    priority: 0.8,
   }));
 
-  return [...staticEntries, ...products, ...posts];
+  return [...staticEntries, ...products, ...captures, ...posts];
 }

@@ -88,7 +88,7 @@ export const TIER_ZERO_CATALOG: Record<string, TierZeroProduct> = {
     ctaText: "Quero os 10 prompts — R$ 9",
     socialProofLine: "Feito para negócios locais que querem organizar a conversa — sem spam.",
     finalCtaTitle: "Pronto para organizar suas respostas no WhatsApp?",
-    coverSrc: "/mockups/10-prompts-whatsapp-vendem/social-cover.svg",
+    coverSrc: "/capas/10-prompts-whatsapp-vendem.jpg",
     problem: {
       title: "Antes dos prompts…",
       subtitle: "Situações comuns no atendimento solo",
@@ -184,7 +184,7 @@ export const TIER_ZERO_CATALOG: Record<string, TierZeroProduct> = {
     ctaText: "Quero o checklist — R$ 7",
     socialProofLine: "Para quem quer começar com IA sem bagunça operacional.",
     finalCtaTitle: "Pronto para a primeira hora com IA organizada?",
-    coverSrc: "/mockups/checklist-ia-1-hora/social-cover.svg",
+    coverSrc: "/capas/checklist-ia-1-hora.jpg",
     problem: {
       title: "Por que a IA “não funciona” no início",
       subtitle: "Não é falta de ferramenta — é falta de base",
@@ -246,7 +246,7 @@ export const TIER_ZERO_CATALOG: Record<string, TierZeroProduct> = {
     ctaText: "Quero as 30 estruturas — R$ 12",
     socialProofLine: "Para quem trava na página em branco do feed.",
     finalCtaTitle: "Pronto para ter estrutura de post esta semana?",
-    coverSrc: "/mockups/30-posts-prontos-ia/social-cover.svg",
+    coverSrc: "/capas/30-posts-prontos-ia.jpg",
     problem: {
       title: "Se isso soa familiar…",
       subtitle: "Dor real de quem posta sozinho",
@@ -308,7 +308,7 @@ export const TIER_ZERO_CATALOG: Record<string, TierZeroProduct> = {
     ctaText: "Quero o template — R$ 14",
     socialProofLine: "Para quem quer padrão de resposta sem gambiarra.",
     finalCtaTitle: "Pronto para padronizar o atendimento?",
-    coverSrc: "/mockups/template-atendimento-automatico/social-cover.svg",
+    coverSrc: "/capas/template-atendimento-automatico.jpg",
     problem: {
       title: "Atendimento inconsistente custa confiança",
       subtitle: "Sinais de que falta padrão",
@@ -370,7 +370,7 @@ export const TIER_ZERO_CATALOG: Record<string, TierZeroProduct> = {
     ctaText: "Quero o guia — R$ 9",
     socialProofLine: "Para quem tem pouco tempo e perfil abandonado.",
     finalCtaTitle: "Pronto para os 5 ajustes de maior impacto?",
-    coverSrc: "/mockups/mini-guia-gmn-30min/social-cover.svg",
+    coverSrc: "/capas/mini-guia-gmn-30min.jpg",
     problem: {
       title: "Perfil incompleto = oportunidade perdida",
       subtitle: "Sem milagre de ranking",
@@ -433,7 +433,7 @@ export const TIER_ZERO_CATALOG: Record<string, TierZeroProduct> = {
     ctaText: "Quero as legendas — R$ 7",
     socialProofLine: "Para quem trava no texto da legenda.",
     finalCtaTitle: "Pronto para adaptar legendas esta semana?",
-    coverSrc: "/mockups/20-legendas-instagram/social-cover.svg",
+    coverSrc: "/capas/20-legendas-instagram.jpg",
     problem: {
       title: "Legenda genérica não conecta",
       subtitle: "O texto importa tanto quanto a imagem",
@@ -495,7 +495,7 @@ export const TIER_ZERO_CATALOG: Record<string, TierZeroProduct> = {
     ctaText: "Quero a calculadora — R$ 9",
     socialProofLine: "Para quem precifica no achismo e quer enxergar a conta.",
     finalCtaTitle: "Pronto para ver o preço com mais clareza?",
-    coverSrc: "/mockups/calculadora-preco-rapida/social-cover.svg",
+    coverSrc: "/capas/calculadora-preco-rapida.jpg",
     problem: {
       title: "Preço no chute é aposta",
       subtitle: "Sinais de alerta",
@@ -558,7 +558,7 @@ export const TIER_ZERO_CATALOG: Record<string, TierZeroProduct> = {
     ctaText: "Quero os roteiros — R$ 7",
     socialProofLine: "Para quem trava na hora de apertar gravar.",
     finalCtaTitle: "Pronto para gravar o primeiro roteiro?",
-    coverSrc: "/mockups/15-ideias-reels-segmento/social-cover.svg",
+    coverSrc: "/capas/15-ideias-reels-segmento.jpg",
     problem: {
       title: "Bloqueio de gravação",
       subtitle: "O celular está na mão — falta o roteiro",
@@ -620,7 +620,7 @@ export const TIER_ZERO_CATALOG: Record<string, TierZeroProduct> = {
     ctaText: "Quero o template — R$ 7",
     socialProofLine: "Para quem tem bio vazia ou confusa.",
     finalCtaTitle: "Pronto para reescrever a bio?",
-    coverSrc: "/mockups/template-bio-instagram/social-cover.svg",
+    coverSrc: "/capas/template-bio-instagram.jpg",
     problem: {
       title: "Bio confusa perde visita",
       subtitle: "Antes do primeiro post, a bio fala por você",
@@ -677,7 +677,7 @@ export const TIER_ZERO_CATALOG: Record<string, TierZeroProduct> = {
     ctaText: "Quero o pack — R$ 7",
     socialProofLine: "Para quem só usa as mesmas hashtags genéricas.",
     finalCtaTitle: "Pronto para testar hashtags por nicho?",
-    coverSrc: "/mockups/pack-50-hashtags-nicho/social-cover.svg",
+    coverSrc: "/capas/pack-50-hashtags-nicho.jpg",
     problem: {
       title: "Hashtag genérica não é estratégia",
       subtitle: "Comece organizado — depois meça",
@@ -734,7 +734,7 @@ export const TIER_ZERO_CATALOG: Record<string, TierZeroProduct> = {
     ctaText: "Quero o método — R$ 67",
     socialProofLine: "Para negócios locais que querem conversar com ética e clareza.",
     finalCtaTitle: "Pronto para um WhatsApp mais profissional?",
-    coverSrc: "/mockups/whatsapp-etico-negocios/social-cover.svg",
+    coverSrc: "/capas/whatsapp-etico-negocios.jpg",
     problem: {
       title: "Você reconhece alguma dessas situações?",
       subtitle: "Se sim, este material foi pensado para o seu contexto",
@@ -843,7 +843,7 @@ export const TIER_ZERO_CATALOG: Record<string, TierZeroProduct> = {
     ctaText: "Quero o BalcãoIA Pro — R$ 97",
     socialProofLine: "Para quem quer padronizar atendimento com apoio de IA.",
     finalCtaTitle: "Pronto para atendimento assistido com método?",
-    coverSrc: "/mockups/checklist-atendimento-local/social-cover.svg",
+    coverSrc: "/capas/checklist-atendimento-local.jpg",
     problem: {
       title: "Atendimento lento e sem padrão?",
       subtitle: "A IA não resolve bagunça — organiza o que já existe",
@@ -934,7 +934,7 @@ export const TIER_ZERO_CATALOG: Record<string, TierZeroProduct> = {
     ctaText: "Quero o FOCO 14 — R$ 47",
     socialProofLine: "Para quem termina o dia cheio e sem evidência do que avançou.",
     finalCtaTitle: "Pronto para 14 dias de prática com evidência?",
-    coverSrc: "/mockups/foco-14/social-cover.svg",
+    coverSrc: "/capas/foco-14.jpg",
     problem: {
       title: "Dia cheio, pouca evidência",
       subtitle: "O problema não é só ‘falta de disciplina’",
@@ -1012,7 +1012,7 @@ export const TIER_ZERO_CATALOG: Record<string, TierZeroProduct> = {
     ctaText: "Quero o guia — R$ 57",
     socialProofLine: "Para quem já usa ChatGPT e recebe resposta genérica.",
     finalCtaTitle: "Pronto para prompts com contexto de negócio?",
-    coverSrc: "/mockups/chatgpt-empreendedores/social-cover.svg",
+    coverSrc: "/capas/chatgpt-empreendedores.jpg",
     problem: {
       title: "Resposta genérica não serve",
       subtitle: "O problema costuma ser o prompt, não a ferramenta",
@@ -1079,7 +1079,7 @@ export const TIER_ZERO_CATALOG: Record<string, TierZeroProduct> = {
     ctaText: "Quero a masterclass — R$ 77",
     socialProofLine: "Para negócios locais que postam sem estratégia.",
     finalCtaTitle: "Pronto para uma rotina de conteúdo sustentável?",
-    coverSrc: "/mockups/instagram-negocios-locais-ia/social-cover.svg",
+    coverSrc: "/capas/instagram-negocios-locais-ia.jpg",
     problem: {
       title: "Postar sem estratégia cansa",
       subtitle: "Consistência vence criatividade esporádica",
@@ -1146,7 +1146,7 @@ export const TIER_ZERO_CATALOG: Record<string, TierZeroProduct> = {
     ctaText: "Quero a masterclass — R$ 57",
     socialProofLine: "Para quem quer aparecer melhor nas buscas locais com perfil bem cuidado.",
     finalCtaTitle: "Pronto para completar e manter o perfil?",
-    coverSrc: "/mockups/google-meu-negocio-masterclass/social-cover.svg",
+    coverSrc: "/capas/google-meu-negocio-masterclass.jpg",
     problem: {
       title: "Perfil incompleto custa clientes",
       subtitle: "Manutenção importa mais que truque",

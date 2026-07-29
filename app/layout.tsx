@@ -80,14 +80,23 @@ export const metadata: Metadata = {
 const orgJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "BalcãoIA Local",
+  name: "BalcãoIA",
   url: SITE.url,
   logo: `${SITE.url}/logo.png`,
-  description: "Organização de atendimento e IA assistida para negócios locais.",
+  description:
+    "Inteligência artificial assistida e ética para negócios locais brasileiros. Conteúdo educativo — sem promessa de renda.",
   email: SITE.supportEmail,
+  foundingDate: "2026",
+  areaServed: "BR",
   address: {
     "@type": "PostalAddress",
     addressCountry: "BR",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "customer service",
+    availableLanguage: "Portuguese",
+    email: SITE.supportEmail,
   },
 };
 

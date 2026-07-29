@@ -30,8 +30,29 @@ export default async function BlogPostPage({ params }: Props) {
   const post = getPost(slug);
   if (!post) notFound();
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.description,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: { "@type": "Organization", name: "BalcãoIA" },
+    publisher: {
+      "@type": "Organization",
+      name: "BalcãoIA",
+      logo: { "@type": "ImageObject", url: `${SITE.url}/logo.png` },
+    },
+    mainEntityOfPage: `${SITE.url}/blog/${slug}`,
+    inLanguage: "pt-BR",
+  };
+
   return (
     <div className="flex min-h-screen flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <MarketingHeader />
       <main className="container-app max-w-3xl flex-1 py-14">
         <p className="text-xs text-[var(--muted-foreground)]">{post.date}</p>

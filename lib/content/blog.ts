@@ -32,17 +32,23 @@ function loadLongPosts(): BlogPost[] {
           ? "whatsapp-etico-negocios"
           : slug.includes("whatsapp") || slug.includes("automacao")
           ? "whatsapp-etico-negocios"
-          : slug.includes("produtividade") || slug.includes("foco")
+          : slug.includes("produtividade") || slug.includes("foco") || slug.includes("aumentar-vendas")
             ? "foco-14"
-            : slug.includes("transformacao")
-              ? "programa-8-semanas-balcao"
-              : slug.includes("programadores")
-                ? "sistema-balcao-proprietario"
-                : slug.includes("atendimento")
-                  ? "workshop-ia-atendimento"
-                  : slug.includes("negocios-locais-2026")
-                    ? "checklist-atendimento-local"
-                    : "foco-14";
+            : slug.includes("google-meu-negocio")
+              ? "google-meu-negocio-masterclass"
+              : slug.includes("chatgpt")
+                ? "chatgpt-empreendedores"
+                : slug.includes("instagram")
+                  ? "instagram-negocios-locais-ia"
+                  : slug.includes("ia-para-pequenas") || slug.includes("negocios-locais-2026")
+                    ? "checklist-ia-1-hora"
+                    : slug.includes("transformacao")
+                      ? "programa-8-semanas-balcao"
+                      : slug.includes("programadores")
+                        ? "sistema-balcao-proprietario"
+                        : slug.includes("atendimento")
+                          ? "workshop-ia-atendimento"
+                          : "foco-14";
       return {
         slug,
         title: titleMatch?.[1] || slug,
