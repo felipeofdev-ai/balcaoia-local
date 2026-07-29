@@ -1,0 +1,178 @@
+[
+  {
+    "slug": "10-prompts-whatsapp-vendem",
+    "checkout": "https://pay.hotmart.com/L106925146Q",
+    "upsell_slug": "whatsapp-etico",
+    "upsell_checkout": "https://pay.hotmart.com/D106927075P",
+    "upsell_copy": "Complemente com o método WhatsApp Ético (conteúdo educativo).",
+    "downsell_slug": "template-atendimento-automatico",
+    "downsell_checkout": "https://pay.hotmart.com/T106926591V",
+    "downsell_copy": "Ou leve o Template de Atendimento Automático.",
+    "bump_slug": "whatsapp-etico"
+  },
+  {
+    "slug": "checklist-ia-1-hora",
+    "checkout": "https://pay.hotmart.com/M106925563V",
+    "upsell_slug": "balcaoia-pro",
+    "upsell_checkout": "https://pay.hotmart.com/A106927145W",
+    "upsell_copy": "Aprofunde com BalcãoIA Pro (prompts de atendimento).",
+    "downsell_slug": "template-atendimento-automatico",
+    "downsell_checkout": "https://pay.hotmart.com/T106926591V",
+    "downsell_copy": "Ou o Template de Atendimento Automático.",
+    "bump_slug": "balcaoia-pro"
+  },
+  {
+    "slug": "30-posts-prontos-ia",
+    "checkout": "https://pay.hotmart.com/H106926380Y",
+    "upsell_slug": "instagram-negocios-locais-ia",
+    "upsell_checkout": "https://pay.hotmart.com/M106927276N",
+    "upsell_copy": "Estratégia Instagram para negócios locais.",
+    "downsell_slug": "15-ideias-reels-segmento",
+    "downsell_checkout": "https://pay.hotmart.com/B106926872H",
+    "downsell_copy": "Ou 15 ideias de Reels.",
+    "bump_slug": "instagram-negocios-locais-ia"
+  },
+  {
+    "slug": "template-atendimento-automatico",
+    "checkout": "https://pay.hotmart.com/T106926591V",
+    "upsell_slug": "balcaoia-pro",
+    "upsell_checkout": "https://pay.hotmart.com/A106927145W",
+    "upsell_copy": "BalcãoIA Pro para ampliar prompts.",
+    "downsell_slug": "checklist-ia-1-hora",
+    "downsell_checkout": "https://pay.hotmart.com/M106925563V",
+    "downsell_copy": "Ou Checklist IA em 1 hora.",
+    "bump_slug": "balcaoia-pro"
+  },
+  {
+    "slug": "mini-guia-gmn-30min",
+    "checkout": "https://pay.hotmart.com/P106926720K",
+    "upsell_slug": "google-meu-negocio-masterclass",
+    "upsell_checkout": "https://pay.hotmart.com/X106927314R",
+    "upsell_copy": "Masterclass Google Meu Negócio.",
+    "downsell_slug": "20-legendas-instagram",
+    "downsell_checkout": "https://pay.hotmart.com/T106926801C",
+    "downsell_copy": "Ou 20 legendas Instagram.",
+    "bump_slug": "google-meu-negocio-masterclass"
+  },
+  {
+    "slug": "20-legendas-instagram",
+    "checkout": "https://pay.hotmart.com/T106926801C",
+    "upsell_slug": "instagram-negocios-locais-ia",
+    "upsell_checkout": "https://pay.hotmart.com/M106927276N",
+    "upsell_copy": "Rotina completa de Instagram local.",
+    "downsell_slug": "15-ideias-reels-segmento",
+    "downsell_checkout": "https://pay.hotmart.com/B106926872H",
+    "downsell_copy": "Ou 15 ideias de Reels.",
+    "bump_slug": "instagram-negocios-locais-ia"
+  },
+  {
+    "slug": "calculadora-preco-rapida",
+    "checkout": "https://pay.hotmart.com/S106926102D",
+    "upsell_slug": "foco-14",
+    "upsell_checkout": "https://pay.hotmart.com/Q106926271V",
+    "upsell_copy": "FOCO 14 para operação com evidência.",
+    "downsell_slug": "checklist-ia-1-hora",
+    "downsell_checkout": "https://pay.hotmart.com/M106925563V",
+    "downsell_copy": "Ou Checklist IA.",
+    "bump_slug": "foco-14"
+  },
+  {
+    "slug": "15-ideias-reels-segmento",
+    "checkout": "https://pay.hotmart.com/B106926872H",
+    "upsell_slug": "instagram-negocios-locais-ia",
+    "upsell_checkout": "https://pay.hotmart.com/M106927276N",
+    "upsell_copy": "Instagram negócios locais com IA.",
+    "downsell_slug": "20-legendas-instagram",
+    "downsell_checkout": "https://pay.hotmart.com/T106926801C",
+    "downsell_copy": "Ou 20 legendas.",
+    "bump_slug": "instagram-negocios-locais-ia"
+  },
+  {
+    "slug": "template-bio-instagram",
+    "checkout": "https://pay.hotmart.com/U106926929L",
+    "upsell_slug": "instagram-negocios-locais-ia",
+    "upsell_checkout": "https://pay.hotmart.com/M106927276N",
+    "upsell_copy": "Estratégia Instagram completa.",
+    "downsell_slug": "20-legendas-instagram",
+    "downsell_checkout": "https://pay.hotmart.com/T106926801C",
+    "downsell_copy": "Ou 20 legendas.",
+    "bump_slug": "20-legendas-instagram"
+  },
+  {
+    "slug": "pack-50-hashtags-nicho",
+    "checkout": "https://pay.hotmart.com/J106927000T",
+    "upsell_slug": "instagram-negocios-locais-ia",
+    "upsell_checkout": "https://pay.hotmart.com/M106927276N",
+    "upsell_copy": "Instagram local com IA.",
+    "downsell_slug": "15-ideias-reels-segmento",
+    "downsell_checkout": "https://pay.hotmart.com/B106926872H",
+    "downsell_copy": "Ou ideias de Reels.",
+    "bump_slug": "15-ideias-reels-segmento"
+  },
+  {
+    "slug": "whatsapp-etico",
+    "checkout": "https://pay.hotmart.com/D106927075P",
+    "upsell_slug": "balcaoia-pro",
+    "upsell_checkout": "https://pay.hotmart.com/A106927145W",
+    "upsell_copy": "Combine com BalcãoIA Pro.",
+    "downsell_slug": "10-prompts-whatsapp-vendem",
+    "downsell_checkout": "https://pay.hotmart.com/L106925146Q",
+    "downsell_copy": "Ou os 10 prompts WhatsApp.",
+    "bump_slug": "10-prompts-whatsapp-vendem"
+  },
+  {
+    "slug": "balcaoia-pro",
+    "checkout": "https://pay.hotmart.com/A106927145W",
+    "upsell_slug": "whatsapp-etico",
+    "upsell_checkout": "https://pay.hotmart.com/D106927075P",
+    "upsell_copy": "Combine com WhatsApp Ético.",
+    "downsell_slug": "template-atendimento-automatico",
+    "downsell_checkout": "https://pay.hotmart.com/T106926591V",
+    "downsell_copy": "Ou Template de Atendimento.",
+    "bump_slug": "checklist-ia-1-hora"
+  },
+  {
+    "slug": "foco-14",
+    "checkout": "https://pay.hotmart.com/Q106926271V",
+    "upsell_slug": "whatsapp-etico",
+    "upsell_checkout": "https://pay.hotmart.com/D106927075P",
+    "upsell_copy": "Organização + conversa ética no WhatsApp.",
+    "downsell_slug": "calculadora-preco-rapida",
+    "downsell_checkout": "https://pay.hotmart.com/S106926102D",
+    "downsell_copy": "Ou Calculadora de Preço.",
+    "bump_slug": "checklist-ia-1-hora"
+  },
+  {
+    "slug": "chatgpt-empreendedores",
+    "checkout": "https://pay.hotmart.com/D106927243G",
+    "upsell_slug": "balcaoia-pro",
+    "upsell_checkout": "https://pay.hotmart.com/A106927145W",
+    "upsell_copy": "IA aplicada ao atendimento (BalcãoIA Pro).",
+    "downsell_slug": "checklist-ia-1-hora",
+    "downsell_checkout": "https://pay.hotmart.com/M106925563V",
+    "downsell_copy": "Ou Checklist IA 1 hora.",
+    "bump_slug": "balcaoia-pro"
+  },
+  {
+    "slug": "instagram-negocios-locais-ia",
+    "checkout": "https://pay.hotmart.com/M106927276N",
+    "upsell_slug": "whatsapp-etico",
+    "upsell_checkout": "https://pay.hotmart.com/D106927075P",
+    "upsell_copy": "Fechar conversa no WhatsApp com ética.",
+    "downsell_slug": "30-posts-prontos-ia",
+    "downsell_checkout": "https://pay.hotmart.com/H106926380Y",
+    "downsell_copy": "Ou 30 posts prontos.",
+    "bump_slug": "15-ideias-reels-segmento"
+  },
+  {
+    "slug": "google-meu-negocio-masterclass",
+    "checkout": "https://pay.hotmart.com/X106927314R",
+    "upsell_slug": "instagram-negocios-locais-ia",
+    "upsell_checkout": "https://pay.hotmart.com/M106927276N",
+    "upsell_copy": "Presença no Instagram local.",
+    "downsell_slug": "mini-guia-gmn-30min",
+    "downsell_checkout": "https://pay.hotmart.com/P106926720K",
+    "downsell_copy": "Ou mini-guia GMN 30 min.",
+    "bump_slug": "mini-guia-gmn-30min"
+  }
+]
