@@ -29,9 +29,9 @@
 ### Hotmart
 - **16/16** com `checkout_url` e status `vendas_ativas`
 - Capas premium OK (≥200KB) e PDFs OK
-- Script CDP overnight: `hotmart-factory/src/overnight_bumps_recuperador.py`
-- Relatório: `hotmart-factory/logs/OVERNIGHT-HOTMART.md` (quando o job terminar)
-- UI de Recuperador usa `<hot-select>` — automação tenta selecionar produto a produto; **confirmação visual ainda recomendada**
+- CDP overnight percorreu os 16 SKUs: **Checkout/Order Bump UI aberta** em todos; **seleção automática do `<hot-select>` do Recuperador não concluiu** (shadow DOM) — ativação final é **manual oferta a oferta**
+- Relatório: `docs/OVERNIGHT-HOTMART.md` · screenshots em `hotmart-factory/logs/overnight/`
+- Trilhas de bump sugeridas documentadas no relatório
 
 ---
 
