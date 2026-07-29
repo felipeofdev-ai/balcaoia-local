@@ -3,16 +3,21 @@ import { notFound } from "next/navigation";
 import { ProductSalesPage } from "@/components/marketing/ProductSalesPage";
 import { getAllEbookIdeas, getEbookBySlug, TOP_NICHES_2026 } from "@/lib/market-research/trends";
 import { getVoid9BySlug } from "@/lib/market-research/void9-portfolio";
+import { resolveStudioSlug } from "@/lib/config/lote1-checkouts";
 import { SITE } from "@/lib/config/site";
 
 type Props = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
-  return getAllEbookIdeas().map((e) => ({ slug: e.slug }));
+  const base = getAllEbookIdeas().map((e) => ({ slug: e.slug }));
+  // Aliases Hotmart → Studio (ex.: whatsapp-etico)
+  const aliases = ["whatsapp-etico", "balcaoia-pro"].map((slug) => ({ slug }));
+  return [...base, ...aliases];
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug: raw } = await params;
+  const slug = resolveStudioSlug(raw);
   const idea = getEbookBySlug(slug);
   if (!idea) return { title: "Produto" };
   return {
@@ -32,7 +37,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function ProdutoPage({ params }: Props) {
-  const { slug } = await params;
+  const { slug: raw } = await params;
+  const slug = resolveStudioSlug(raw);
   const idea = getEbookBySlug(slug);
   if (!idea) notFound();
   const niche = TOP_NICHES_2026.find((n) => n.id === idea.nicheId);

@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { formatBRL } from "@/lib/config/pricing";
 import { HOTMART } from "@/lib/config/hotmart";
+import { resolveLote1Checkout } from "@/lib/config/lote1-checkouts";
 import { SITE } from "@/lib/config/site";
 import type { EbookIdea } from "@/lib/market-research/trends";
 import { getVoid9BySlug } from "@/lib/market-research/void9-portfolio";
@@ -22,6 +23,8 @@ function resolveCheckout(idea: EbookIdea): string | null {
   if (idea.checkoutEnvKey && process.env[idea.checkoutEnvKey]) {
     return process.env[idea.checkoutEnvKey] as string;
   }
+  const lote1 = resolveLote1Checkout(idea.slug);
+  if (lote1) return lote1;
   const fallback = HOTMART.checkoutUrl;
   if (fallback && !fallback.includes("SEU_CHECKOUT")) {
     return fallback;
@@ -122,6 +125,15 @@ export function ProductSalesPage({ idea, complianceNote }: Props) {
             </h1>
             <p className="max-w-2xl text-lg text-white/80">{idea.subtitle}</p>
             <p className="max-w-2xl text-sm text-white/70">{idea.promise}</p>
+            <div className="flex flex-wrap items-baseline justify-center gap-3">
+              <span className="text-sm text-white/45 line-through">{formatBRL(table)}</span>
+              <span className="text-4xl font-extrabold tracking-tight sm:text-5xl">
+                {formatBRL(idea.price)}
+              </span>
+            </div>
+            <p className="text-xs text-white/55">
+              Referência educativa · PIX, cartão e boleto conforme checkout Hotmart
+            </p>
             <div className="flex flex-col gap-3 sm:flex-row">
               {checkout ? (
                 <a
@@ -152,12 +164,35 @@ export function ProductSalesPage({ idea, complianceNote }: Props) {
                 Quero afiliar
               </Link>
             </div>
-            <p className="flex items-center gap-2 text-xs text-white/60">
-              <ShieldCheck className="h-4 w-4 text-[var(--brand-amber)]" />
-              Garantia de {void9?.guaranteeDays ?? HOTMART.guaranteeDays} dias · Sem promessa de renda
+            <p className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-white/60">
+              <span className="inline-flex items-center gap-1.5">
+                <ShieldCheck className="h-4 w-4 text-[var(--brand-amber)]" />
+                Garantia de {void9?.guaranteeDays ?? HOTMART.guaranteeDays} dias
+              </span>
+              <span>Acesso após confirmação</span>
+              <span>Sem promessa de renda</span>
             </p>
           </div>
         </section>
+
+        <div className="sticky top-0 z-40 border-b border-[var(--border)] bg-white/95 backdrop-blur">
+          <div className="container-app flex h-14 items-center justify-between gap-3">
+            <div className="min-w-0">
+              <p className="truncate text-sm font-bold text-[var(--brand-graphite)]">{idea.title}</p>
+              <p className="text-xs text-[var(--muted-foreground)]">{formatBRL(idea.price)}</p>
+            </div>
+            {checkout ? (
+              <a
+                href={checkout}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(buttonVariants({ variant: "amber", size: "sm" }), "shrink-0")}
+              >
+                Garantir acesso
+              </a>
+            ) : null}
+          </div>
+        </div>
 
         <section className="border-b border-[var(--border)] bg-white py-6">
           <div className="container-app flex flex-wrap items-center justify-center gap-6 text-center text-sm text-[var(--muted-foreground)]">

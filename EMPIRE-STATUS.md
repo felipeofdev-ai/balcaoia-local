@@ -1,32 +1,32 @@
 # EMPIRE STATUS — BalcãoIA / VOID-9
 
-**Atualizado:** 2026-07-28
+**Atualizado:** 2026-07-29 (operação qualidade Fortune 500)
 
-## Infraestrutura
+## LOTE 1
 
 | Item | Status |
 |------|--------|
-| Webhook | ✅ online (`/api/webhook`) |
-| HOTTOK | ✅ `hottok_configured: true` (domínio + Vercel) |
-| APP_SECRET | ✅ |
-| OAuth Hotmart | ✅ `access_token` HTTP 200 |
-| Criar produto via API | ❌ **painel obrigatório** |
-| Checkout URL | ❌ aguardando links do painel |
+| 16 produtos Vendas ativas | ✅ |
+| Checkouts reais no Studio | ✅ (`lib/config/lote1-checkouts.ts` + env) |
+| Capas Fortune 500 (JPG 2x) | ✅ `hotmart-factory/assets/capas/*.jpg` (~500KB+) |
+| Páginas `/produtos/[slug]` | ✅ sticky CTA + preço + aliases Hotmart |
+| Blueprint PDF | ✅ |
+| Preços no checkout Hotmart | ⚠️ parcial — ver abaixo |
+| Cupons / order bump | ❌ pendente (CDP/VLC instável) |
 
-## Etapas desta operação
+## Correções de preço (painel)
 
-| Etapa | Status |
-|-------|--------|
-| 1 HOTTOK + deploy | ✅ |
-| 2 Teste OAuth | ✅ access_token OK |
-| 3 Guia 15 produtos | ✅ `docs/guia-criar-produtos-hotmart.md` |
-| 4 Links reais nas páginas | ⏳ bloqueado até criar no painel |
-| 5 FOCO 14 aprofundado | ✅ ~15.1k palavras + bônus + ads |
-| 6 Commit/push/deploy | em andamento |
+| Produto | ID | Alvo | Status |
+|---------|-----|------|--------|
+| 30 Posts | 8210879 | R$ 12 | ⚠️ ainda precisa confirmar / criar oferta |
+| Template Atendimento | 8210984 | R$ 14 | ✅ oferta criada via API (BRL:14) |
+| Calculadora | 8210744 | R$ 9 | ✅ oferta criada via API (BRL:9) |
 
-## Próximo passo humano
+## Studio deploy
 
-1. Abrir https://app.hotmart.com/products/add
-2. Criar **FOCO 14** copiando de `docs/guia-criar-produtos-hotmart.md`
-3. Colar o link de checkout no chat
-4. Eu configuro `NEXT_PUBLIC_HOTMART_CHECKOUT_FOCO14` + redeploy
+- Build: ✅ `npm run build`
+- Capas preview: `hotmart-factory/logs/preview-capas/{a1,b1,j1}.html`
+
+## Bloqueio técnico
+
+Shell Hotmart (`app.hotmart.com`) está em loading infinito no conteúdo (iframe VLC). Reiniciar Chrome com `--remote-debugging-port=9222` para: subir capas no painel, cupons, order bumps e fechar oferta R$12 do 30 Posts.
