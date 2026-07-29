@@ -1,32 +1,29 @@
 # EMPIRE STATUS — BalcãoIA / VOID-9
 
-**Atualizado:** 2026-07-29 (operação qualidade Fortune 500)
+**Atualizado:** 2026-07-29 (auditoria Blueprint Máximo Hotmart)
 
 ## LOTE 1
 
 | Item | Status |
 |------|--------|
 | 16 produtos Vendas ativas | ✅ |
-| Checkouts reais no Studio | ✅ (`lib/config/lote1-checkouts.ts` + env) |
-| Capas Fortune 500 (JPG 2x) | ✅ `hotmart-factory/assets/capas/*.jpg` (~500KB+) |
-| Páginas `/produtos/[slug]` | ✅ sticky CTA + preço + aliases Hotmart |
-| Blueprint PDF | ✅ |
-| Preços no checkout Hotmart | ⚠️ parcial — ver abaixo |
-| Cupons / order bump | ❌ pendente (CDP/VLC instável) |
+| Checkouts no Studio | ✅ |
+| Capas Fortune locais | ✅ |
+| Páginas `/produtos/[slug]` | ✅ |
+| Inventário ferramentas Hotmart | ✅ ver `docs/hotmart-features…` + auditoria |
+| Preços hotlink (3 SKUs) | ❌ ainda errados |
+| Order Bump / Funil / Recuperador | ⚠️ disponíveis na conta — config manual/parcial |
+| Cupons % corretos | ⚠️ verificar |
 
-## Correções de preço (painel)
+## Ferramentas liberadas na conta (amostra)
 
-| Produto | ID | Alvo | Status |
-|---------|-----|------|--------|
-| 30 Posts | 8210879 | R$ 12 | ⚠️ ainda precisa confirmar / criar oferta |
-| Template Atendimento | 8210984 | R$ 14 | ✅ oferta criada via API (BRL:14) |
-| Calculadora | 8210744 | R$ 9 | ✅ oferta criada via API (BRL:9) |
+Order Bump · Checkout Builder · Funil · Recuperadores · Recomenda · **Agente de vendas IA** · Exit pop-up · Pixel · Webhook · Club · DRM Social · Material afiliados …
 
-## Studio deploy
+## P0
 
-- Build: ✅ `npm run build`
-- Capas preview: `hotmart-factory/logs/preview-capas/{a1,b1,j1}.html`
+1. Corrigir hotlinks R$12 / R$14 / R$9  
+2. Order Bumps no Checkout Builder  
+3. Recuperador por oferta  
+4. Funil micro→flagship  
 
-## Bloqueio técnico
-
-Shell Hotmart (`app.hotmart.com`) está em loading infinito no conteúdo (iframe VLC). Reiniciar Chrome com `--remote-debugging-port=9222` para: subir capas no painel, cupons, order bumps e fechar oferta R$12 do 30 Posts.
+Detalhe: `hotmart-factory/logs/RELATORIO-ATIVACAO.md` · `docs/CHECKLIST-BLUEPRINT-FINAL.md`

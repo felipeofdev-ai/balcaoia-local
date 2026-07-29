@@ -1,0 +1,240 @@
+Hotmart
+FD
+Buscar
+Home
+Produtos
+Meus produtos
+Área de membros
+Afiliar-se a um produto
+Marketing
+Visão geral
+Criação de páginas
+E-mail marketing
+Vendas
+Gestão de vendas
+Minhas vendas
+Gestão de assinaturas
+Gestão de Produtos Físicos
+Gestão do Parcelado Hotmart
+Reembolsos
+Emissão de Nota Fiscal (eNotas)
+Gestão de recebíveis
+Carteira
+Saldo
+Extrato
+Movimentações do mês
+Saques
+Antecipações
+Relatórios
+Vendas
+Recorrências
+Minhas análises
+Parcerias
+Central de colaboradores
+Afiliados
+Chat com Afiliados
+Ferramentas
+Impulsione suas vendas
+Gerencie seu negócio
+Ver todas
+Ferramentas
+
+Soluções para facilitar seu dia a dia.
+
+Impulsione suas vendas
+
+Descubra ferramentas que ajudam a divulgar seus produtos e venda mais
+
+Ver ferramentas
+Recupere suas vendas
+
+Resgate vendas que seriam perdidas e melhore seus resultados
+
+Ver ferramentas
+Fale com seu público
+
+Melhore a comunicação com seu público e conquiste mais vendas
+
+Ver ferramentas
+Gerencie seu negócio
+
+Acompanhe seus resultados e gerencie a evolução do seu negócio
+
+Ver ferramentas
+TODAS AS FERRAMENTAS
+Parcelado Hotmart
+Novo
+
+Método de pagamento que permite parcelamento com PIX, boleto ou cartão de crédito recorrente.
+
+Exit pop-up
+Novo
+
+Diminua o abandono de carrinho, impulsione a taxa de conversão e acompanhe os resultados
+
+Hotmart Player
+(Biblioteca de vídeos)
+Novo
+
+Acesse todos seus conteúdos em um só lugar
+
+Agente de vendas
+Novo
+
+O agente de vendas IA que conversa com seus leads e vende por você.
+
+Programa de Afiliados
+
+Permita que outras pessoas vendam seus produtos em troca de comissões
+
+Páginas dinâmicas (Afiliados)
+
+Cadastre URLs e permita que os Afiliados criem um link próprio para divulgar seus produtos
+
+Páginas alternativas (Afiliados)
+
+Crie páginas de vendas alternativas para ajudar seu afiliado a divulgar o seu produto
+
+Central de Colaboradores
+
+Dê permissões personalizadas para sua equipe
+
+Recomenda
+
+Visualize as recomendações automáticas da Hotmart e gerencie sua esteira.
+
+Order Bump
+
+Adicione uma oferta extra no momento da compra e aumente o valor médio de cada pedido.
+
+Material para divulgação
+
+Cadastre imagens, vídeos e materiais para auxiliar na venda do seu afiliado
+
+Proteção para ebooks (DRM Social)
+
+Imprima informações pessoais do comprador no PDF/ePub, inibindo pirataria
+
+Email marketing
+
+Envie emails para vários leads de uma vez, de acordo com o comportamento deles na Hotmart
+
+eNotas
+
+Emita notas fiscais eletrônicas dos seus produtos automaticamente com o eNotas
+
+Hotmart Ask
+
+Crie formulários para conhecer a opinião dos seus clientes sobre seus produtos
+
+Integrações
+
+Encontre provedores externos e conecte-os a ferramentas disponíveis na Hotmart
+
+Kajabi
+
+Faça a integração da plataforma de membership Kajabi à Hotmart
+
+Gerenciador de links
+
+Diminua, personalize e adicione parâmetros de campanha aos seus links
+
+Gestão automática de contatos (ListBoss)
+
+Conecte seu provedor de email marketing à sua conta Hotmart e organize seus leads
+
+Criador de Páginas
+
+Crie, edite e personalize uma página de acordo com a sua estratégia
+
+Aparência da página de pagamento
+
+Personalize sua página de pagamento com vídeos, imagens, Order Bump, renovação antecipada e outros recursos.
+
+Configurações de pagamento
+
+Edite opções de pagamento, dados solicitados e ative e desative as vendas
+
+Widget da página de pagamento
+
+Insira em sua própria página a ferramenta de pagamento da Hotmart
+
+Funil de Vendas
+
+Monte uma sequência de preços para automatizar a comunicação com o cliente
+
+Envio de relatórios
+
+Receba relatórios sobre suas atividades na Hotmart por email
+
+Pixel de rastreamento
+
+Monitore o comportamento dos seus consumidores e dos seus anúncios
+
+Webhook (API e notificações)
+
+Configure integrações externas e avisos de vendas com a API da Hotmart
+
+Webinário
+
+Fale ao vivo com sua audiência, capture mais leads e aumente as chances de venda
+
+WhatsApp
+
+Use o Hotmart Send para acessar e organizar os contatos de seus leads e clientes. Conecte-se com eles diretamente pelo WhatsApp e potencialize sua comunicação!
+
+Recuperador automático de vendas
+
+Aumente até 50% de suas vendas, permitindo o parcelamento de compras recusadas por limite insuficiente
+
+Recuperador de assinaturas atrasadas
+
+Envie emails em massa para recuperar assinaturas que possuem a última recorrência (ou mais) em atraso
+
+Recuperador de vendas com pagamento híbrido
+
+Recupere vendas dividindo as compras recusadas por limite insuficiente usando cartão de crédito e Pix
+
+Automações
+
+Recupere mais vendas no checkout, organizando e automatizando diálogos com seus clientes
+
+Documentação da API
+
+Acesse nossa documentação de API e veja os Endpoints disponiveis para integração.
+
+Teachable
+
+Faça a integração da área de membros da Teachable com a Hotmart.
+
+Relatórios exportados
+
+Encontre e baixe novamente todas as suas exportações recentes.
+
+Hotmart Club (área de membros)
+
+Organize seus produtos em uma área de membros completa e confiável.
+
+Negociação de parcelas
+
+Diminua a taxa de inadimplência oferecendo acordos para pagamento de parcelas em atraso ou antecipando cobranças de seus clientes
+
+WhatsApp para suporte de pagamentos
+
+Diminua a taxa de desistência oferecendo suporte pelo WhatsApp em caso de problemas para finalizar a compra
+
+Estratégia de retenção
+
+Envie propostas de renovação antecipada de assinaturas.
+
+Coproduções
+
+Cadastre parcerias de negócio, divida o lucro das vendas e configure as regras
+
+Credenciais Hotmart
+
+Crie e gerencie suas credenciais para conectar suas aplicações, além de criar outras
+
+Estratégias de vendas
+
+Consulte informações essenciais para aprimorar suas táticas de vendas e maximizar os seus resultados.
