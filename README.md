@@ -1,32 +1,34 @@
-# BalcãoIA Studio
+﻿> **Live demo:** https://balcaoia-studio.vercel.app
 
-> ## ⚠️ Aviso importante (leia antes de usar)
+# BalcÃ£oIA Studio
+
+> ## âš ï¸ Aviso importante (leia antes de usar)
 >
-> O **BalcãoIA Studio** é uma ferramenta **educacional e de produtividade** para ajudar
-> negócios locais a organizar catálogo, base de conhecimento e scripts de atendimento
-> com apoio de Inteligência Artificial.
+> O **BalcÃ£oIA Studio** Ã© uma ferramenta **educacional e de produtividade** para ajudar
+> negÃ³cios locais a organizar catÃ¡logo, base de conhecimento e scripts de atendimento
+> com apoio de InteligÃªncia Artificial.
 >
-> - **Não garantimos** resultados de vendas, faturamento, aprovação ou qualquer
+> - **NÃ£o garantimos** resultados de vendas, faturamento, aprovaÃ§Ã£o ou qualquer
 >   resultado financeiro.
-> - **Não fazemos** diagnósticos médicos, veterinários, jurídicos ou financeiros —
->   todo o conteúdo gerado por IA deve ser **revisado por um humano** antes de ser
+> - **NÃ£o fazemos** diagnÃ³sticos mÃ©dicos, veterinÃ¡rios, jurÃ­dicos ou financeiros â€”
+>   todo o conteÃºdo gerado por IA deve ser **revisado por um humano** antes de ser
 >   usado com clientes reais.
-> - **Não somos afiliados** a WhatsApp, Meta, Google, OpenAI, Anthropic, Hotmart ou
+> - **NÃ£o somos afiliados** a WhatsApp, Meta, Google, OpenAI, Anthropic, Hotmart ou
 >   quaisquer outras marcas eventualmente citadas.
-> - Este produto **não usa e não suporta** automações não oficiais de WhatsApp
+> - Este produto **nÃ£o usa e nÃ£o suporta** automaÃ§Ãµes nÃ£o oficiais de WhatsApp
 >   (OpenWA, Baileys, Venom, Evolution API, WA-Automate, scraping via QR Code).
 >   Veja [Regras de compliance](#regras-de-compliance) abaixo.
 >
-> Consulte também `/disclaimer`, `/termos-de-uso` e `/politica-de-privacidade` no app.
+> Consulte tambÃ©m `/disclaimer`, `/termos-de-uso` e `/politica-de-privacidade` no app.
 
 ---
 
-## Sumário
+## SumÃ¡rio
 
 - [Stack](#stack)
-- [Instalação](#instalação)
-- [Configuração do Supabase](#configuração-do-supabase)
-- [Variáveis de ambiente](#variáveis-de-ambiente)
+- [InstalaÃ§Ã£o](#instalaÃ§Ã£o)
+- [ConfiguraÃ§Ã£o do Supabase](#configuraÃ§Ã£o-do-supabase)
+- [VariÃ¡veis de ambiente](#variÃ¡veis-de-ambiente)
 - [Rodando localmente](#rodando-localmente)
 - [Testes](#testes)
 - [Deploy na Vercel](#deploy-na-vercel)
@@ -45,41 +47,41 @@
 - **Framework:** [Next.js 15](https://nextjs.org) (App Router, React 19, TypeScript, Turbopack)
 - **Estilo:** Tailwind CSS 4
 - **Banco de dados:** Supabase (Postgres + Auth), com **modo demo sem Supabase**
-  (dados em `localStorage` no navegador / memória no servidor)
-- **Validação:** Zod
-- **IA:** provedor plugável — Mock (padrão, sem custo), OpenAI, Anthropic ou Gemini
-- **E-mail transacional:** Resend (com modo "log" quando não configurado)
-- **Exportação:** Markdown nativo e PDF via `jsPDF`
+  (dados em `localStorage` no navegador / memÃ³ria no servidor)
+- **ValidaÃ§Ã£o:** Zod
+- **IA:** provedor plugÃ¡vel â€” Mock (padrÃ£o, sem custo), OpenAI, Anthropic ou Gemini
+- **E-mail transacional:** Resend (com modo "log" quando nÃ£o configurado)
+- **ExportaÃ§Ã£o:** Markdown nativo e PDF via `jsPDF`
 - **Testes:** Vitest
 
-## Instalação
+## InstalaÃ§Ã£o
 
-Pré-requisitos: Node.js 20+ e npm.
+PrÃ©-requisitos: Node.js 20+ e npm.
 
 ```bash
 npm install
 ```
 
-## Configuração do Supabase
+## ConfiguraÃ§Ã£o do Supabase
 
 O projeto funciona **sem Supabase configurado** (modo demo, com dados salvos no
-navegador). Para persistência real, siga estes passos:
+navegador). Para persistÃªncia real, siga estes passos:
 
 1. Crie um projeto em [supabase.com](https://supabase.com).
-2. No SQL Editor do projeto, execute o conteúdo de
+2. No SQL Editor do projeto, execute o conteÃºdo de
    `supabase/migrations/001_initial_schema.sql` (cria tabelas, RLS e nichos
    iniciais).
 3. Copie a **Project URL**, a **anon key** e a **service_role key** do painel
-   (Settings → API) para o seu `.env.local` (veja abaixo).
-4. Configure a autenticação (e-mail/senha ou o provedor de sua preferência) em
-   Authentication → Providers.
+   (Settings â†’ API) para o seu `.env.local` (veja abaixo).
+4. Configure a autenticaÃ§Ã£o (e-mail/senha ou o provedor de sua preferÃªncia) em
+   Authentication â†’ Providers.
 
-Sem essas variáveis, as rotas de API (`/api/leads`, `/api/diagnostic`,
+Sem essas variÃ¡veis, as rotas de API (`/api/leads`, `/api/diagnostic`,
 `/api/businesses`, `/api/webhooks/hotmart`, etc.) operam em modo **mock/local**,
 retornando `{ mode: "local" }` ou `{ mode: "mock" }` e continuam funcionais para
-demonstração e desenvolvimento.
+demonstraÃ§Ã£o e desenvolvimento.
 
-## Variáveis de ambiente
+## VariÃ¡veis de ambiente
 
 Copie `.env.example` para `.env.local` e preencha o que for usar:
 
@@ -87,15 +89,15 @@ Copie `.env.example` para `.env.local` e preencha o que for usar:
 cp .env.example .env.local
 ```
 
-Nenhuma variável é obrigatória para rodar em modo demo. Principais grupos:
+Nenhuma variÃ¡vel Ã© obrigatÃ³ria para rodar em modo demo. Principais grupos:
 
-| Grupo | Variáveis | Efeito quando ausente |
+| Grupo | VariÃ¡veis | Efeito quando ausente |
 | --- | --- | --- |
 | Site | `NEXT_PUBLIC_SITE_URL` | usa `http://localhost:3000` |
-| Supabase | `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY` | modo demo (localStorage/memória) |
-| IA | `AI_PROVIDER`, `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `GEMINI_API_KEY`, `*_MODEL` | usa `MockAIProvider` (determinístico, sem custo) |
-| Hotmart | `HOTMART_HOTTOK` | webhook aceita qualquer chamada (uso só para teste local) |
-| WhatsApp Cloud API | `ENABLE_OFFICIAL_WHATSAPP_CLOUD`, `WHATSAPP_CLOUD_*` | integração oficial desativada (padrão) |
+| Supabase | `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY` | modo demo (localStorage/memÃ³ria) |
+| IA | `AI_PROVIDER`, `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `GEMINI_API_KEY`, `*_MODEL` | usa `MockAIProvider` (determinÃ­stico, sem custo) |
+| Hotmart | `HOTMART_HOTTOK` | webhook aceita qualquer chamada (uso sÃ³ para teste local) |
+| WhatsApp Cloud API | `ENABLE_OFFICIAL_WHATSAPP_CLOUD`, `WHATSAPP_CLOUD_*` | integraÃ§Ã£o oficial desativada (padrÃ£o) |
 | E-mail | `RESEND_API_KEY`, `RESEND_FROM_EMAIL` | e-mails apenas logados no console |
 
 Veja o arquivo `.env.example` para a lista completa comentada.
@@ -106,16 +108,16 @@ Veja o arquivo `.env.example` para a lista completa comentada.
 npm run dev
 ```
 
-Acesse [http://localhost:3000](http://localhost:3000). A área logada fica em
-`/app` (dashboard, negócios, wizard, simulador, exportações, configurações).
-Sem Supabase configurado, a página `/app/login` cria uma sessão de demonstração
+Acesse [http://localhost:3000](http://localhost:3000). A Ã¡rea logada fica em
+`/app` (dashboard, negÃ³cios, wizard, simulador, exportaÃ§Ãµes, configuraÃ§Ãµes).
+Sem Supabase configurado, a pÃ¡gina `/app/login` cria uma sessÃ£o de demonstraÃ§Ã£o
 baseada em cookie local.
 
-Outros comandos úteis:
+Outros comandos Ãºteis:
 
 ```bash
-npm run build   # build de produção (Turbopack)
-npm run start   # sobe o build de produção
+npm run build   # build de produÃ§Ã£o (Turbopack)
+npm run start   # sobe o build de produÃ§Ã£o
 npm run lint    # ESLint
 ```
 
@@ -123,32 +125,32 @@ npm run lint    # ESLint
 
 Testes automatizados com [Vitest](https://vitest.dev), cobrindo o webhook da
 Hotmart, os geradores de IA (mock), os adapters de canal (incluindo o bloqueio
-de automações não oficiais) e as validações de formulário:
+de automaÃ§Ãµes nÃ£o oficiais) e as validaÃ§Ãµes de formulÃ¡rio:
 
 ```bash
-npm test          # roda a suíte uma vez (vitest run)
+npm test          # roda a suÃ­te uma vez (vitest run)
 npm run test:watch  # modo watch
 ```
 
 Os arquivos de teste ficam em `__tests__/`:
 
-- `hotmart-webhook.test.ts` — validação de HOTTOK, parsing do payload e
-  ativação/suspensão de workspace;
-- `ai-generators.test.ts` — geradores de conteúdo com `MockAIProvider` e o
-  negócio de exemplo `EXAMPLE_BEAUTY_SALON`;
-- `channel-adapters.test.ts` — `ManualExportAdapter`, `SimulatorAdapter`,
+- `hotmart-webhook.test.ts` â€” validaÃ§Ã£o de HOTTOK, parsing do payload e
+  ativaÃ§Ã£o/suspensÃ£o de workspace;
+- `ai-generators.test.ts` â€” geradores de conteÃºdo com `MockAIProvider` e o
+  negÃ³cio de exemplo `EXAMPLE_BEAUTY_SALON`;
+- `channel-adapters.test.ts` â€” `ManualExportAdapter`, `SimulatorAdapter`,
   bloqueio de adapters proibidos e a feature flag da WhatsApp Cloud API;
-- `validations.test.ts` — schemas Zod do wizard e da captura de leads;
-- `export-and-compliance.test.ts` — exportação em Markdown/PDF e detecção de
-  termos de automação não oficial em nomes de canais.
+- `validations.test.ts` â€” schemas Zod do wizard e da captura de leads;
+- `export-and-compliance.test.ts` â€” exportaÃ§Ã£o em Markdown/PDF e detecÃ§Ã£o de
+  termos de automaÃ§Ã£o nÃ£o oficial em nomes de canais.
 
 ## Deploy na Vercel
 
-1. Importe o repositório em [vercel.com/new](https://vercel.com/new).
-2. Configure as variáveis de ambiente de produção (mesmas do `.env.example`).
-3. Aponte o build command padrão do Next.js (`next build`) e o output padrão —
-   nenhuma configuração extra é necessária.
-4. Após o deploy, atualize `NEXT_PUBLIC_SITE_URL` com o domínio final (usado no
+1. Importe o repositÃ³rio em [vercel.com/new](https://vercel.com/new).
+2. Configure as variÃ¡veis de ambiente de produÃ§Ã£o (mesmas do `.env.example`).
+3. Aponte o build command padrÃ£o do Next.js (`next build`) e o output padrÃ£o â€”
+   nenhuma configuraÃ§Ã£o extra Ã© necessÃ¡ria.
+4. ApÃ³s o deploy, atualize `NEXT_PUBLIC_SITE_URL` com o domÃ­nio final (usado no
    `sitemap.xml`, `robots.txt` e metadados de SEO).
 5. Configure a URL do webhook da Hotmart (veja abaixo) apontando para
    `https://SEU-DOMINIO/api/webhooks/hotmart`.
@@ -157,32 +159,32 @@ Os arquivos de teste ficam em `__tests__/`:
 
 ```
 app/
-  (marketing)/          → landing page pública
-  (legal)/               → disclaimer, termos, privacidade
-  app/                    → área logada (dashboard, negócios, wizard, admin…)
+  (marketing)/          â†’ landing page pÃºblica
+  (legal)/               â†’ disclaimer, termos, privacidade
+  app/                    â†’ Ã¡rea logada (dashboard, negÃ³cios, wizard, adminâ€¦)
   api/
-    ai/generate/          → geração de ativos com IA
-    simulate/              → simulador de conversa
-    leads/                 → captura de leads
-    diagnostic/            → diagnóstico de atendimento
-    businesses/            → CRUD de negócios (mock-friendly)
-    exports/markdown|pdf/  → exportação de pacotes gerados
-    webhooks/hotmart/      → webhook oficial da Hotmart
-  robots.ts, sitemap.ts    → SEO
-components/               → componentes de UI (marketing, app, ui)
+    ai/generate/          â†’ geraÃ§Ã£o de ativos com IA
+    simulate/              â†’ simulador de conversa
+    leads/                 â†’ captura de leads
+    diagnostic/            â†’ diagnÃ³stico de atendimento
+    businesses/            â†’ CRUD de negÃ³cios (mock-friendly)
+    exports/markdown|pdf/  â†’ exportaÃ§Ã£o de pacotes gerados
+    webhooks/hotmart/      â†’ webhook oficial da Hotmart
+  robots.ts, sitemap.ts    â†’ SEO
+components/               â†’ componentes de UI (marketing, app, ui)
 lib/
-  ai/                     → providers de IA (mock/openai/anthropic/gemini) + geradores
-  channels/               → adapters de canal (manual, simulador, webchat, WhatsApp Cloud API)
-  hotmart/                → tipos e parser do webhook da Hotmart
-  email/                  → wrapper do Resend + templates HTML
-  utils/                  → exportação (Markdown/PDF) e regras de compliance
-  analytics/              → tracking de eventos (mock-friendly)
-  businesses/             → store em memória para o CRUD mock
-  validations/            → schemas Zod (wizard, lead, negócio)
-  supabase/               → clients Supabase (browser/server/service role)
-types/                    → tipos compartilhados (business, database, ai, hotmart)
-supabase/migrations/      → schema SQL + seed de nichos
-__tests__/                → suíte Vitest
+  ai/                     â†’ providers de IA (mock/openai/anthropic/gemini) + geradores
+  channels/               â†’ adapters de canal (manual, simulador, webchat, WhatsApp Cloud API)
+  hotmart/                â†’ tipos e parser do webhook da Hotmart
+  email/                  â†’ wrapper do Resend + templates HTML
+  utils/                  â†’ exportaÃ§Ã£o (Markdown/PDF) e regras de compliance
+  analytics/              â†’ tracking de eventos (mock-friendly)
+  businesses/             â†’ store em memÃ³ria para o CRUD mock
+  validations/            â†’ schemas Zod (wizard, lead, negÃ³cio)
+  supabase/               â†’ clients Supabase (browser/server/service role)
+types/                    â†’ tipos compartilhados (business, database, ai, hotmart)
+supabase/migrations/      â†’ schema SQL + seed de nichos
+__tests__/                â†’ suÃ­te Vitest
 ```
 
 ## Como adicionar um novo nicho
@@ -190,63 +192,63 @@ __tests__/                → suíte Vitest
 1. **Seed no banco (opcional, se usar Supabase):** adicione uma linha na tabela
    `niche_templates` (veja o `insert` no final de
    `supabase/migrations/001_initial_schema.sql`) com `niche`, `suggested_tone`
-   e `compliance_alerts` específicos do segmento.
-2. **Opções do wizard:** inclua o nome do nicho em `NICHE_OPTIONS`, em
-   `types/business.ts`, para que apareça no seletor de segmento.
-3. **Alertas de compliance específicos:** se o nicho tiver riscos particulares
-   (ex.: saúde, jurídico, financeiro), documente-os em `compliance_alerts` —
-   eles aparecem para o usuário durante o wizard/simulador.
-4. **Sem Supabase (modo demo):** os templates de nicho também podem ser
+   e `compliance_alerts` especÃ­ficos do segmento.
+2. **OpÃ§Ãµes do wizard:** inclua o nome do nicho em `NICHE_OPTIONS`, em
+   `types/business.ts`, para que apareÃ§a no seletor de segmento.
+3. **Alertas de compliance especÃ­ficos:** se o nicho tiver riscos particulares
+   (ex.: saÃºde, jurÃ­dico, financeiro), documente-os em `compliance_alerts` â€”
+   eles aparecem para o usuÃ¡rio durante o wizard/simulador.
+4. **Sem Supabase (modo demo):** os templates de nicho tambÃ©m podem ser
    gerenciados via `/app/admin/templates`, persistidos em `localStorage`
-   através de `lib/local-store.ts`.
+   atravÃ©s de `lib/local-store.ts`.
 
 ## Webhook da Hotmart
 
 Endpoint: `POST /api/webhooks/hotmart`.
 
-1. No painel da Hotmart, vá em **Ferramentas → Webhook** e cadastre a URL
+1. No painel da Hotmart, vÃ¡ em **Ferramentas â†’ Webhook** e cadastre a URL
    `https://SEU-DOMINIO/api/webhooks/hotmart`.
-2. Copie o **Hottok** exibido lá e defina `HOTMART_HOTTOK` no ambiente de
-   produção. O token é validado tanto pelo header `X-Hotmart-Hottok` quanto
-   pelo campo `hottok` do corpo (compatibilidade com versões antigas).
+2. Copie o **Hottok** exibido lÃ¡ e defina `HOTMART_HOTTOK` no ambiente de
+   produÃ§Ã£o. O token Ã© validado tanto pelo header `X-Hotmart-Hottok` quanto
+   pelo campo `hottok` do corpo (compatibilidade com versÃµes antigas).
 3. Eventos tratados:
-   - `PURCHASE_APPROVED` / `PURCHASE_COMPLETE` → **ativa** o workspace do
+   - `PURCHASE_APPROVED` / `PURCHASE_COMPLETE` â†’ **ativa** o workspace do
      comprador;
    - `PURCHASE_REFUNDED`, `PURCHASE_CANCELED`/`PURCHASE_CANCELLED`,
-     `PURCHASE_CHARGEBACK`, `PURCHASE_EXPIRED`, `PURCHASE_PROTEST` →
+     `PURCHASE_CHARGEBACK`, `PURCHASE_EXPIRED`, `PURCHASE_PROTEST` â†’
      **suspende** o workspace;
-   - demais eventos são apenas registrados (sem ação de workspace).
-4. Toda chamada é registrada (Supabase, se configurado, com fallback para um
-   log em memória) e pode ser conferida na demo em `/app/admin/hotmart-events`.
-5. Hottok inválido → resposta `401`. Processamento com sucesso → `200`.
+   - demais eventos sÃ£o apenas registrados (sem aÃ§Ã£o de workspace).
+4. Toda chamada Ã© registrada (Supabase, se configurado, com fallback para um
+   log em memÃ³ria) e pode ser conferida na demo em `/app/admin/hotmart-events`.
+5. Hottok invÃ¡lido â†’ resposta `401`. Processamento com sucesso â†’ `200`.
 
-A lógica pura fica em `lib/hotmart/webhook-parser.ts`
-(`validateHottok`, `parseHotmartPayload`, `handleHotmartEvent`), testável sem
-depender do runtime do Next.js — veja `__tests__/hotmart-webhook.test.ts`.
+A lÃ³gica pura fica em `lib/hotmart/webhook-parser.ts`
+(`validateHottok`, `parseHotmartPayload`, `handleHotmartEvent`), testÃ¡vel sem
+depender do runtime do Next.js â€” veja `__tests__/hotmart-webhook.test.ts`.
 
 ## Trocando o provedor de IA
 
-Defina `AI_PROVIDER` como `mock` (padrão), `openai`, `anthropic` ou `gemini` e
+Defina `AI_PROVIDER` como `mock` (padrÃ£o), `openai`, `anthropic` ou `gemini` e
 preencha a respectiva chave de API (`OPENAI_API_KEY`, `ANTHROPIC_API_KEY` ou
 `GEMINI_API_KEY`). Cada provider implementa a interface `AIProvider`
-(`lib/ai/provider.ts`) e, se a chave não estiver configurada, cai
-automaticamente de volta para o `MockAIProvider` — o app nunca quebra por
+(`lib/ai/provider.ts`) e, se a chave nÃ£o estiver configurada, cai
+automaticamente de volta para o `MockAIProvider` â€” o app nunca quebra por
 falta de credencial de IA.
 
 Todos os provedores recebem o mesmo bloco de `GUARDRAILS` (regras absolutas:
-nunca inventar preços/prazos, nunca prometer resultado garantido, nunca pedir
-dados sensíveis, sempre oferecer atendimento humano etc.), injetado no prompt
+nunca inventar preÃ§os/prazos, nunca prometer resultado garantido, nunca pedir
+dados sensÃ­veis, sempre oferecer atendimento humano etc.), injetado no prompt
 de sistema em `lib/ai/generators/index.ts`.
 
 ## WhatsApp Cloud API (feature flag)
 
-A integração oficial (`lib/channels/whatsapp-cloud.ts`) fica **desativada por
-padrão** (`ENABLE_OFFICIAL_WHATSAPP_CLOUD=false`). Enquanto desativada, todas
-as chamadas lançam `FeatureDisabledError` com uma mensagem explicando como
-ativar. Para habilitar em produção:
+A integraÃ§Ã£o oficial (`lib/channels/whatsapp-cloud.ts`) fica **desativada por
+padrÃ£o** (`ENABLE_OFFICIAL_WHATSAPP_CLOUD=false`). Enquanto desativada, todas
+as chamadas lanÃ§am `FeatureDisabledError` com uma mensagem explicando como
+ativar. Para habilitar em produÃ§Ã£o:
 
 1. Configure um app WhatsApp Business Platform na Meta e obtenha token de
-   acesso, ID do número e ID da conta.
+   acesso, ID do nÃºmero e ID da conta.
 2. Defina `ENABLE_OFFICIAL_WHATSAPP_CLOUD=true` e preencha
    `WHATSAPP_CLOUD_ACCESS_TOKEN`, `WHATSAPP_CLOUD_PHONE_NUMBER_ID`,
    `WHATSAPP_CLOUD_BUSINESS_ACCOUNT_ID` e `WHATSAPP_CLOUD_VERIFY_TOKEN`.
@@ -254,26 +256,26 @@ ativar. Para habilitar em produção:
    janela de 24h e templates aprovados pela Meta.
 
 Sem a flag, use `ManualExportAdapter` (cola manual no WhatsApp Business App)
-ou `SimulatorAdapter` (treino interno) — ambos oficiais e sem risco de
-bloqueio de número.
+ou `SimulatorAdapter` (treino interno) â€” ambos oficiais e sem risco de
+bloqueio de nÃºmero.
 
 ## Regras de compliance
 
-O BalcãoIA Studio **não implementa e não permite** integrações via bibliotecas
-não oficiais de WhatsApp. Isso é reforçado em código, não apenas em
-documentação:
+O BalcÃ£oIA Studio **nÃ£o implementa e nÃ£o permite** integraÃ§Ãµes via bibliotecas
+nÃ£o oficiais de WhatsApp. Isso Ã© reforÃ§ado em cÃ³digo, nÃ£o apenas em
+documentaÃ§Ã£o:
 
 - `ForbiddenChannelType` (`lib/channels/adapter.ts`) lista os tipos proibidos:
   `openwa`, `baileys`, `venom`, `evolution_api`, `wa_automate`,
   `qrcode_scraping`.
-- `createForbiddenAdapter(type)` sempre lança `ComplianceError` — não existe
-  implementação funcional para esses tipos no projeto, apenas o bloqueio.
-- `lib/utils/compliance.ts` expõe `detectForbiddenChannelTerm` e
-  `assertChannelNameIsCompliant` para impedir que integrações/canais
-  criados pelo usuário usem nomes que sugiram esse tipo de automação (ex.:
+- `createForbiddenAdapter(type)` sempre lanÃ§a `ComplianceError` â€” nÃ£o existe
+  implementaÃ§Ã£o funcional para esses tipos no projeto, apenas o bloqueio.
+- `lib/utils/compliance.ts` expÃµe `detectForbiddenChannelTerm` e
+  `assertChannelNameIsCompliant` para impedir que integraÃ§Ãµes/canais
+  criados pelo usuÃ¡rio usem nomes que sugiram esse tipo de automaÃ§Ã£o (ex.:
   "Bot via Baileys", "QR Code Scraper").
-- Nenhuma dependência de scraping/QR Code (OpenWA, Baileys, Venom, Evolution
-  API, WA-Automate) está listada em `package.json` — e não deve ser
+- Nenhuma dependÃªncia de scraping/QR Code (OpenWA, Baileys, Venom, Evolution
+  API, WA-Automate) estÃ¡ listada em `package.json` â€” e nÃ£o deve ser
   adicionada.
 
 Canais permitidos: `ManualExportAdapter`, `SimulatorAdapter`, `WebchatAdapter`
@@ -282,7 +284,35 @@ Meta).
 
 ## Suporte
 
-Dúvidas sobre o produto, cobrança ou acesso: responda o e-mail de boas-vindas
+DÃºvidas sobre o produto, cobranÃ§a ou acesso: responda o e-mail de boas-vindas
 recebido no cadastro ou entre em contato pelo canal de suporte informado na
-página de checkout. Para questões técnicas do código-fonte, abra uma issue no
-repositório do projeto.
+pÃ¡gina de checkout. Para questÃµes tÃ©cnicas do cÃ³digo-fonte, abra uma issue no
+repositÃ³rio do projeto.
+
+---
+
+## Live demo
+
+**Try it in the browser (no clone):** see badge / homepage above, or the [Labs hub](https://felipeofdev-ai.github.io/labs/).
+
+## Constellation
+
+| Project | Demo |
+|---------|------|
+| [CardOpsAI](https://github.com/felipeofdev-ai/CardOpsAI) | [lab](https://felipeofdev-ai.github.io/labs/cardopsai/) |
+| [BridgeTrace-AI](https://github.com/felipeofdev-ai/BridgeTrace-AI) | [lab](https://felipeofdev-ai.github.io/labs/bridgetrace/) |
+| [Meridian](https://github.com/felipeofdev-ai/Meridian) | [lab](https://felipeofdev-ai.github.io/labs/meridian/) |
+| [TrustHire](https://github.com/felipeofdev-ai/trusthire) | [lab](https://felipeofdev-ai.github.io/labs/trusthire/) |
+| [secure-ship-kit](https://github.com/felipeofdev-ai/secure-ship-kit) | [lab](https://felipeofdev-ai.github.io/labs/secure-ship-kit/) |
+| [agentic-rag-cite](https://github.com/felipeofdev-ai/agentic-rag-cite) | [lab](https://felipeofdev-ai.github.io/labs/agentic-rag-cite/) |
+| [hitl-langgraph-kit](https://github.com/felipeofdev-ai/hitl-langgraph-kit) | [lab](https://felipeofdev-ai.github.io/labs/hitl-langgraph-kit/) |
+| [forge-mcp-server](https://github.com/felipeofdev-ai/forge-mcp-server) | [lab](https://felipeofdev-ai.github.io/labs/forge-mcp-server/) |
+| [agent-eval-harness](https://github.com/felipeofdev-ai/agent-eval-harness) | [lab](https://felipeofdev-ai.github.io/labs/agent-eval-harness/) |
+| [lgpd-checklist-agent](https://github.com/felipeofdev-ai/lgpd-checklist-agent) | [lab](https://felipeofdev-ai.github.io/labs/lgpd-checklist-agent/) |
+| [hiring-packet](https://github.com/felipeofdev-ai/hiring-packet) | [lab](https://felipeofdev-ai.github.io/labs/hiring-packet/) |
+| [philo-ai-os](https://github.com/felipeofdev-ai/philo-ai-os) | [lab](https://felipeofdev-ai.github.io/labs/philo-ai-os/) |
+| [balcaoia-local](https://github.com/felipeofdev-ai/balcaoia-local) | [studio](https://balcaoia-studio.vercel.app) |
+
+Portfolio: [felipeofdev-ai.github.io](https://felipeofdev-ai.github.io/) · Author: Felipe Fernandes · `felipe.of.dev@gmail.com`
+
+> If this helped you, **star this repo** — organic only. No bots, no paid stars.
